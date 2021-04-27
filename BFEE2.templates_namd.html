@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>BFEE2.templates_namd &mdash; BFEE2  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="BFEE2.templates_gromacs" href="BFEE2.templates_gromacs.html" />
+    <link rel="prev" title="BFEE2.inputGenerator" href="BFEE2.inputGenerator.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> BFEE2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="python_api.html">Python API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html">BFEE2.commonTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html">BFEE2.gui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.inputGenerator.html">BFEE2.inputGenerator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BFEE2.templates_namd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.templates_namd.configTemplate">BFEE2.templates_namd.configTemplate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.templates_namd.scriptTemplate">BFEE2.templates_namd.scriptTemplate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BFEE2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="python_api.html">Python API</a> &raquo;</li>
+        
+      <li>BFEE2.templates_namd</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/BFEE2.templates_namd.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bfee2-templates-namd">
+<h1>BFEE2.templates_namd<a class="headerlink" href="#bfee2-templates-namd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-BFEE2.templates_namd.configTemplate">
+<span id="bfee2-templates-namd-configtemplate"></span><h2>BFEE2.templates_namd.configTemplate<a class="headerlink" href="#module-BFEE2.templates_namd.configTemplate" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.configTemplate.</span></code><code class="sig-name descname"><span class="pre">configTemplate</span></code><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>generate NAMD/Gromacs/Colvars config files
+In the Colvars config file, ndx and xyz files are used to indicate the group of atoms
+The non-hydrogen atoms of protein are labeled as ‘protein’ in complex.ndx
+The non-hydrogen atoms of ligand are labeled as ‘ligand’ in complex.ndx
+The non-hydrogen atoms of user-defined reference are labeled as ‘reference’ in complex.ndx</p>
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvABFTemplate">
+<code class="sig-name descname"><span class="pre">cvABFTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvABFTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvABFTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>template for WTM-eABF bias</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cv</strong> (<em>str</em>) – name of the colvars</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of the WTM-eABF definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvEulerAngleTemplate">
+<code class="sig-name descname"><span class="pre">cvEulerAngleTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvEulerAngleTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvEulerAngleTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Euler angle template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>setBoundary</strong> (<em>bool</em>) – whether set boundary (for free-energy calculation)</p></li>
+<li><p><strong>lowerBoundary</strong> (<em>float</em>) – lower boundary of free-energy calculaton</p></li>
+<li><p><strong>upperboundary</strong> (<em>float</em>) – upper boundary of free-energy calculation</p></li>
+<li><p><strong>angle</strong> (<em>str</em>) – ‘eulerTheta’, ‘eulerPhi’ of ‘eulerPsi’</p></li>
+<li><p><strong>refFile</strong> (<em>str</em>) – path to the reference file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of Euler angle definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicTemplate">
+<code class="sig-name descname"><span class="pre">cvHarmonicTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiWindows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiForward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetForceConstant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvHarmonicTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>template for a harmonic restraint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cv</strong> (<em>str</em>) – name of the colvars</p></li>
+<li><p><strong>constant</strong> (<em>float</em>) – force constant of the restraint</p></li>
+<li><p><strong>center</strong> (<em>float</em>) – center of the restraint</p></li>
+<li><p><strong>tiWindows</strong> (<em>int</em>) – number of windows of the TI simulation (if runs a TI simulation). Defaults to 0.</p></li>
+<li><p><strong>tiForward</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether the TI simulation is forward (if runs a TI simulation). Defaults to True.</p></li>
+<li><p><strong>targetForceConstant</strong> (<em>int</em><em>, </em><em>optional</em>) – targeted force constant of the restraint in TI simulation (if runs a TI simulation).
+Defaults to 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of the harmonic restraint definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicWallsTemplate">
+<code class="sig-name descname"><span class="pre">cvHarmonicWallsTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerWall</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperWall</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvHarmonicWallsTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicWallsTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>template of harmonic wall bias</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cv</strong> (<em>str</em>) – name of the colvars</p></li>
+<li><p><strong>lowerWall</strong> (<em>float</em>) – lower wall of the bias</p></li>
+<li><p><strong>upperWall</strong> (<em>float</em>) – upper wall of the bias</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of the harmonic wall bias definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvHeadTemplate">
+<code class="sig-name descname"><span class="pre">cvHeadTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvHeadTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvHeadTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the head of colvars file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>indexFile</strong> (<em>str</em>) – name of ndx file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>head of colvars file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvPolarAngleTemplate">
+<code class="sig-name descname"><span class="pre">cvPolarAngleTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvPolarAngleTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvPolarAngleTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polar angle template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>setBoundary</strong> (<em>bool</em>) – whether set boundary (for free-energy calculation)</p></li>
+<li><p><strong>lowerBoundary</strong> (<em>float</em>) – lower boundary of free-energy calculaton</p></li>
+<li><p><strong>upperboundary</strong> (<em>float</em>) – upper boundary of free-energy calculation</p></li>
+<li><p><strong>angle</strong> (<em>str</em>) – ‘polarTheta’ or ‘polarPhi’</p></li>
+<li><p><strong>refFile</strong> (<em>str</em>) – path to the reference file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of polar angle definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvProteinTemplate">
+<code class="sig-name descname"><span class="pre">cvProteinTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centerCoor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvProteinTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvProteinTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>the template of restraining the protein</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>centerCoor</strong> (<em>np.array</em><em>, </em><em>3</em>) – (x,y,z), center of the protein</p></li>
+<li><p><strong>refFile</strong> (<em>str</em>) – path of the reference file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of the restraining the protein</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvRMSDTemplate">
+<code class="sig-name descname"><span class="pre">cvRMSDTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvRMSDTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvRMSDTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>RMSD CV template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>setBoundary</strong> (<em>bool</em>) – whether set boundary (for free-energy calculation)</p></li>
+<li><p><strong>lowerBoundary</strong> (<em>float</em>) – lower boundary of free-energy calculaton</p></li>
+<li><p><strong>upperboundary</strong> (<em>float</em>) – upper boundary of free-energy calculation</p></li>
+<li><p><strong>refFile</strong> (<em>str</em>) – path to the reference file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of RMSD definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.cvRTemplate">
+<code class="sig-name descname"><span class="pre">cvRTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerBoundary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperBoundary</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.cvRTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.cvRTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>r distance template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>setBoundary</strong> (<em>bool</em>) – whether set boundary (for free-energy calculation)</p></li>
+<li><p><strong>lowerBoundary</strong> (<em>float</em>) – lower boundary of free-energy calculaton</p></li>
+<li><p><strong>upperboundary</strong> (<em>float</em>) – upper boundary of free-energy</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string of distance r definition</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="BFEE2.templates_namd.configTemplate.configTemplate.namdConfigTemplate">
+<code class="sig-name descname"><span class="pre">namdConfigTemplate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forceFieldType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forceFieldFiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coorFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NAMDRestartCoor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NAMDRestartVel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NAMDRestartXsc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PBCCondition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputPrefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numSteps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cvFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cvDefinitionFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CVRestartFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fepFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fepWindowNum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fepForward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fepDoubleWide</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fepMinBeforeSample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">membraneProtein</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/configTemplate.html#configTemplate.namdConfigTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.configTemplate.configTemplate.namdConfigTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>the namd config file template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forceFieldType</strong> (<em>str</em>) – ‘charmm’ or ‘amber’</p></li>
+<li><p><strong>forceFieldFiles</strong> (<em>list of str</em>) – name of charmm force field files</p></li>
+<li><p><strong>topFile</strong> (<em>str</em>) – name of the topology file (psf, parm)</p></li>
+<li><p><strong>coorFile</strong> (<em>str</em>) – name of the coordinate file (pdb, rst)</p></li>
+<li><p><strong>NAMDRestartCoor</strong> (<em>str</em>) – name of namd binary restart coor file (if restart from a previous simulation)</p></li>
+<li><p><strong>NAMDRestartVel</strong> (<em>str</em>) – name of namd binary restart vel file</p></li>
+<li><p><strong>NAMDRestartXsc</strong> (<em>str</em>) – name of namd restart xsc file</p></li>
+<li><p><strong>PBCCondition</strong> (<em>np.array</em><em>, </em><em>2*3</em>) – PBC vector, ((lengthX, lengthY, lengthZ),(centerX, centerY, centerZ))</p></li>
+<li><p><strong>outputPrefix</strong> (<em>str</em>) – prefix of output file</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – temperature of the simulation</p></li>
+<li><p><strong>numSteps</strong> (<em>int</em>) – number of steps of the simulation</p></li>
+<li><p><strong>cvFile</strong> (<em>str</em>) – name of Colvars file. Defaults to ‘’.</p></li>
+<li><p><strong>cvDefinitionFile</strong> (<em>str</em><em>, </em><em>optional</em>) – name of a TCL file defining new CVs. Defaults to ‘’.</p></li>
+<li><p><strong>CVRestartFile</strong> (<em>str</em><em>, </em><em>optional</em>) – name of Colvars restart file. Defaults to ‘’.</p></li>
+<li><p><strong>fepFile</strong> (<em>str</em><em>, </em><em>optional</em>) – name of fep file, indicating which atoms will be generated/removed
+(if run alchemical simulation). Defaults to ‘’.</p></li>
+<li><p><strong>fepWindowNum</strong> (<em>int</em><em>, </em><em>optional</em>) – number of fep windows. Defaults to 20.</p></li>
+<li><p><strong>fepForward</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this is a forward fep simulation. Defaults to True.</p></li>
+<li><p><strong>fepDoubleWide</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether this is a double-wide fep simulation. Defaults to False.</p></li>
+<li><p><strong>fepMinBeforeSample</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether do minimization before sampling in each FEP window.
+Defaults to False.</p></li>
+<li><p><strong>membraneProtein</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether simulating a membrame protein. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a NAMD config string if succeed, and empty string otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-BFEE2.templates_namd.scriptTemplate">
+<span id="bfee2-templates-namd-scripttemplate"></span><h2>BFEE2.templates_namd.scriptTemplate<a class="headerlink" href="#module-BFEE2.templates_namd.scriptTemplate" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="BFEE2.templates_gromacs.html" class="btn btn-neutral float-right" title="BFEE2.templates_gromacs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BFEE2.inputGenerator.html" class="btn btn-neutral float-left" title="BFEE2.inputGenerator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Haohao Fu, Haochuan Chen.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
