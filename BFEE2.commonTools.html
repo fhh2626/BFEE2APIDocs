@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BFEE2.commonTools &mdash; BFEE2  documentation</title>
+  <title>BFEE2.commonTools &mdash; BFEE3  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -32,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            BFEE2
+            BFEE3
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -95,6 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html">BFEE2.templates_namd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.third_party.html">BFEE2.third_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.skills.html">BFEE2.skills</a></li>
 </ul>
 </li>
 </ul>
@@ -105,7 +107,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BFEE2</a>
+          <a href="index.html">BFEE3</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -551,11 +553,11 @@ False if single-frame format (.pmf)</p></li>
 <dd><p>Extract all possible base names from a GaWTM PMF file for flexible matching.</p>
 <p>This function returns a list of candidate base names to support flexible pairing.
 For example:</p>
-<blockquote>
-<div><p>‘path/to/abf_1.abf1.czar.pmf’ -&gt; [‘abf_1.abf1’, ‘abf_1’]
-‘path/to/001.czar.pmf’ -&gt; [‘001’]
-‘path/to/step1.abf2.czar.pmf’ -&gt; [‘step1.abf2’, ‘step1’]</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;path/to/abf_1.abf1.czar.pmf&#39;</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s1">&#39;abf_1.abf1&#39;</span><span class="p">,</span> <span class="s1">&#39;abf_1&#39;</span><span class="p">]</span>
+<span class="s1">&#39;path/to/001.czar.pmf&#39;</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s1">&#39;001&#39;</span><span class="p">]</span>
+<span class="s1">&#39;path/to/step1.abf2.czar.pmf&#39;</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s1">&#39;step1.abf2&#39;</span><span class="p">,</span> <span class="s1">&#39;step1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
@@ -599,10 +601,10 @@ For example:</p>
 <dd><p>Extract all possible base names from a GaWTM History PMF file for flexible matching.</p>
 <p>This function returns a list of candidate base names to support flexible pairing.
 For example:</p>
-<blockquote>
-<div><p>‘path/to/abf_1.abf1.hist.czar.pmf’ -&gt; [‘abf_1.abf1’, ‘abf_1’]
-‘path/to/001.hist.czar.pmf’ -&gt; [‘001’]</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;path/to/abf_1.abf1.hist.czar.pmf&#39;</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s1">&#39;abf_1.abf1&#39;</span><span class="p">,</span> <span class="s1">&#39;abf_1&#39;</span><span class="p">]</span>
+<span class="s1">&#39;path/to/001.hist.czar.pmf&#39;</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s1">&#39;001&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
@@ -754,17 +756,13 @@ Wrong correction files (.reweightamd1.reweight.pmf instead of .cumulant.pmf) are
 <dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – list of all History PMF file paths (including correction files)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl>
-<dt>(paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</dt><dd><dl class="simple">
-<dt>paired_list: list of tuples (pmf_file_path, correction_file_path, is_hist_correction)</dt><dd><p>is_hist_correction: True if correction is .hist.pmf, False if single-frame .pmf</p>
-</dd>
-</dl>
-<p>unpaired_czar_list: list of hist.czar.pmf file paths without correction
-orphan_correction_list: list of correction file paths without matching hist.czar.pmf
-other_files: list of other PMF files
-wrong_correction_files: list of .reweightamd1.reweight.pmf files (wrong type)</p>
-</dd>
-</dl>
+<dd class="field-even"><p><p>(paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</p>
+<p><code class="docutils literal notranslate"><span class="pre">paired_list</span></code> is a list of tuples
+<code class="docutils literal notranslate"><span class="pre">(pmf_file_path,</span> <span class="pre">correction_file_path,</span> <span class="pre">is_hist_correction)</span></code>.
+<code class="docutils literal notranslate"><span class="pre">is_hist_correction</span></code> is True if correction is .hist.pmf and False if
+it is a single-frame .pmf. Other returned lists contain unpaired
+hist.czar.pmf files, orphan correction files, other PMF files, and
+wrong .reweightamd1.reweight.pmf correction files.</p>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -952,7 +950,7 @@ wrong_correction_files: list of .reweightamd1.reweight.pmf files (wrong type)</p
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

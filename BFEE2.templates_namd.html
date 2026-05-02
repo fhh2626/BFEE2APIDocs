@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BFEE2.templates_namd &mdash; BFEE2  documentation</title>
+  <title>BFEE2.templates_namd &mdash; BFEE3  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -32,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            BFEE2
+            BFEE3
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,10 +57,23 @@
 <li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.scriptTemplate.charmmToGromacsTemplate"><code class="docutils literal notranslate"><span class="pre">charmmToGromacsTemplate()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.templates_namd.updateCenters">BFEE2.templates_namd.updateCenters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.changeABFRange"><code class="docutils literal notranslate"><span class="pre">changeABFRange()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.changeCenters"><code class="docutils literal notranslate"><span class="pre">changeCenters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.findOptimalCVs"><code class="docutils literal notranslate"><span class="pre">findOptimalCVs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.isGeometric"><code class="docutils literal notranslate"><span class="pre">isGeometric()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.parseDat"><code class="docutils literal notranslate"><span class="pre">parseDat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.readCenters"><code class="docutils literal notranslate"><span class="pre">readCenters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.updateAlchemicalFiles"><code class="docutils literal notranslate"><span class="pre">updateAlchemicalFiles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.templates_namd.updateCenters.updateGeometricFiles"><code class="docutils literal notranslate"><span class="pre">updateGeometricFiles()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.third_party.html">BFEE2.third_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.skills.html">BFEE2.skills</a></li>
 </ul>
 </li>
 </ul>
@@ -71,7 +84,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BFEE2</a>
+          <a href="index.html">BFEE3</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -529,6 +542,127 @@ Defaults to False.</p></li>
 <dd></dd></dl>
 
 </section>
+<section id="module-BFEE2.templates_namd.updateCenters">
+<span id="bfee2-templates-namd-updatecenters"></span><h2>BFEE2.templates_namd.updateCenters<a class="headerlink" href="#module-BFEE2.templates_namd.updateCenters" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.changeABFRange">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">changeABFRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CVs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newCenters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">originalCenters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#changeABFRange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.changeABFRange" title="Link to this definition"></a></dt>
+<dd><p>change lowerboundary, upperboundary, lowerWalls, upperWalls of ABF in a <code class="docutils literal notranslate"><span class="pre">*.in</span></code> file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – a Colvars config file</p></li>
+<li><p><strong>CVs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – a list, showing the corresponding options of which CV blocks are to be replaced</p></li>
+<li><p><strong>newCenters</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – a list, containing the new values of Centers of these CVs</p></li>
+<li><p><strong>originalCenters</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – a list, containing the original values of Centers of these CVs</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.changeCenters">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">changeCenters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CVs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newCenters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#changeCenters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.changeCenters" title="Link to this definition"></a></dt>
+<dd><p>change Centers of harmonic restraints in a <code class="docutils literal notranslate"><span class="pre">*.in</span></code> file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – a Colvars config file</p></li>
+<li><p><strong>CVs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – a list, showing the Centers of which harmonic blocks are to be replaced</p></li>
+<li><p><strong>newCenters</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – a list, containing the new values of Centers</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.findOptimalCVs">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">findOptimalCVs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#findOptimalCVs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.findOptimalCVs" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>read <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> files generated through equilibration</dt><dd><p>and find out the most probable values of CVs</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the most probable values of RMSD, eulerTheta, eulerPhi, eulerPsi, polarTheta, polarPhi, r</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[Float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.isGeometric">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">isGeometric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#isGeometric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.isGeometric" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Check the route of the simulation, True for geometric,</dt><dd><p>False for alchemical.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>the route of the free-energy calculation. True for geometric,</dt><dd><p>False for alchemical</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.parseDat">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">parseDat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#parseDat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.parseDat" title="Link to this definition"></a></dt>
+<dd><p>Parse a dat (histogram) file and return the most probable CV value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – the dat file to be parsed with</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the most probable CV value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.readCenters">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">readCenters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CVs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#readCenters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.readCenters" title="Link to this definition"></a></dt>
+<dd><p>find the value of centers of provided CVs in a <code class="docutils literal notranslate"><span class="pre">*.in</span></code> file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – a Colvars config file</p></li>
+<li><p><strong>CVs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – a list, showing the CVs whose centers are to be get</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>centers of the provided CVs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.updateAlchemicalFiles">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">updateAlchemicalFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#updateAlchemicalFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.updateAlchemicalFiles" title="Link to this definition"></a></dt>
+<dd><p>Update the Centers of <code class="docutils literal notranslate"><span class="pre">*.in</span></code> files based on equilibration</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.templates_namd.updateCenters.updateGeometricFiles">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.templates_namd.updateCenters.</span></span><span class="sig-name descname"><span class="pre">updateGeometricFiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/templates_namd/updateCenters.html#updateGeometricFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.templates_namd.updateCenters.updateGeometricFiles" title="Link to this definition"></a></dt>
+<dd><p>Update the Centers of <code class="docutils literal notranslate"><span class="pre">*.in</span></code> files based on equilibration</p>
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -542,7 +676,7 @@ Defaults to False.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

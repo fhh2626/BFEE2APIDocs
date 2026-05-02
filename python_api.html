@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python API &mdash; BFEE2  documentation</title>
+  <title>Python API &mdash; BFEE3  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BFEE2.commonTools" href="BFEE2.commonTools.html" />
-    <link rel="prev" title="Binding Free Energy Estimator 2" href="index.html" /> 
+    <link rel="prev" title="Binding Free Energy Estimator 3" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            BFEE2
+            BFEE3
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -51,6 +51,8 @@
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html">BFEE2.templates_namd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.third_party.html">BFEE2.third_party</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.skills.html">BFEE2.skills</a></li>
 </ul>
 </li>
 </ul>
@@ -61,7 +63,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BFEE2</a>
+          <a href="index.html">BFEE3</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -81,9 +83,10 @@
              
   <section id="python-api">
 <h1>Python API<a class="headerlink" href="#python-api" title="Link to this heading"></a></h1>
-<p>BFEE2 Python API provides information for the end-user to use BFEE2 in a console program / streamline.</p>
+<p>BFEE2 Python API provides information for the end-user to use BFEE in a console program / streamline.</p>
 <p>One may always use <strong>BFEE2.inputGenerator</strong> and <strong>BFEE2.postTreatment</strong> when using BFEE2 Python API in automated/streamlined binding free-energy calculation.
-If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_namd</strong> also deserves to look at.</p>
+If one wants to use BFEE as an NAMD, GROMACS, Colvars, or FEP parser, <strong>BFEE2.templates_namd</strong>, <strong>BFEE2.templates_gromacs</strong>, and <strong>BFEE2.third_party</strong> also deserve a look.
+The GUI and AI-assistant support modules are documented for completeness.</p>
 <p>See BFEE2 user guide if one wants to know how to use BFEE2.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -212,6 +215,17 @@ If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_
 <li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.scriptTemplate.charmmToGromacsTemplate"><code class="docutils literal notranslate"><span class="pre">charmmToGromacsTemplate()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html#module-BFEE2.templates_namd.updateCenters">BFEE2.templates_namd.updateCenters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.changeABFRange"><code class="docutils literal notranslate"><span class="pre">changeABFRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.changeCenters"><code class="docutils literal notranslate"><span class="pre">changeCenters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.findOptimalCVs"><code class="docutils literal notranslate"><span class="pre">findOptimalCVs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.isGeometric"><code class="docutils literal notranslate"><span class="pre">isGeometric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.parseDat"><code class="docutils literal notranslate"><span class="pre">parseDat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.readCenters"><code class="docutils literal notranslate"><span class="pre">readCenters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.updateAlchemicalFiles"><code class="docutils literal notranslate"><span class="pre">updateAlchemicalFiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.updateGeometricFiles"><code class="docutils literal notranslate"><span class="pre">updateGeometricFiles()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a><ul>
@@ -271,6 +285,37 @@ If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.third_party.html">BFEE2.third_party</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.third_party.html#module-BFEE2.third_party.py_bar">BFEE2.third_party.py_bar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.ColvarsParser"><code class="docutils literal notranslate"><span class="pre">ColvarsParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.ColvarsParser.get_data"><code class="docutils literal notranslate"><span class="pre">ColvarsParser.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.ColvarsParser.get_restraint_contribution"><code class="docutils literal notranslate"><span class="pre">ColvarsParser.get_restraint_contribution()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.FEPAnalyzer"><code class="docutils literal notranslate"><span class="pre">FEPAnalyzer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.FEPAnalyzer.BAR_free_energy"><code class="docutils literal notranslate"><span class="pre">FEPAnalyzer.BAR_free_energy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.FEPAnalyzer.FEP_free_energy"><code class="docutils literal notranslate"><span class="pre">FEPAnalyzer.FEP_free_energy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.FEPAnalyzer.MergeData"><code class="docutils literal notranslate"><span class="pre">FEPAnalyzer.MergeData()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.FEPAnalyzer.Window_boundaries"><code class="docutils literal notranslate"><span class="pre">FEPAnalyzer.Window_boundaries()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.NAMDParser"><code class="docutils literal notranslate"><span class="pre">NAMDParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.third_party.html#BFEE2.third_party.py_bar.NAMDParser.get_data"><code class="docutils literal notranslate"><span class="pre">NAMDParser.get_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.skills.html">BFEE2.skills</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.skills.html#BFEE2.skills.AISkillExecutor"><code class="docutils literal notranslate"><span class="pre">AISkillExecutor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.skills.html#BFEE2.skills.AISkillExecutor.SCHEMA_NAME"><code class="docutils literal notranslate"><span class="pre">AISkillExecutor.SCHEMA_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.skills.html#BFEE2.skills.AISkillExecutor.execute"><code class="docutils literal notranslate"><span class="pre">AISkillExecutor.execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.skills.html#BFEE2.skills.AISkillExecutor.parent"><code class="docutils literal notranslate"><span class="pre">AISkillExecutor.parent</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -279,14 +324,14 @@ If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Binding Free Energy Estimator 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Binding Free Energy Estimator 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="BFEE2.commonTools.html" class="btn btn-neutral float-right" title="BFEE2.commonTools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

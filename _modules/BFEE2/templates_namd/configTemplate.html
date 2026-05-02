@@ -1,173 +1,93 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>BFEE2.templates_namd.configTemplate &mdash; BFEE2  documentation</title>
-  
+  <title>BFEE2.templates_namd.configTemplate &mdash; BFEE3  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../index.html" class="icon icon-home"> BFEE2
           
-
-          
+          <a href="../../../index.html" class="icon icon-home">
+            BFEE3
           </a>
-
-          
-            
-            
-              <div class="version">
-                2.1.8
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../python_api.html">Python API</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">BFEE2</a>
-        
+          <a href="../../../index.html">BFEE3</a>
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-        
-      <li>BFEE2.templates_namd.configTemplate</li>
-    
-    
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">BFEE2.templates_namd.configTemplate</li>
       <li class="wy-breadcrumbs-aside">
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <h1>Source code for BFEE2.templates_namd.configTemplate</h1><div class="highlight"><pre>
 <span></span><span class="c1"># generate NAMD/Gromacs/Colvars config files</span>
 
-<div class="viewcode-block" id="configTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate">[docs]</a><span class="k">class</span> <span class="nc">configTemplate</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39; generate NAMD/Gromacs/Colvars config files</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<div class="viewcode-block" id="configTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">configTemplate</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; generate NAMD/Gromacs/Colvars config files</span>
 <span class="sd">        In the Colvars config file, ndx and xyz files are used to indicate the group of atoms</span>
 <span class="sd">        The non-hydrogen atoms of protein are labeled as &#39;protein&#39; in complex.ndx</span>
 <span class="sd">        The non-hydrogen atoms of ligand are labeled as &#39;ligand&#39; in complex.ndx</span>
 <span class="sd">        The non-hydrogen atoms of user-defined reference are labeled as &#39;reference&#39; in complex.ndx &#39;&#39;&#39;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
-<div class="viewcode-block" id="configTemplate.namdConfigTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.namdConfigTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">namdConfigTemplate</span><span class="p">(</span>
+<div class="viewcode-block" id="configTemplate.namdConfigTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.namdConfigTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">namdConfigTemplate</span><span class="p">(</span>
                             <span class="bp">self</span><span class="p">,</span>
                             <span class="n">forceFieldType</span><span class="p">,</span>
                             <span class="n">forceFieldFiles</span><span class="p">,</span>
@@ -188,9 +108,15 @@
                             <span class="n">fepForward</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                             <span class="n">fepDoubleWide</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                             <span class="n">fepMinBeforeSample</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                            <span class="n">membraneProtein</span> <span class="o">=</span> <span class="kc">False</span>
+                            <span class="n">membraneProtein</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">OPLSMixingRule</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">GaWTM</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">CUDASOAIntegrator</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">timestep</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span>
+                            <span class="n">LDDMStep1</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">lambdaABF</span> <span class="o">=</span> <span class="kc">False</span>
                             <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;the namd config file template</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;the namd config file template</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            forceFieldType (str): &#39;charmm&#39; or &#39;amber&#39;</span>
@@ -215,12 +141,20 @@
 <span class="sd">            fepMinBeforeSample (bool, optional): whether do minimization before sampling in each FEP window.</span>
 <span class="sd">                                                 Defaults to False.</span>
 <span class="sd">            membraneProtein (bool, optional): whether simulating a membrame protein. Defaults to False.</span>
-<span class="sd">            </span>
+<span class="sd">            OPLSMixingRule (bool, optional): whether use the OPLS mixing rules. Defaults to False.</span>
+<span class="sd">            GaWTM (bool, optional): Whether this is an GaWTM-eABF simulation. Default to False</span>
+<span class="sd">            CUDASOAIntegrator (bool, optional): Whether CUDASOA integrator is used. Default to False</span>
+<span class="sd">            timestep (float, optional): timestep of the simulation. Default to 2.0</span>
+<span class="sd">            LDDMStep1 (bool, optional): whether this is the 1st step of a LDDM simulation. Default to False.</span>
+<span class="sd">            lambdaABF (bool, optional): whether use WTM-lambdaABF. This option is incompatible with FEP. Default to False.</span>
+
 <span class="sd">        Returns:</span>
 <span class="sd">            str: a NAMD config string if succeed, and empty string otherwise</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">assert</span><span class="p">(</span><span class="n">forceFieldType</span> <span class="o">==</span> <span class="s1">&#39;charmm&#39;</span> <span class="ow">or</span> <span class="n">forceFieldType</span> <span class="o">==</span> <span class="s1">&#39;amber&#39;</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="ow">not</span> <span class="n">lambdaABF</span> <span class="ow">or</span> <span class="n">cvFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="ow">not</span> <span class="n">lambdaABF</span> <span class="ow">or</span> <span class="n">fepFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
         <span class="n">configString</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">coordinates    </span><span class="si">{</span><span class="n">coorFile</span><span class="si">}</span><span class="s1">                   </span><span class="se">\n</span><span class="s1">&#39;</span>
@@ -255,14 +189,19 @@
 <span class="s1">exclude    scaled1-4                    </span><span class="se">\n\</span>
 <span class="s1">1-4scaling    0.83333333                </span><span class="se">\n\</span>
 <span class="s1">switching            on                 </span><span class="se">\n\</span>
-<span class="s1">switchdist           8.0                </span><span class="se">\n\</span>
-<span class="s1">cutoff               9.0                </span><span class="se">\n\</span>
-<span class="s1">pairlistdist         11.0               </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="s1">switchdist           9.0                </span><span class="se">\n\</span>
+<span class="s1">cutoff               10.0               </span><span class="se">\n\</span>
+<span class="s1">pairlistdist         12.0               </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># error</span>
             <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        
+        <span class="c1"># OPLS mixing rule</span>
+        <span class="k">if</span> <span class="n">OPLSMixingRule</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">vdwGeometricSigma    yes               </span><span class="se">\n</span><span class="s1">&#39;</span>
 
-        <span class="k">if</span> <span class="n">NAMDRestartCoor</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartVel</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartXsc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">PBCCondition</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">NAMDRestartCoor</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartVel</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartXsc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">PBCCondition</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="c1"># set temperature</span>
             <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">temperature    </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">                      </span><span class="se">\n\</span>
@@ -279,6 +218,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># error</span>
             <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        
+        <span class="k">if</span> <span class="n">lambdaABF</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">computeEnergies      1                          </span><span class="se">\n</span><span class="s1">&#39;</span>   <span class="c1"># required by WTM-lambda ABF</span>
 
         <span class="c1"># other parameters</span>
         <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
@@ -297,7 +240,7 @@
 <span class="s1">wrapWater            on                         </span><span class="se">\n\</span>
 <span class="s1">langevin             on                         </span><span class="se">\n\</span>
 <span class="s1">langevinDamping      1                          </span><span class="se">\n\</span>
-<span class="s1">langevinTemp         300                        </span><span class="se">\n\</span>
+<span class="s1">langevinTemp         </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">              </span><span class="se">\n\</span>
 <span class="s1">langevinHydrogen     no                         </span><span class="se">\n\</span>
 <span class="s1">langevinpiston       on                         </span><span class="se">\n\</span>
 <span class="s1">langevinpistontarget 1.01325                    </span><span class="se">\n\</span>
@@ -309,7 +252,7 @@
 <span class="s1">PMETolerance         10e-6                      </span><span class="se">\n\</span>
 <span class="s1">PMEInterpOrder       4                          </span><span class="se">\n\</span>
 <span class="s1">PMEGridSpacing       1.0                        </span><span class="se">\n\</span>
-<span class="s1">timestep             2.0                        </span><span class="se">\n\</span>
+<span class="s1">timestep             </span><span class="si">{</span><span class="n">timestep</span><span class="si">}</span><span class="s1">                 </span><span class="se">\n\</span>
 <span class="s1">fullelectfrequency   2                          </span><span class="se">\n\</span>
 <span class="s1">nonbondedfreq        1                          </span><span class="se">\n\</span>
 <span class="s1">rigidbonds           all                        </span><span class="se">\n\</span>
@@ -328,15 +271,22 @@
             <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">useflexiblecell      no                         </span><span class="se">\n\</span>
 <span class="s1">useConstantRatio     no                         </span><span class="se">\n</span><span class="s1">&#39;</span>
+            
+        <span class="c1"># CUDASOA integrator</span>
+        <span class="k">if</span> <span class="n">CUDASOAIntegrator</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">CUDASOAIntegrate     on                         </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="c1"># colvars definition</span>
         <span class="k">if</span> <span class="n">cvFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
             <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
-<span class="s1">colvars    on                                   </span><span class="se">\n\</span>
+<span class="s1">colvars    on                                   </span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">GaWTM</span><span class="p">:</span>
+                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">colvarsConfig    </span><span class="si">{</span><span class="n">cvFile</span><span class="si">}</span><span class="s1">                       </span><span class="se">\n</span><span class="s1">&#39;</span>
 
-            <span class="k">if</span> <span class="n">CVRestartFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+                <span class="k">if</span> <span class="n">CVRestartFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                    <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">colvarsInput     </span><span class="si">{</span><span class="n">CVRestartFile</span><span class="si">}</span><span class="s1">                </span><span class="se">\n</span><span class="s1">&#39;</span>
 
 
@@ -345,18 +295,62 @@
 <span class="s1">source     </span><span class="si">{</span><span class="n">cvDefinitionFile</span><span class="si">}</span><span class="s1">                   </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="c1"># fep</span>
-        <span class="k">if</span> <span class="n">fepFile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fepFile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">lambdaABF</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">NAMDRestartCoor</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartVel</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">NAMDRestartXsc</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
                 <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">minimize    500                                 </span><span class="se">\n\</span>
 <span class="s1">reinitvels    </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">                     </span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">GaWTM</span><span class="p">:</span>
+                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">run    </span><span class="si">{</span><span class="n">numSteps</span><span class="si">}</span><span class="s1">                               </span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="k">else</span><span class="p">:</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">accelMD                         on                     </span><span class="se">\n\</span>
+<span class="s1">accelMDG                        on                     </span><span class="se">\n\</span>
+<span class="s1">accelMDdihe                     on                     </span><span class="se">\n\</span>
+<span class="s1">accelMDOutFreq                  1000                   </span><span class="se">\n\</span>
+<span class="s1">accelMDGSigma0D                 6.0                    </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="k">if</span> <span class="n">CVRestartFile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                     <span class="c1"># new GaMD-WTM-eABF simulation</span>
+                     <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">accelMDGcMDSteps                500000                 </span><span class="se">\n\</span>
+<span class="s1">accelMDGcMDPrepSteps            100000                 </span><span class="se">\n\</span>
+<span class="s1">accelMDGEquiPrepSteps           100000                 </span><span class="se">\n\</span>
+<span class="s1">accelMDGEquiSteps               500000                 </span><span class="se">\n\</span>
+<span class="s1">for </span><span class="se">{{</span><span class="s1">set stage 0</span><span class="se">}}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">$stage &lt; 2</span><span class="se">}}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">incr stage</span><span class="se">}}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">   </span><span class="se">\n\</span>
+<span class="s1">    if </span><span class="se">{{</span><span class="s1">$stage == 0</span><span class="se">}}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">                              </span><span class="se">\n\</span>
+<span class="s1">        puts &quot;Probing the GaMD parameters...&quot;          </span><span class="se">\n\</span>
+<span class="s1">        cv configfile </span><span class="si">{</span><span class="n">cvFile</span><span class="si">}</span><span class="s1">                         </span><span class="se">\n\</span>
+<span class="s1">        run norepeat 1000000                           </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1"> elseif </span><span class="se">{{</span><span class="s1">$stage == 1</span><span class="se">}}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">                       </span><span class="se">\n\</span>
+<span class="s1">        puts &quot;Starting eABF + GaMD...&quot;                 </span><span class="se">\n\</span>
+<span class="s1">        cv reset                                       </span><span class="se">\n\</span>
+<span class="s1">        cv configfile </span><span class="si">{</span><span class="n">cvFile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.amd&quot;</span><span class="si">}</span><span class="s1">                </span><span class="se">\n\</span>
+<span class="s1">        run norepeat   </span><span class="si">{</span><span class="n">numSteps</span><span class="si">}</span><span class="s1">                      </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1">                                                 </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                                                     </span><span class="se">\n</span><span class="s1">&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                     <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">accelMDGcMDSteps                0                      </span><span class="se">\n\</span>
+<span class="s1">accelMDGcMDPrepSteps            0                      </span><span class="se">\n\</span>
+<span class="s1">accelMDGEquiPrepSteps           0                      </span><span class="se">\n\</span>
+<span class="s1">accelMDGEquiSteps               0                      </span><span class="se">\n\</span>
+<span class="s1">accelMDGRestart                 on                     </span><span class="se">\n\</span>
+<span class="s1">accelMDGRestartFile             </span><span class="si">{</span><span class="n">CVRestartFile</span><span class="si">}</span><span class="s1">.gamd   </span><span class="se">\n\</span>
+<span class="s1">colvarsConfig                   </span><span class="si">{</span><span class="n">cvFile</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;.amd&quot;</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
+<span class="s1">colvarsInput                    </span><span class="si">{</span><span class="n">CVRestartFile</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">run norepeat   </span><span class="si">{</span><span class="n">numSteps</span><span class="si">}</span><span class="s1">                              </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">elif</span> <span class="n">fepFile</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">lambdaABF</span><span class="p">):</span>
             <span class="c1"># currently the alchemical route is somewhat hard-coded</span>
             <span class="c1"># this will be improved in the future</span>
+            <span class="k">if</span> <span class="n">LDDMStep1</span><span class="p">:</span>
+                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">source ./fep_lddm.tcl                           </span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">source ../fep.tcl                               </span><span class="se">\n</span><span class="s1">&#39;</span>  
             <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
-<span class="s1">source ../fep.tcl                                  </span><span class="se">\n\</span>
 <span class="s1">alch on                                         </span><span class="se">\n\</span>
 <span class="s1">alchType FEP                                    </span><span class="se">\n\</span>
 <span class="s1">alchFile </span><span class="si">{</span><span class="n">fepFile</span><span class="si">}</span><span class="s1">                              </span><span class="se">\n\</span>
@@ -397,22 +391,191 @@
                     <span class="c1"># double wide simulation</span>
                     <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">runFEP 1.0 0.0 </span><span class="si">{</span><span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="n">fepWindowNum</span><span class="si">}</span><span class="s1"> 500000 true</span><span class="se">\n</span><span class="s1">&#39;</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># lambda ABF instead of FEP</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">alch on                                         </span><span class="se">\n\</span>
+<span class="s1">alchType TI                                     </span><span class="se">\n\</span>
+<span class="s1">alchFile </span><span class="si">{</span><span class="n">fepFile</span><span class="si">}</span><span class="s1">                              </span><span class="se">\n\</span>
+<span class="s1">alchCol B                                       </span><span class="se">\n\</span>
+<span class="s1">alchOutFile </span><span class="si">{</span><span class="n">outputPrefix</span><span class="si">}</span><span class="s1">.fepout               </span><span class="se">\n\</span>
+<span class="s1">alchOutFreq 5000                                </span><span class="se">\n\</span>
+<span class="s1">alchVdwLambdaEnd 0.7                            </span><span class="se">\n\</span>
+<span class="s1">alchElecLambdaStart 0.5                         </span><span class="se">\n\</span>
+<span class="s1">alchDecouple   on                               </span><span class="se">\n\</span>
+<span class="s1">alchlambda     0                                </span><span class="se">\n\</span>
+<span class="s1">run    </span><span class="si">{</span><span class="n">numSteps</span><span class="si">}</span><span class="s1">                               </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="k">return</span> <span class="n">configString</span></div>
 
+    
+<div class="viewcode-block" id="configTemplate.gromacsMinimizeConfigTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.gromacsMinimizeConfigTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gromacsMinimizeConfigTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;the gromacs config file template for minimization</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: a Gromacs config string if succeed, and empty string otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">configString</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">integrator      = steep     </span><span class="se">\n\</span>
+<span class="s1">emtol           = 418.4     </span><span class="se">\n\</span>
+<span class="s1">emstep          = 0.01      </span><span class="se">\n\</span>
+<span class="s1">nsteps          = 20000     </span><span class="se">\n\</span>
+<span class="s1">nstlist         = 1         </span><span class="se">\n\</span>
+<span class="s1">cutoff-scheme   = Verlet    </span><span class="se">\n\</span>
+<span class="s1">ns_type         =           </span><span class="se">\n\</span>
+<span class="s1">coulombtype     = PME       </span><span class="se">\n\</span>
+<span class="s1">rcoulomb        = 1.2       </span><span class="se">\n\</span>
+<span class="s1">rvdw            = 1.2       </span><span class="se">\n\</span>
+<span class="s1">pbc             = xyz       </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">configString</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvRMSDTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRMSDTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvRMSDTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">refFile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;RMSD CV template</span>
+    
+<div class="viewcode-block" id="configTemplate.gromacsConfigTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.gromacsConfigTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gromacsConfigTemplate</span><span class="p">(</span>
+                            <span class="bp">self</span><span class="p">,</span>
+                            <span class="n">forceFieldType</span><span class="p">,</span>
+                            <span class="n">temperature</span><span class="p">,</span>
+                            <span class="n">numSteps</span><span class="p">,</span>
+                            <span class="n">membraneProtein</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                            <span class="n">generateVelocities</span> <span class="o">=</span> <span class="kc">True</span>
+                            <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;the gromacs config file template</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            forceFieldType (str): &#39;charmm&#39; or &#39;amber&#39;</span>
+<span class="sd">            temperature (float): temperature of the simulation</span>
+<span class="sd">            numSteps (int): number of steps of the simulation</span>
+<span class="sd">            membraneProtein (bool, optional): whether simulating a membrame protein. Defaults to False.</span>
+<span class="sd">            generateVelocities (bool, optional): whether generate velocities. Defaults to True.</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: a Gromacs config string if succeed, and empty string otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">configString</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">integrator              = md                </span><span class="se">\n\</span>
+<span class="s1">nsteps                  = </span><span class="si">{</span><span class="n">numSteps</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">dt                      = 0.002             </span><span class="se">\n\</span>
+<span class="s1">nstxout                 = 5000              </span><span class="se">\n\</span>
+<span class="s1">nstvout                 = 5000              </span><span class="se">\n\</span>
+<span class="s1">nstenergy               = 5000              </span><span class="se">\n\</span>
+<span class="s1">nstlog                  = 5000              </span><span class="se">\n\</span>
+<span class="s1">continuation            = no                </span><span class="se">\n\</span>
+<span class="s1">constraint_algorithm    = lincs             </span><span class="se">\n\</span>
+<span class="s1">constraints             = h-bonds           </span><span class="se">\n\</span>
+<span class="s1">cutoff-scheme           = Verlet            </span><span class="se">\n\</span>
+<span class="s1">nstlist                 = 10                </span><span class="se">\n\</span>
+<span class="s1">coulombtype             = PME               </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">if</span> <span class="n">forceFieldType</span> <span class="o">==</span> <span class="s1">&#39;charmm&#39;</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">rcoulomb                = 1.2               </span><span class="se">\n\</span>
+<span class="s1">rvdw                    = 1.2               </span><span class="se">\n\</span>
+<span class="s1">rvdw-switch             = 1.0               </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">elif</span> <span class="n">forceFieldType</span> <span class="o">==</span> <span class="s1">&#39;amber&#39;</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">rcoulomb                = 0.9               </span><span class="se">\n\</span>
+<span class="s1">rvdw                    = 0.9               </span><span class="se">\n\</span>
+<span class="s1">rvdw-switch             = 0.8               </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">vdwtype                 = Cut-off                </span><span class="se">\n\</span>
+<span class="s1">vdw-modifier            = force-switch           </span><span class="se">\n\</span>
+<span class="s1">DispCorr                = EnerPres               </span><span class="se">\n\</span>
+<span class="s1">tcoupl                  = V-rescale              </span><span class="se">\n\</span>
+<span class="s1">tc-grps                 = System                 </span><span class="se">\n\</span>
+<span class="s1">tau_t                   = 1                      </span><span class="se">\n\</span>
+<span class="s1">ref_t                   = </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">          </span><span class="se">\n\</span>
+<span class="s1">pbc                     = xyz                    </span><span class="se">\n\</span>
+<span class="s1">pcoupl                  = C-rescale              </span><span class="se">\n\</span>
+<span class="s1">tau-p                   = 1                      </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">membraneProtein</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">ref-p                   = 1.01325                </span><span class="se">\n\</span>
+<span class="s1">compressibility         = 4.5e-5                 </span><span class="se">\n\</span>
+<span class="s1">refcoord-scaling        = com                    </span><span class="se">\n\</span>
+<span class="s1">pcoupltype              = isotropic              </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">elif</span> <span class="n">membraneProtein</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">ref-p                   = 1.01325 1.01325        </span><span class="se">\n\</span>
+<span class="s1">compressibility         = 4.5e-5 4.5e-5          </span><span class="se">\n\</span>
+<span class="s1">refcoord-scaling        = com                    </span><span class="se">\n\</span>
+<span class="s1">pcoupltype              = semiisotropic          </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">generateVelocities</span><span class="p">:</span>
+            <span class="n">configString</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">gen_vel                 = yes                    </span><span class="se">\n\</span>
+<span class="s1">gen_temp                = </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">          </span><span class="se">\n\</span>
+<span class="s1">gen_seed                = -1                     </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">return</span> <span class="n">configString</span></div>
+
+    
+<div class="viewcode-block" id="configTemplate.cvLambdaTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvLambdaTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvLambdaTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bins</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;lambda CV template for WTM-lambdaABF</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            bins (int): number of bins for the CV</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: string of lambda definition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">colvar </span><span class="se">{{</span><span class="s1">                                </span><span class="se">\n\</span>
+<span class="s1">    name l                               </span><span class="se">\n\</span>
+<span class="s1">    extendedLagrangian on                </span><span class="se">\n\</span>
+<span class="s1">    extendedMass 150000                  </span><span class="se">\n\</span>
+<span class="s1">    extendedLangevinDamping 1000         </span><span class="se">\n\</span>
+<span class="s1">    lowerBoundary 0                      </span><span class="se">\n\</span>
+<span class="s1">    upperBoundary 1                      </span><span class="se">\n\</span>
+<span class="s1">    reflectingLowerBoundary              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperBoundary              </span><span class="se">\n\</span>
+<span class="s1">    width </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span><span class="si">}</span><span class="s1">                </span><span class="se">\n\</span>
+<span class="s1">    subtractAppliedForce                 </span><span class="se">\n\</span>
+<span class="s1">    expandboundaries                     </span><span class="se">\n\</span>
+<span class="s1">    alchLambda </span><span class="se">{{</span><span class="s1">                        </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1">                                   </span><span class="se">\n\</span>
+<span class="s1">    outputTotalForce                     </span><span class="se">\n\</span>
+<span class="s1">    outputAppliedforce                   </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                                       </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">string</span></div>
+
+
+<div class="viewcode-block" id="configTemplate.cvRMSDTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRMSDTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvRMSDTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> 
+            <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;namd&#39;</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;RMSD CV template</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
 <span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
 <span class="sd">            upperboundary (float): upper boundary of free-energy calculation</span>
 <span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of RMSD definition</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;namd&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mf">0.1</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">colvar </span><span class="se">{{</span><span class="s1">                                    </span><span class="se">\n\</span>
@@ -420,13 +583,21 @@
 
         <span class="k">if</span> <span class="n">setBoundary</span><span class="p">:</span>
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
-<span class="s1">    width 0.05                               </span><span class="se">\n\</span>
-<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">            </span><span class="se">\n\</span>
-<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">            </span><span class="se">\n\</span>
+<span class="s1">    width </span><span class="si">{</span><span class="mf">0.05</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">                               </span><span class="se">\n\</span>
+<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">            </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">            </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    subtractAppliedForce on                  </span><span class="se">\n\</span>
 <span class="s1">    expandboundaries  on                     </span><span class="se">\n\</span>
 <span class="s1">    extendedLagrangian on                    </span><span class="se">\n\</span>
-<span class="s1">    extendedFluctuation 0.05                 </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="s1">    extendedFluctuation </span><span class="si">{</span><span class="mf">0.05</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">                 </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    rmsd </span><span class="se">{{</span><span class="s1">                                  </span><span class="se">\n\</span>
@@ -438,15 +609,68 @@
 <span class="se">}}</span><span class="s1">                                           </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvEulerAngleTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvEulerAngleTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvEulerAngleTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Euler angle template</span>
+    
+<div class="viewcode-block" id="configTemplate.cvAngleTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvAngleTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvAngleTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> 
+            <span class="n">refFile</span><span class="p">,</span> <span class="n">oldDefinition</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Eulaer and polar angle template</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
+<span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
+<span class="sd">            upperBoundary (float): upper boundary of free-energy calculation</span>
+<span class="sd">            angle (str): &#39;eulerTheta&#39;, &#39;eulerPhi&#39;, &#39;eulerPsi&#39;, &#39;polarTheta&#39; or &#39;polarPhi&#39;</span>
+<span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            oldDefinition (bool, optional): Whether use old definition of angles</span>
+<span class="sd">                                            for compatibility. Defaults to True</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">assert</span><span class="p">(</span>
+            <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPhi&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPsi&#39;</span> <span class="ow">or</span> \
+            <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarPhi&#39;</span>
+        <span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPhi&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPsi&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">oldDefinition</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cvEulerAngleTemplate</span><span class="p">(</span>
+                           <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span><span class="p">,</span> <span class="n">reflectingBoundary</span>
+                       <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">newCvEulerAngleTemplate</span><span class="p">(</span>
+                           <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span><span class="p">,</span> <span class="n">reflectingBoundary</span>
+                       <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarPhi&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">oldDefinition</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cvPolarAngleTemplate</span><span class="p">(</span>
+                           <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span><span class="p">,</span> <span class="n">reflectingBoundary</span>
+                       <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">newCvPolarAngleTemplate</span><span class="p">(</span>
+                           <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span><span class="p">,</span> <span class="n">reflectingBoundary</span>
+                       <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="configTemplate.cvEulerAngleTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvEulerAngleTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvEulerAngleTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> 
+            <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Euler angle template</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
 <span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
 <span class="sd">            upperboundary (float): upper boundary of free-energy calculation</span>
-<span class="sd">            angle (str): &#39;eulerTheta&#39;, &#39;eulerPhi&#39; of &#39;eulerPsi&#39;</span>
+<span class="sd">            angle (str): &#39;eulerTheta&#39;, &#39;eulerPhi&#39; or &#39;eulerPsi&#39;</span>
 <span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
 <span class="sd">            </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            string: string of Euler angle definition</span>
@@ -472,7 +696,15 @@
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    width 1                            </span><span class="se">\n\</span>
 <span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
-<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+        
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    subtractAppliedForce on            </span><span class="se">\n\</span>
 <span class="s1">    expandboundaries  on               </span><span class="se">\n\</span>
 <span class="s1">    extendedLagrangian on              </span><span class="se">\n\</span>
@@ -485,7 +717,6 @@
 <span class="s1">            indexGroup  ligand                 </span><span class="se">\n\</span>
 <span class="s1">            centerReference    on              </span><span class="se">\n\</span>
 <span class="s1">            rotateReference    on              </span><span class="se">\n\</span>
-<span class="s1">	        enableFitGradients no              </span><span class="se">\n\</span>
 <span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                    </span><span class="se">\n\</span>
 <span class="s1">                indexGroup  protein            </span><span class="se">\n\</span>
 <span class="s1">            </span><span class="se">}}</span><span class="s1">                                 </span><span class="se">\n\</span>
@@ -497,8 +728,14 @@
 
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvPolarAngleTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvPolarAngleTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvPolarAngleTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">refFile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Polar angle template</span>
+
+<div class="viewcode-block" id="configTemplate.cvPolarAngleTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvPolarAngleTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvPolarAngleTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> 
+            <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Polar angle template</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
@@ -506,6 +743,8 @@
 <span class="sd">            upperboundary (float): upper boundary of free-energy calculation</span>
 <span class="sd">            angle (str): &#39;polarTheta&#39; or &#39;polarPhi&#39;</span>
 <span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
 <span class="sd">            </span>
 <span class="sd">        Return:</span>
 <span class="sd">            str: string of polar angle definition</span>
@@ -524,13 +763,21 @@
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    customFunction atan2(i3, i1) * 180 / 3.1415926</span><span class="se">\n\</span>
 <span class="s1">    period  360                             </span><span class="se">\n\</span>
-<span class="s1">    wrapAround 0.0                          </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="s1">    wrapAround </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">lowerBoundary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">upperBoundary</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">                          </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="k">if</span> <span class="n">setBoundary</span><span class="p">:</span>
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    width 1                                 </span><span class="se">\n\</span>
 <span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
-<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">           </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    subtractAppliedForce on                 </span><span class="se">\n\</span>
 <span class="s1">    expandboundaries  on                    </span><span class="se">\n\</span>
 <span class="s1">    extendedLagrangian on                   </span><span class="se">\n\</span>
@@ -543,9 +790,8 @@
 <span class="s1">            indexGroup  reference           </span><span class="se">\n\</span>
 <span class="s1">            centerReference    on           </span><span class="se">\n\</span>
 <span class="s1">            rotateReference    on           </span><span class="se">\n\</span>
-<span class="s1">            enableFitGradients no           </span><span class="se">\n\</span>
 <span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                 </span><span class="se">\n\</span>
-<span class="s1">                indexGroup  protein         </span><span class="se">\n\</span>
+<span class="s1">                indexGroup  reference       </span><span class="se">\n\</span>
 <span class="s1">            </span><span class="se">}}</span><span class="s1">                              </span><span class="se">\n\</span>
 <span class="s1">            refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">     </span><span class="se">\n\</span>
 <span class="s1">        </span><span class="se">}}</span><span class="s1">                                  </span><span class="se">\n\</span>
@@ -553,9 +799,8 @@
 <span class="s1">            indexGroup  ligand              </span><span class="se">\n\</span>
 <span class="s1">            centerReference    on           </span><span class="se">\n\</span>
 <span class="s1">            rotateReference    on           </span><span class="se">\n\</span>
-<span class="s1">            enableFitGradients no           </span><span class="se">\n\</span>
 <span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                 </span><span class="se">\n\</span>
-<span class="s1">                indexGroup  protein         </span><span class="se">\n\</span>
+<span class="s1">                indexGroup  reference       </span><span class="se">\n\</span>
 <span class="s1">            </span><span class="se">}}</span><span class="s1">                              </span><span class="se">\n\</span>
 <span class="s1">            refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">     </span><span class="se">\n\</span>
 <span class="s1">        </span><span class="se">}}</span><span class="s1">                                  </span><span class="se">\n\</span>
@@ -563,30 +808,202 @@
 <span class="se">}}</span><span class="s1">                                          </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvRTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvRTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;r distance template</span>
+    
+<div class="viewcode-block" id="configTemplate.newCvEulerAngleTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.newCvEulerAngleTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">newCvEulerAngleTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> 
+            <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;new definition Euler angle template, probably the pinning down the protein is not required</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
 <span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
-<span class="sd">            upperboundary (float): upper boundary of free-energy </span>
+<span class="sd">            upperboundary (float): upper boundary of free-energy calculation</span>
+<span class="sd">            angle (str): &#39;eulerTheta&#39;, &#39;eulerPhi&#39; of &#39;eulerPsi&#39;</span>
+<span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            string: string of Euler angle definition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">assert</span><span class="p">(</span><span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPhi&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;eulerPsi&#39;</span><span class="p">)</span>
+        
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">colvar </span><span class="se">{{</span><span class="s1">                              </span><span class="se">\n\</span>
+<span class="s1">    name </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s1">                   </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">if</span> <span class="n">setBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    width 1                            </span><span class="se">\n\</span>
+<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+        
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    subtractAppliedForce on            </span><span class="se">\n\</span>
+<span class="s1">    expandboundaries  on               </span><span class="se">\n\</span>
+<span class="s1">    extendedLagrangian on              </span><span class="se">\n\</span>
+<span class="s1">    extendedFluctuation 1              </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s1"> </span><span class="se">{{</span><span class="s1">                             </span><span class="se">\n\</span>
+<span class="s1">        atoms </span><span class="se">{{</span><span class="s1">                               </span><span class="se">\n\</span>
+<span class="s1">            indexGroup  ligand                 </span><span class="se">\n\</span>
+<span class="s1">            centerReference    on              </span><span class="se">\n\</span>
+<span class="s1">            rotateReference    on              </span><span class="se">\n\</span>
+<span class="s1">            centerToOrigin     on              </span><span class="se">\n\</span>
+<span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                    </span><span class="se">\n\</span>
+<span class="s1">                indexGroup  protein            </span><span class="se">\n\</span>
+<span class="s1">            </span><span class="se">}}</span><span class="s1">                                 </span><span class="se">\n\</span>
+<span class="s1">            refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">         </span><span class="se">}}</span><span class="s1">                                    </span><span class="se">\n\</span>
+<span class="s1">         refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1">                                         </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                                             </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">return</span> <span class="n">string</span></div>
+
+    
+<div class="viewcode-block" id="configTemplate.newCvPolarAngleTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.newCvPolarAngleTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">newCvPolarAngleTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> 
+            <span class="n">refFile</span><span class="p">,</span> <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;new definition of Polar angle template, probably the pinning down the protein is not required</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
+<span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
+<span class="sd">            upperboundary (float): upper boundary of free-energy calculation</span>
+<span class="sd">            angle (str): &#39;polarTheta&#39; or &#39;polarPhi&#39;</span>
+<span class="sd">            refFile (str): path to the reference file</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
+<span class="sd">            </span>
+<span class="sd">        Return:</span>
+<span class="sd">            str: string of polar angle definition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">assert</span><span class="p">(</span><span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarTheta&#39;</span> <span class="ow">or</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarPhi&#39;</span><span class="p">)</span>
+        
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">colvar </span><span class="se">{{</span><span class="s1">                                   </span><span class="se">\n\</span>
+<span class="s1">    name </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s1">                            </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarTheta&#39;</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    customFunction acos(-sin(t / 180 * 3.1415926) * sin(p / 180 * 3.1415926)) * 180 / 3.1415926</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">elif</span> <span class="n">angle</span> <span class="o">==</span> <span class="s1">&#39;polarPhi&#39;</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    customFunction atan2(cos(t / 180 * 3.1415926), cos(p / 180 * 3.1415926) * sin(t / 180 * 3.1415926)) * 180 / 3.1415926</span><span class="se">\n\</span>
+<span class="s1">    period  360                             </span><span class="se">\n\</span>
+<span class="s1">    wrapAround </span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">lowerBoundary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">upperBoundary</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">                          </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="k">if</span> <span class="n">setBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    width 1                                 </span><span class="se">\n\</span>
+<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">           </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+        
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    subtractAppliedForce on                 </span><span class="se">\n\</span>
+<span class="s1">    expandboundaries  on                    </span><span class="se">\n\</span>
+<span class="s1">    extendedLagrangian on                   </span><span class="se">\n\</span>
+<span class="s1">    extendedFluctuation 1                   </span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    polarTheta </span><span class="se">{{</span><span class="s1">                             </span><span class="se">\n\</span>
+<span class="s1">        name        t                          </span><span class="se">\n\</span>
+<span class="s1">        atoms </span><span class="se">{{</span><span class="s1">                               </span><span class="se">\n\</span>
+<span class="s1">            indexGroup  ligand                 </span><span class="se">\n\</span>
+<span class="s1">            centerReference    on              </span><span class="se">\n\</span>
+<span class="s1">            rotateReference    on              </span><span class="se">\n\</span>
+<span class="s1">            centerToOrigin     on              </span><span class="se">\n\</span>
+<span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                    </span><span class="se">\n\</span>
+<span class="s1">                indexGroup  reference          </span><span class="se">\n\</span>
+<span class="s1">            </span><span class="se">}}</span><span class="s1">                                 </span><span class="se">\n\</span>
+<span class="s1">            refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">         </span><span class="se">}}</span><span class="s1">                                    </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1">                                         </span><span class="se">\n\</span>
+<span class="s1">    polarPhi </span><span class="se">{{</span><span class="s1">                             </span><span class="se">\n\</span>
+<span class="s1">        name        p                      </span><span class="se">\n\</span>
+<span class="s1">        atoms </span><span class="se">{{</span><span class="s1">                               </span><span class="se">\n\</span>
+<span class="s1">            indexGroup  ligand                 </span><span class="se">\n\</span>
+<span class="s1">            centerReference    on              </span><span class="se">\n\</span>
+<span class="s1">            rotateReference    on              </span><span class="se">\n\</span>
+<span class="s1">            centerToOrigin     on              </span><span class="se">\n\</span>
+<span class="s1">            fittingGroup </span><span class="se">{{</span><span class="s1">                    </span><span class="se">\n\</span>
+<span class="s1">                indexGroup  reference          </span><span class="se">\n\</span>
+<span class="s1">            </span><span class="se">}}</span><span class="s1">                                 </span><span class="se">\n\</span>
+<span class="s1">            refpositionsfile  </span><span class="si">{</span><span class="n">refFile</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">         </span><span class="se">}}</span><span class="s1">                                    </span><span class="se">\n\</span>
+<span class="s1">    </span><span class="se">}}</span><span class="s1">                                         </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                                             </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">string</span></div>
+
+
+<div class="viewcode-block" id="configTemplate.cvRTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvRTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">setBoundary</span><span class="p">,</span> <span class="n">lowerBoundary</span><span class="p">,</span> <span class="n">upperBoundary</span><span class="p">,</span> 
+            <span class="n">extendedLagrangian</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">reflectingBoundary</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;namd&#39;</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;r distance template</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            setBoundary (bool): whether set boundary (for free-energy calculation)</span>
+<span class="sd">            lowerBoundary (float): lower boundary of free-energy calculaton</span>
+<span class="sd">            upperboundary (float): upper boundary of free-energy</span>
+<span class="sd">            extendedLagrangian (bool, optional): Whether extended Lagrangian is added. Default to True</span>
+<span class="sd">            reflectingBoundary (bool, optional): Whether use reflecting boundaries, requires setBoundary on. Default to False</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of distance r definition</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;namd&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mf">0.1</span>
         
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">colvar </span><span class="se">{{</span><span class="s1">                            </span><span class="se">\n\</span>
 <span class="s1">    name    r                        </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">if</span> <span class="n">setBoundary</span><span class="p">:</span>
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
-<span class="s1">    width 0.1                        </span><span class="se">\n\</span>
-<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">    </span><span class="se">\n\</span>
-<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">    </span><span class="se">\n\</span>
+<span class="s1">    width </span><span class="si">{</span><span class="mf">0.1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">                        </span><span class="se">\n\</span>
+<span class="s1">    lowerboundary </span><span class="si">{</span><span class="n">lowerBoundary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">    </span><span class="se">\n\</span>
+<span class="s1">    upperboundary </span><span class="si">{</span><span class="n">upperBoundary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">    </span><span class="se">\n</span><span class="s1">&#39;</span>
+    
+        <span class="k">if</span> <span class="n">setBoundary</span> <span class="ow">and</span> <span class="n">reflectingBoundary</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">    reflectingLowerboundary  on              </span><span class="se">\n\</span>
+<span class="s1">    reflectingUpperboundary  on              </span><span class="se">\n</span><span class="s1">&#39;</span>
+        
+        <span class="k">if</span> <span class="n">extendedLagrangian</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    subtractAppliedForce on          </span><span class="se">\n\</span>
 <span class="s1">    expandboundaries  on             </span><span class="se">\n\</span>
 <span class="s1">    extendedLagrangian on            </span><span class="se">\n\</span>
-<span class="s1">    extendedFluctuation 0.1          </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="s1">    extendedFluctuation </span><span class="si">{</span><span class="mf">0.1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">          </span><span class="se">\n</span><span class="s1">&#39;</span>
 
         <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    distance </span><span class="se">{{</span><span class="s1">                            </span><span class="se">\n\</span>
@@ -602,44 +1019,73 @@
 
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvHeadTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHeadTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvHeadTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indexFile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;return the head of colvars file</span>
+
+<div class="viewcode-block" id="configTemplate.cvHeadTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHeadTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvHeadTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indexFile</span><span class="p">,</span> <span class="n">reweightAMD</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;return the head of colvars file</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            indexFile (str): name of ndx file</span>
+<span class="sd">            reweightAMD (bool, optional): if reweightAMD, there should be &quot;smp off&quot; in the </span>
+<span class="sd">                                          head. Default to False.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str: head of colvars file</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
-<span class="s1">colvarsTrajFrequency      500              </span><span class="se">\n\</span>
-<span class="s1">colvarsRestartFrequency   50000            </span><span class="se">\n\</span>
-<span class="s1">indexFile                 </span><span class="si">{</span><span class="n">indexFile</span><span class="si">}</span><span class="s1">      </span><span class="se">\n</span><span class="s1">&#39;</span></div>
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">colvarsTrajFrequency      5000             </span><span class="se">\n\</span>
+<span class="s1">colvarsRestartFrequency   5000            </span><span class="se">\n\</span>
+<span class="s1">indexFile                 </span><span class="si">{</span><span class="n">indexFile</span><span class="si">}</span><span class="s1">      </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="c1">#        if reweightAMD:</span>
+<span class="c1">#            string += f&#39;\</span>
+<span class="c1">#smp                       off              \n&#39;</span>
+        <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvHarmonicWallsTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicWallsTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvHarmonicWallsTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">lowerWall</span><span class="p">,</span> <span class="n">upperWall</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; template of harmonic wall bias</span>
+
+<div class="viewcode-block" id="configTemplate.cvHarmonicWallsTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicWallsTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvHarmonicWallsTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">lowerWall</span><span class="p">,</span> <span class="n">upperWall</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;namd&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; template of harmonic wall bias</span>
 <span class="sd">        </span>
 <span class="sd">        Args:</span>
 <span class="sd">            cv (str): name of the colvars</span>
 <span class="sd">            lowerWall (float): lower wall of the bias</span>
 <span class="sd">            upperWall (float): upper wall of the bias</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
 <span class="sd">                </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of the harmonic wall bias definition &#39;&#39;&#39;</span>
+        
+        <span class="k">if</span> <span class="n">cv</span> <span class="o">==</span> <span class="s1">&#39;RMSD&#39;</span> <span class="ow">or</span> <span class="n">cv</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+            <span class="n">distanceCV</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">distanceCV</span> <span class="o">=</span> <span class="kc">False</span>
+            
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span> <span class="ow">and</span> <span class="n">distanceCV</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
             
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">harmonicWalls </span><span class="se">{{</span><span class="s1">                           </span><span class="se">\n\</span>
 <span class="s1">    colvars           </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">                 </span><span class="se">\n\</span>
-<span class="s1">    lowerWalls        </span><span class="si">{</span><span class="n">lowerWall</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
-<span class="s1">    upperWalls        </span><span class="si">{</span><span class="n">upperWall</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
+<span class="s1">    lowerWalls        </span><span class="si">{</span><span class="n">lowerWall</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
+<span class="s1">    upperWalls        </span><span class="si">{</span><span class="n">upperWall</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">      </span><span class="se">\n\</span>
 <span class="s1">    lowerWallConstant 0.2                  </span><span class="se">\n\</span>
 <span class="s1">    upperWallConstant 0.2                  </span><span class="se">\n\</span>
 <span class="se">}}</span><span class="s1">                                         </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvHarmonicTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvHarmonicTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">constant</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">tiWindows</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tiForward</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">targetForceConstant</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;template for a harmonic restraint</span>
+
+<div class="viewcode-block" id="configTemplate.cvHarmonicTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvHarmonicTemplate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">constant</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">tiWindows</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tiForward</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">targetForceConstant</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;namd&#39;</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;template for a harmonic restraint</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            cv (str): name of the colvars</span>
@@ -649,22 +1095,39 @@
 <span class="sd">            tiForward (bool, optional): whether the TI simulation is forward (if runs a TI simulation). Defaults to True.</span>
 <span class="sd">            targetForceConstant (int, optional): targeted force constant of the restraint in TI simulation (if runs a TI simulation).</span>
 <span class="sd">                                                 Defaults to 0.</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of the harmonic restraint definition</span>
-<span class="sd">        &quot;&quot;&quot;</span>        
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">cv</span> <span class="o">==</span> <span class="s1">&#39;RMSD&#39;</span> <span class="ow">or</span> <span class="n">cv</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+            <span class="n">distanceCV</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">distanceCV</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span> <span class="ow">and</span> <span class="n">distanceCV</span><span class="p">:</span>
+            <span class="n">forceConstantScaleFactor</span> <span class="o">=</span> <span class="mf">418.4</span>
+            <span class="n">centerScaleFactor</span> <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">distanceCV</span><span class="p">:</span>
+            <span class="n">forceConstantScaleFactor</span> <span class="o">=</span> <span class="mf">4.164</span>
+            <span class="n">centerScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">forceConstantScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">centerScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+            
 
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">harmonic </span><span class="se">{{</span><span class="s1">                          </span><span class="se">\n\</span>
 <span class="s1">    colvars         </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">             </span><span class="se">\n\</span>
-<span class="s1">    forceConstant   </span><span class="si">{</span><span class="n">constant</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">   </span><span class="se">\n\</span>
-<span class="s1">    centers         </span><span class="si">{</span><span class="n">center</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">     </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="s1">    forceConstant   </span><span class="si">{</span><span class="n">constant</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">forceConstantScaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">   </span><span class="se">\n\</span>
+<span class="s1">    centers         </span><span class="si">{</span><span class="n">center</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">centerScaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">     </span><span class="se">\n</span><span class="s1">&#39;</span>
         
         <span class="k">if</span> <span class="n">tiWindows</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">    targetNumSteps      500000                       </span><span class="se">\n\</span>
 <span class="s1">    targetEquilSteps    100000                       </span><span class="se">\n\</span>
-<span class="s1">    targetForceConstant </span><span class="si">{</span><span class="n">targetForceConstant</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
+<span class="s1">    targetForceConstant </span><span class="si">{</span><span class="n">targetForceConstant</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">forceConstantScaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
 <span class="s1">    targetForceExponent 4                            </span><span class="se">\n</span><span class="s1">&#39;</span>
 
             <span class="n">schedule</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -678,41 +1141,107 @@
         <span class="n">string</span> <span class="o">+=</span> <span class="s1">&#39;}</span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvABFTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvABFTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvABFTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; template for WTM-eABF bias</span>
+
+<div class="viewcode-block" id="configTemplate.cvABFTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvABFTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvABFTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;namd&#39;</span><span class="p">,</span> <span class="n">czar</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; template for WTM-eABF bias</span>
 <span class="sd">        </span>
 <span class="sd">        Args:</span>
 <span class="sd">            cv (str): name of the colvars</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
+<span class="sd">            czar (bool, optional): whether call the czar estimator. Default to True.</span>
 <span class="sd">            </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of the WTM-eABF definition &#39;&#39;&#39;</span>
+            
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;namd&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span><span class="p">:</span>
+            <span class="n">scaleFactor</span> <span class="o">=</span> <span class="mf">4.184</span>
+
+        <span class="n">czar_line</span> <span class="o">=</span> <span class="s1">&#39;    writeCZARwindowFile           </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">czar</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
             
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">abf </span><span class="se">{{</span><span class="s1">                            </span><span class="se">\n\</span>
 <span class="s1">    colvars        </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
 <span class="s1">    FullSamples    10000          </span><span class="se">\n\</span>
 <span class="s1">    historyfreq    50000          </span><span class="se">\n\</span>
-<span class="s1">    writeCZARwindowFile           </span><span class="se">\n\</span>
+<span class="si">{</span><span class="n">czar_line</span><span class="si">}</span><span class="se">\</span>
 <span class="se">}}</span><span class="s1">                                </span><span class="se">\n\</span>
 <span class="s1">metadynamics </span><span class="se">{{</span><span class="s1">                   </span><span class="se">\n\</span>
 <span class="s1">    colvars           </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
 <span class="s1">    hillWidth         3.0         </span><span class="se">\n\</span>
-<span class="s1">    hillWeight        0.05        </span><span class="se">\n\</span>
+<span class="s1">    hillWeight        </span><span class="si">{</span><span class="mf">0.05</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scaleFactor</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">        </span><span class="se">\n\</span>
 <span class="s1">    wellTempered      on          </span><span class="se">\n\</span>
-<span class="s1">    biasTemperature   4000        </span><span class="se">\n\</span>
+<span class="s1">    biasTemperature   3000        </span><span class="se">\n\</span>
 <span class="se">}}</span><span class="s1">                                </span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
-<div class="viewcode-block" id="configTemplate.cvProteinTemplate"><a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvProteinTemplate">[docs]</a>    <span class="k">def</span> <span class="nf">cvProteinTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">centerCoor</span><span class="p">,</span> <span class="n">refFile</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;the template of restraining the protein</span>
+    
+<div class="viewcode-block" id="configTemplate.cvHistogramTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHistogramTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvHistogramTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; template for outputting the histogram of the CV</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            cv (str): name of the colvars</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: string of the histogram definition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">histogram </span><span class="se">{{</span><span class="s1">                     </span><span class="se">\n\</span>
+<span class="s1">  colvars    </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">                </span><span class="se">\n\</span>
+<span class="s1">  outputFileDX  none             </span><span class="se">\n\</span>
+<span class="s1">  outputFreq 10000               </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                               </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">string</span></div>
+
+
+<div class="viewcode-block" id="configTemplate.cvReweightAMDTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvReweightAMDTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvReweightAMDTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; template for reweight aMD results</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            cv (str): name of the colvars</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            str: string of the reweightamd definition</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
+<span class="s1">reweightamd </span><span class="se">{{</span><span class="s1">                  </span><span class="se">\n\</span>
+<span class="s1">  colvars        </span><span class="si">{</span><span class="n">cv</span><span class="si">}</span><span class="s1">           </span><span class="se">\n\</span>
+<span class="s1">  historyfreq    50000          </span><span class="se">\n\</span>
+<span class="se">}}</span><span class="s1">                              </span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">string</span></div>
+
+
+<div class="viewcode-block" id="configTemplate.cvProteinTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvProteinTemplate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cvProteinTemplate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">centerCoor</span><span class="p">,</span> <span class="n">refFile</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="s1">&#39;namd&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;the template of restraining the protein</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            centerCoor (np.array, 3): (x,y,z), center of the protein </span>
 <span class="sd">            refFile (str): path of the reference file</span>
+<span class="sd">            unit (str, optional): unit, &#39;namd&#39; or &#39;gromacs&#39;. Default to namd.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            str: string of the restraining the protein</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;namd&#39;</span><span class="p">:</span>
+            <span class="n">translationCoorScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">translationForceScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">orientationForceScaleFactor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s1">&#39;gromacs&#39;</span><span class="p">:</span>
+            <span class="n">translationCoorScaleFactor</span> <span class="o">=</span> <span class="mf">0.1</span>
+            <span class="n">translationForceScaleFactor</span> <span class="o">=</span> <span class="mf">418.4</span>
+            <span class="n">orientationForceScaleFactor</span> <span class="o">=</span> <span class="mf">4.184</span>
         
         <span class="n">string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\</span>
 <span class="s1">colvar </span><span class="se">{{</span><span class="s1">                         </span><span class="se">\n\</span>
@@ -722,14 +1251,14 @@
 <span class="s1">      indexGroup  protein         </span><span class="se">\n\</span>
 <span class="s1">    </span><span class="se">}}</span><span class="s1">                            </span><span class="se">\n\</span>
 <span class="s1">    group2 </span><span class="se">{{</span><span class="s1">                     </span><span class="se">\n\</span>
-<span class="s1">      dummyAtom (</span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1">)    </span><span class="se">\n\</span>
+<span class="s1">      dummyAtom (</span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">translationCoorScaleFactor</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">translationCoorScaleFactor</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">centerCoor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">translationCoorScaleFactor</span><span class="si">}</span><span class="s1">)    </span><span class="se">\n\</span>
 <span class="s1">    </span><span class="se">}}</span><span class="s1">                            </span><span class="se">\n\</span>
 <span class="s1">  </span><span class="se">}}</span><span class="s1">                              </span><span class="se">\n\</span>
 <span class="se">}}</span><span class="s1">                                </span><span class="se">\n\</span>
 <span class="s1">harmonic </span><span class="se">{{</span><span class="s1">                       </span><span class="se">\n\</span>
 <span class="s1">  colvars       translation       </span><span class="se">\n\</span>
 <span class="s1">  centers       0.0               </span><span class="se">\n\</span>
-<span class="s1">  forceConstant 100.0             </span><span class="se">\n\</span>
+<span class="s1">  forceConstant </span><span class="si">{</span><span class="mf">100.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">translationForceScaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">             </span><span class="se">\n\</span>
 <span class="se">}}</span><span class="s1">                                </span><span class="se">\n\</span>
 <span class="s1">                                  </span><span class="se">\n\</span>
 <span class="s1">colvar </span><span class="se">{{</span><span class="s1">                         </span><span class="se">\n\</span>
@@ -744,52 +1273,38 @@
 <span class="s1">harmonic </span><span class="se">{{</span><span class="s1">                       </span><span class="se">\n\</span>
 <span class="s1">  colvars       orientation       </span><span class="se">\n\</span>
 <span class="s1">  centers       (1.0, 0.0, 0.0, 0.0)    </span><span class="se">\n\</span>
-<span class="s1">  forceConstant 2000.0            </span><span class="se">\n\</span>
+<span class="s1">  forceConstant </span><span class="si">{</span><span class="mf">2000.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">orientationForceScaleFactor</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">            </span><span class="se">\n\</span>
 <span class="se">}}</span><span class="s1">                                </span><span class="se">\n</span><span class="s1">&#39;</span>
-        <span class="k">return</span> <span class="n">string</span></div></div>
+        <span class="k">return</span> <span class="n">string</span></div>
+</div>
+
 </pre></div>
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Haohao Fu, Haochuan Chen.
-
-    </p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -80,94 +80,93 @@
 <dd class="field-even"><p>May 02, 2026</p>
 </dd>
 </dl>
-<a class="reference external image-reference" href="https://zenodo.org/badge/latestdoi/322234705"><img alt="DOI" src="https://zenodo.org/badge/322234705.svg" /></a>
-<a class="reference external image-reference" href="https://pepy.tech/project/bfee2"><img alt="Downloads" src="https://static.pepy.tech/badge/bfee2" /></a>
-<p><strong>Binding Free Energy Estimator 3 (BFEE3) is here! BFEE3 includes many upgrades:</strong></p>
-<ul class="simple">
-<li><p>LDDM, a high-throughput alchemical route for absolute binding free-energy calculations;</p></li>
-<li><p>WTM-λABF, an efficient algorithm for alchemical transformations;</p></li>
-<li><p>A streamlined geometrical route for protein-protein binding free-energy calculations;</p></li>
-<li><p>Quick setup options for common calculations;</p></li>
-<li><p>An AI assistant for generating input files and answering questions.</p></li>
-</ul>
-<p>BFEE is a Python-based software package that automates absolute binding free-energy calculations through either the alchemical or geometric route using molecular dynamics simulations.</p>
+<p>Binding Free Energy Estimator (BFEE) is a Python-based software package that
+automates absolute binding free-energy calculations through alchemical and
+geometrical routes using molecular dynamics simulations.</p>
 <section id="theoretical-background">
-<h2>Theoretical background<a class="headerlink" href="#theoretical-background" title="Link to this heading"></a></h2>
-<p>The degrees of freedom of the protein-ligand or host-guest system are described by a series of geometric variables, or collective variables, as first described by the <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/jp0217839">Karplus group</a>. In BFEE, generalized geometric variables based on best-fit rotation are used, making the method, in principle, applicable to any protein-ligand complex. See <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.7b00791">this paper</a> for an introduction to these variables.</p>
-<p>In the <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ct3008099">geometric route</a>, the degrees of freedom are investigated one by one through one-dimensional free-energy calculations. In BFEE, <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.accounts.9b00473">WTM-eABF</a> is used, while other importance-sampling algorithms, such as <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.6b00447">plain eABF</a>, are also supported.</p>
-<p>The <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ct3008099">alchemical route</a> is a variant of the <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0006349597787563">double decoupling method (DDM)</a>. It uses a thermodynamic cycle in which the ligand and the geometric restraints are decoupled independently to ensure convergence of the simulations.</p>
-<p>More recently, high-efficiency methods such as <a class="reference external" href="https://www.nature.com/articles/s43588-025-00821-w">Lucid DDM</a> and <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.accounts.5c00666">WTM-λABF</a> have also been implemented in BFEE3. These methods are generally recommended as the first choice for absolute binding free-energy calculations.</p>
-<p><a class="reference external" href="http://sioc-journal.cn/Jwk_hxxb/CN/10.6023/A20100489">这里</a> 是标准结合自由能计算方法的中文介绍。</p>
+<h2>Theoretical Background<a class="headerlink" href="#theoretical-background" title="Link to this heading"></a></h2>
+<p>The degrees of freedom of the protein-ligand or host-guest system are described
+by a series of geometric variables, or collective variables, as first described
+by the <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/jp0217839">Karplus group</a>. In BFEE, generalized best-fit-rotation-based geometric
+variables are used, making the method in principle applicable to any
+protein-ligand complex. See <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.7b00791">this paper</a> for an introduction to these
+variables.</p>
+<p>In the <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ct3008099">geometric route</a>, the degrees of freedom are investigated one by one
+through one-dimensional free-energy calculations. BFEE supports WTM-eABF and
+plain eABF for these calculations. The <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ct3008099">alchemical route</a> is a variant of the
+double <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0006349597787563">decoupling method (DDM)</a>. It uses a thermodynamic cycle in which the
+ligand and geometric restraints are decoupled independently to improve
+simulation convergence.</p>
+<p>Recent BFEE3 releases also include high-efficiency methods such as Lucid DDM
+(LDDM) and WTM-lambdaABF, plus a streamlined geometrical route for
+protein-protein binding free-energy calculations.</p>
 </section>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Generates all input files for absolute binding free-energy calculations;</p></li>
-<li><p>Supports protein-protein and protein-ligand complexes;</p></li>
-<li><p>Performs post-processing automatically;</p></li>
-<li><p>Supports NAMD for both the alchemical and geometric routes, and GROMACS for the geometric route, as molecular dynamics engines;</p></li>
-<li><p>Supports many file formats for the input complex structure, including PSF/PDB/PRM, PRM7/RST7, and TOP/PDB;</p></li>
-<li><p>Supports both rigid ligands and protein-protein complexes, which exclude the RMSD CV, and flexible ligands and protein-protein complexes, which include the RMSD CV, through the streamlined geometrical route;</p></li>
-<li><p>…</p></li>
+<li><p>Generate input files for absolute binding free-energy calculations.</p></li>
+<li><p>Support protein-protein and protein-ligand complexes.</p></li>
+<li><p>Support NAMD for alchemical and geometrical routes, and GROMACS for the
+geometrical route.</p></li>
+<li><p>Support PSF/PDB/PRM, PRM7/RST7, and TOP/PDB input systems.</p></li>
+<li><p>Support DDM, LDDM, WTM-eABF, WTM-lambdaABF, and GaWTM-eABF workflows.</p></li>
+<li><p>Provide quick setup actions for common calculation types.</p></li>
+<li><p>Provide an OpenAI-compatible AI assistant for setup guidance.</p></li>
+<li><p>Perform post-treatment and quick plotting inside the GUI.</p></li>
 </ul>
 </section>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Python 3.6+, PySide 2, numpy, scipy, matplotlib, parmed, and MDAnalysis.</p></li>
-<li><p><a class="reference external" href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD">NAMD 3.0 or later</a> / <a class="reference external" href="https://manual.gromacs.org/">GROMACS 2024 or later</a>.</p></li>
+<li><p>Python 3.6+</p></li>
+<li><p>PySide6, appdirs, MDAnalysis, matplotlib, numpy&lt;2.3, scipy, parmed, requests</p></li>
+<li><p>NAMD 3.0 or later</p></li>
+<li><p>GROMACS 2024 or later</p></li>
 </ul>
-<p><strong>Note:</strong> Since both NAMD and GROMACS have incorporated Colvars into their latest binaries, each release of BFEE3 corresponds to a specific version of NAMD/GROMACS. Please always use the corresponding or later versions of the MD engines for free-energy calculations!</p>
+<p>Since both NAMD and GROMACS include Colvars in their recent binaries, each BFEE3
+release corresponds to a specific tested NAMD/GROMACS version. Use the matching
+or a later MD engine version for free-energy calculations.</p>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
-<p>We suggest installing BFEE through conda. It is safer to install it in a new conda environment.</p>
+<p>We suggest installing BFEE through conda in a new environment.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>bfee<span class="w">   </span><span class="o">(</span>optional<span class="o">)</span>
 conda<span class="w"> </span>activate<span class="w"> </span>bfee<span class="w">        </span><span class="o">(</span>optional<span class="o">)</span>
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>BFEE2
 </pre></div>
 </div>
-<p><strong>IMPORTANT:</strong> Please force <code class="docutils literal notranslate"><span class="pre">numpy&lt;2.3</span></code> when installing BFEE, because a recent update of numpy has broken ParmEd (<a class="reference external" href="https://github.com/ParmEd/ParmEd/issues/1406">ParmEd issue #1406</a>).</p>
+<p>Please force <code class="docutils literal notranslate"><span class="pre">numpy&lt;2.3</span></code> if your environment pulls a newer NumPy release,
+because recent NumPy versions can break ParmEd compatibility.</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
-<p>Simply run <code class="docutils literal notranslate"><span class="pre">BFEE2Gui.py</span></code> in a terminal or PowerShell. On Microsoft Windows, you may need to use the absolute path.</p>
-<p>A step-by-step tutorial is provided <a class="reference external" href="https://www.nature.com/articles/s41596-021-00676-1">here</a>.</p>
-<p>A tutorial on the new streamlined geometrical route is provided in the Supporting Information of <a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00487">this paper</a>.</p>
-</section>
-<section id="test-files">
-<h2>Test files<a class="headerlink" href="#test-files" title="Link to this heading"></a></h2>
-<p>You can download the supplementary data <a class="reference external" href="https://www.nature.com/articles/s41596-021-00676-1#Sec47">here</a> to test BFEE3.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">BFEE2Gui.py</span></code> in a terminal or PowerShell. On Microsoft Windows, you may
+need to use the absolute path.</p>
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Link to this heading"></a></h2>
-<p>When possible, please consider mentioning <a class="reference external" href="https://www.nature.com/articles/s41596-021-00676-1#citeas">Fu et al. Nat. Protoc. 2022, 17, 1114–1141</a> when BFEE is used in your project.</p>
-<p>Additional references:</p>
 <ul class="simple">
-<li><p>WTM-λABF: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.5c00525">Zhou et al. J. Phys. Chem. Lett. 2025, 16, 4419–4427</a> and <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.accounts.5c00666">Zhou et al. Acc. Chem. Res. 2026, 59, 90–102</a></p></li>
-<li><p>The “LDDM” route: <a class="reference external" href="https://www.nature.com/articles/s43588-025-00821-w">Bian et al. Nat. Comput. Sci. 2025, 5, 621–626</a></p></li>
-<li><p>BFEE2: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.1c00269">Fu et al. J. Chem. Inf. Model. 2021, 61, 2116–2123</a></p></li>
-<li><p>BFEE2 for protein-protein binding free-energy calculations: <a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00487">Fu et al. J. Chem. Inf. Model. 2023, 63, 2512–2519</a></p></li>
-<li><p>Alchemical and geometric routes: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/ct3008099">Gumbart et al. J. Chem. Theory Comput. 2013, 9, 794–802</a></p></li>
-<li><p>Lucid DDM method: <a class="reference external" href="https://www.nature.com/articles/s43588-025-00821-w">Bian et al. Nat. Comput. Sci. 2025, 5, 621–626</a></p></li>
-<li><p>WTM-λABF: <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.accounts.5c00666">Zhou et al. Acc. Chem. Res. 2026, 59, 90–102</a></p></li>
-<li><p>WTM-eABF: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.accounts.9b00473">Fu et al. Acc. Chem. Res. 2019, 52, 3254–3264</a> and <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.8b01994">Fu et al. J. Phys. Chem. Lett. 2018, 9, 4738–4745</a></p></li>
-<li><p>NAMD3: <a class="reference external" href="https://pubs.aip.org/aip/jcp/article-abstract/153/4/044130/1064953/Scalable-molecular-dynamics-on-CPU-and-GPU?redirectedFrom=fulltext">Phillips et al. J. Chem. Phys. 2020, 153, 044130</a></p></li>
-<li><p>GROMACS: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2352711015000059">Abraham et al. SoftwareX 2015, 1, 19–25</a></p></li>
-<li><p>Collective variables: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.7b00791">Fu et al. J. Chem. Theory Comput. 2017, 13, 5173–5178</a></p></li>
-<li><p>Colvars module: <a class="reference external" href="https://www.tandfonline.com/doi/full/10.1080/00268976.2013.813594">Fiorin et al. Mol. Phys. 2013, 111, 3345–3362</a> and <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.jpcb.4c05604">Fiorin et al. J. Phys. Chem. B 2024, 128, 11108–11123</a></p></li>
-<li><p>The “mother” of all restraint-based binding free-energy calculations: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ijch.198600032">Hermans et al. Isr. J. Chem. 1986, 27, 225–227</a></p></li>
+<li><p>BFEE main protocol: <a class="reference external" href="https://www.nature.com/articles/s41596-021-00676-1">Fu et al. Nat. Protoc. 2022, 17, 1114-1141</a></p></li>
+<li><p>BFEE2: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.1c00269">Fu et al. J. Chem. Inf. Model. 2021, 61, 2116-2123</a></p></li>
+<li><p>Protein-protein BFEE: <a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00487">Fu et al. J. Chem. Inf. Model. 2023, 63, 2512-2519</a></p></li>
+<li><p>LDDM route: <a class="reference external" href="https://www.nature.com/articles/s43588-025-00821-w">Bian et al. Nat. Comput. Sci. 2025, 5, 621-626</a></p></li>
+<li><p>WTM-lambdaABF: <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.accounts.5c00666">Zhou et al. Acc. Chem. Res. 2026, 59, 90-102</a></p></li>
+<li><p>Alchemical and geometrical routes: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/ct3008099">Gumbart et al. J. Chem. Theory Comput. 2013, 9, 794-802</a></p></li>
+<li><p>WTM-eABF: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.accounts.9b00473">Fu et al. Acc. Chem. Res. 2019, 52, 3254-3264</a> and <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.8b01994">Fu et al. J. Phys. Chem. Lett. 2018, 9, 4738-4745</a></p></li>
+<li><p>Collective variables: <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.7b00791">Fu et al. J. Chem. Theory Comput. 2017, 13, 5173-5178</a></p></li>
 </ul>
 </section>
 <section id="contact-us">
-<h2>Contact us<a class="headerlink" href="#contact-us" title="Link to this heading"></a></h2>
-<p>This software is distributed under the <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> license. For more information about BFEE, please contact Haohao Fu (<a class="reference external" href="mailto:fhh2626&#37;&#52;&#48;nankai&#46;edu&#46;cn">fhh2626<span>&#64;</span>nankai<span>&#46;</span>edu<span>&#46;</span>cn</a>) and Haochuan Chen (<a class="reference external" href="mailto:yjcoshc&#37;&#52;&#48;mail&#46;nankai&#46;edu&#46;cn">yjcoshc<span>&#64;</span>mail<span>&#46;</span>nankai<span>&#46;</span>edu<span>&#46;</span>cn</a>).</p>
+<h2>Contact Us<a class="headerlink" href="#contact-us" title="Link to this heading"></a></h2>
+<p>This software is distributed under the <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> license. For more information
+about BFEE, contact Haohao Fu (<a class="reference external" href="mailto:fhh2626&#37;&#52;&#48;nankai&#46;edu&#46;cn">fhh2626<span>&#64;</span>nankai<span>&#46;</span>edu<span>&#46;</span>cn</a>) and Haochuan Chen
+(<a class="reference external" href="mailto:yjcoshc&#37;&#52;&#48;mail&#46;nankai&#46;edu&#46;cn">yjcoshc<span>&#64;</span>mail<span>&#46;</span>nankai<span>&#46;</span>edu<span>&#46;</span>cn</a>).</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<h1>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -185,7 +184,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFEE2.templates_namd.updateCenters &mdash; BFEE3  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            BFEE3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_api.html">Python API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">BFEE3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">BFEE2.templates_namd.updateCenters</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for BFEE2.templates_namd.updateCenters</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Read eq.histogramX.dat and update Centers in *.in files</span>
+<span class="c1"># This step is optional but may improve the convergence</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<div class="viewcode-block" id="isGeometric">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.isGeometric">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">isGeometric</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check the route of the simulation, True for geometric,</span>
+<span class="sd">       False for alchemical.</span>
+<span class="sd">       </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: the route of the free-energy calculation. True for geometric,</span>
+<span class="sd">              False for alchemical</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;../fep.tcl&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+    
+    
+<div class="viewcode-block" id="parseDat">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.parseDat">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parseDat</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse a dat (histogram) file and return the most probable CV value</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): the dat file to be parsed with</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        float: the most probable CV value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">CVs</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">maxCV</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">maxCount</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">CVs</span><span class="p">,</span> <span class="n">counts</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">maxCount</span><span class="p">:</span>
+            <span class="n">maxCV</span> <span class="o">=</span> <span class="n">i</span>
+            <span class="n">maxCount</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="k">return</span> <span class="n">maxCV</span></div>
+
+
+<div class="viewcode-block" id="findOptimalCVs">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.findOptimalCVs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">findOptimalCVs</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; read ``*.dat`` files generated through equilibration</span>
+<span class="sd">        and find out the most probable values of CVs</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[Float]: the most probable values of RMSD, eulerTheta, eulerPhi, eulerPsi, polarTheta, polarPhi, r</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">optimalCVs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;output/eq.histogram1.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram2.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram3.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram4.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram5.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram6.dat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;output/eq.histogram7.dat&#39;</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">optimalCVs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parseDat</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">optimalCVs</span></div>
+
+ 
+<div class="viewcode-block" id="readCenters">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.readCenters">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">readCenters</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">CVs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; find the value of centers of provided CVs in a ``*.in`` file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): a Colvars config file</span>
+<span class="sd">        CVs (List[str]): a list, showing the CVs whose centers are to be get</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        List[float]: centers of the provided CVs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># whether parsing a harmonic block</span>
+    <span class="c1"># either None or the index of the corresponding CV</span>
+    <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="c1"># the CV values</span>
+    <span class="n">CVValues</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CVs</span><span class="p">))]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">colvarsFile</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">colvarsFile</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="n">splitedLine</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                
+            <span class="k">if</span> <span class="n">inBlock</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;centers&#39;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">inBlock</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">CVValues</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                    
+                    <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span><span class="p">:</span>
+                        <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+                        
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;harmonic&#39;</span><span class="p">):</span>
+                <span class="n">inBlock</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                        
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;colvars&#39;</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">CV</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">CVs</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">CV</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                        <span class="n">inBlock</span> <span class="o">=</span> <span class="n">index</span>
+    
+    <span class="k">return</span> <span class="n">CVValues</span></div>
+
+ 
+<div class="viewcode-block" id="changeCenters">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.changeCenters">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">changeCenters</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">CVs</span><span class="p">,</span> <span class="n">newCenters</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; change Centers of harmonic restraints in a ``*.in`` file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): a Colvars config file</span>
+<span class="sd">        CVs (List[str]): a list, showing the Centers of which harmonic blocks are to be replaced</span>
+<span class="sd">        newCenters (List[float]): a list, containing the new values of Centers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># whether parsing a harmonic block</span>
+    <span class="c1"># either None or the index of the corresponding CV</span>
+    <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">oldColvarsFile</span><span class="p">:</span>
+        <span class="c1"># Python cannot modify text file in place</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.tmp&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">newColvarsFile</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">oldColvarsFile</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+                <span class="n">splitedLine</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                
+                <span class="k">if</span> <span class="n">inBlock</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;centers&#39;</span><span class="p">):</span>
+                        <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># &#39;colvars&#39; not in CVs</span>
+                        <span class="k">if</span> <span class="n">inBlock</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                            <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;    Centers    </span><span class="si">{</span><span class="n">newCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span><span class="p">:</span>
+                            <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+                        
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;harmonic&#39;</span><span class="p">):</span>
+                    <span class="n">inBlock</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                        
+                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;colvars&#39;</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">CV</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">CVs</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">CV</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                            <span class="n">inBlock</span> <span class="o">=</span> <span class="n">index</span>
+    
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.tmp&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="changeABFRange">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.changeABFRange">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">changeABFRange</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">CVs</span><span class="p">,</span> <span class="n">newCenters</span><span class="p">,</span> <span class="n">originalCenters</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; change lowerboundary, upperboundary, lowerWalls, upperWalls of ABF in a ``*.in`` file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): a Colvars config file</span>
+<span class="sd">        CVs (List[str]): a list, showing the corresponding options of which CV blocks are to be replaced</span>
+<span class="sd">        newCenters (List[float]): a list, containing the new values of Centers of these CVs</span>
+<span class="sd">        originalCenters (List[float]): a list, containing the original values of Centers of these CVs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># whether parsing a harmonic block</span>
+    <span class="c1"># either None or the index of the corresponding CV</span>
+    <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">oldColvarsFile</span><span class="p">:</span>
+        <span class="c1"># Python cannot modify text file in place</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.tmp&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">newColvarsFile</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">oldColvarsFile</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+                <span class="n">splitedLine</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                
+                <span class="k">if</span> <span class="n">inBlock</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;lowerboundary&#39;</span><span class="p">))</span> <span class="ow">and</span> \
+                        <span class="p">(</span><span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;upperboundary&#39;</span><span class="p">))</span> <span class="ow">and</span> \
+                        <span class="p">(</span><span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;lowerwalls&#39;</span><span class="p">))</span> <span class="ow">and</span> \
+                        <span class="p">(</span><span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;upperwalls&#39;</span><span class="p">)):</span>
+                        <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># &#39;name&#39; not in CVs</span>
+                        <span class="k">if</span> <span class="n">inBlock</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                            <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;lowerboundary&#39;</span><span class="p">):</span>
+                                <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s1">&#39;    Lowerboundary    </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">originalCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                <span class="p">)</span>
+                            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;upperboundary&#39;</span><span class="p">):</span>
+                                <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s1">&#39;    Upperboundary    </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">originalCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                    <span class="p">)</span>
+                            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;lowerwalls&#39;</span><span class="p">):</span>
+                                <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s1">&#39;    LowerWalls    </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">originalCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                    <span class="p">)</span>
+                            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;upperwalls&#39;</span><span class="p">):</span>
+                                <span class="n">newColvarsFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                                    <span class="sa">f</span><span class="s1">&#39;    UpperWalls    </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">originalCenters</span><span class="p">[</span><span class="n">inBlock</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                    <span class="p">)</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected CV(s) not for free-energy calculation!&quot;</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;}&#39;</span><span class="p">:</span>
+                            <span class="n">inBlock</span> <span class="o">=</span> <span class="kc">None</span>
+                
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splitedLine</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;colvar&#39;</span> <span class="ow">or</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;harmonicwalls&#39;</span><span class="p">):</span>
+                        <span class="n">inBlock</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    
+                    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;colvars&#39;</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">CV</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">CVs</span><span class="p">):</span>
+                            <span class="k">if</span> <span class="n">splitedLine</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">CV</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                                <span class="n">inBlock</span> <span class="o">=</span> <span class="n">index</span>
+    
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.tmp&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="updateAlchemicalFiles">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.updateAlchemicalFiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">updateAlchemicalFiles</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the Centers of ``*.in`` files based on equilibration</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;./colvars2.in&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../001_MoleculeBound/colvars.in&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../002_RestraintBound/colvars_forward.in&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../002_RestraintBound/colvars_backward.in&#39;</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1"> does not exist!&#39;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">changeCenters</span><span class="p">(</span>
+            <span class="n">file</span><span class="p">,</span> 
+            <span class="p">[</span>
+                <span class="s1">&#39;eulerTheta&#39;</span><span class="p">,</span> <span class="s1">&#39;eulerPhi&#39;</span><span class="p">,</span> <span class="s1">&#39;eulerPsi&#39;</span><span class="p">,</span> <span class="s1">&#39;polarTheta&#39;</span><span class="p">,</span> <span class="s1">&#39;polarPhi&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span>
+            <span class="p">],</span> 
+            <span class="n">findOptimalCVs</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1"> updated!&#39;</span><span class="p">)</span>
+
+    <span class="c1"># if re-eqilibrated</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;./000.1_eq2_re-eq.conf&#39;</span><span class="p">):</span>
+        <span class="n">confFiles</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;../001_MoleculeBound/001.1_fep_backward.conf&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;../001_MoleculeBound/001_fep_doubleWide.conf&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;../001_MoleculeBound/001_lambdaABF.conf&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;../002_RestraintBound/002.1_ti_backward.conf&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">confFile</span> <span class="ow">in</span> <span class="n">confFiles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">confFile</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File </span><span class="si">{</span><span class="n">confFile</span><span class="si">}</span><span class="s1"> does not exist!&#39;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">confFile</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">readFile</span><span class="p">:</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">readFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;../000_eq/output/eq.coor&#39;</span><span class="p">,</span> <span class="s1">&#39;../000_eq/output/eq2.coor&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;../000_eq/output/eq.vel&#39;</span><span class="p">,</span> <span class="s1">&#39;../000_eq/output/eq2.vel&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;../000_eq/output/eq.xsc&#39;</span><span class="p">,</span> <span class="s1">&#39;../000_eq/output/eq2.xsc&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">confFile</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writeFile</span><span class="p">:</span>
+                <span class="n">writeFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File </span><span class="si">{</span><span class="n">confFile</span><span class="si">}</span><span class="s1"> updated!&#39;</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="updateGeometricFiles">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.updateCenters.updateGeometricFiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">updateGeometricFiles</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the Centers of ``*.in`` files based on equilibration</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">CVNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eulerTheta&#39;</span><span class="p">,</span> <span class="s1">&#39;eulerPhi&#39;</span><span class="p">,</span> <span class="s1">&#39;eulerPsi&#39;</span><span class="p">,</span> <span class="s1">&#39;polarTheta&#39;</span><span class="p">,</span> <span class="s1">&#39;polarPhi&#39;</span><span class="p">]</span>
+    <span class="n">optimalCVValues</span> <span class="o">=</span> <span class="n">findOptimalCVs</span><span class="p">()[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">originalCVValues</span> <span class="o">=</span> <span class="n">readCenters</span><span class="p">(</span><span class="s1">&#39;../007_r/colvars_eq.in&#39;</span><span class="p">,</span> <span class="n">CVNames</span><span class="p">)</span>
+    
+    <span class="c1"># in geometrical route, there may be many windows</span>
+    <span class="n">folders</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;../002_EulerTheta&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../003_EulerPhi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../004_EulerPsi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../005_PolarTheta&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../006_PolarPhi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;../007_r&#39;</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">fIndex</span><span class="p">,</span> <span class="n">folder</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">folders</span><span class="p">):</span>
+        <span class="c1"># *.in in folder </span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.in&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.in.amd&#39;</span><span class="p">):</span>
+                <span class="n">files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+                
+        <span class="k">for</span> <span class="n">inFile</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">changeCenters</span><span class="p">(</span>
+                <span class="n">inFile</span><span class="p">,</span> 
+                <span class="n">CVNames</span><span class="p">[:</span><span class="n">fIndex</span><span class="p">],</span> 
+                <span class="n">optimalCVValues</span><span class="p">[:</span><span class="n">fIndex</span><span class="p">]</span>
+            <span class="p">)</span>
+            
+            <span class="n">changeABFRange</span><span class="p">(</span>
+                <span class="n">inFile</span><span class="p">,</span>
+                <span class="n">CVNames</span><span class="p">[:</span><span class="n">fIndex</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">optimalCVValues</span><span class="p">[:</span><span class="n">fIndex</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">originalCVValues</span><span class="p">[:</span><span class="n">fIndex</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;File </span><span class="si">{</span><span class="n">inFile</span><span class="si">}</span><span class="s1"> updated!&#39;</span><span class="p">)</span></div>
+
+        
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    
+    <span class="k">if</span> <span class="n">isGeometric</span><span class="p">():</span>
+        <span class="n">updateGeometricFiles</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All the *.in files updated for the Geometrical route!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">updateAlchemicalFiles</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;All the *.in files updated for the Alchemical route!&#39;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

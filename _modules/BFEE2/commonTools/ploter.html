@@ -1,187 +1,304 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>BFEE2.commonTools.ploter &mdash; BFEE2  documentation</title>
-  
+  <title>BFEE2.commonTools.ploter &mdash; BFEE3  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../index.html" class="icon icon-home"> BFEE2
           
-
-          
+          <a href="../../../index.html" class="icon icon-home">
+            BFEE3
           </a>
-
-          
-            
-            
-              <div class="version">
-                2.1.8
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../python_api.html">Python API</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">BFEE2</a>
-        
+          <a href="../../../index.html">BFEE3</a>
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-        
-      <li>BFEE2.commonTools.ploter</li>
-    
-    
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">BFEE2.commonTools.ploter</li>
       <li class="wy-breadcrumbs-aside">
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <h1>Source code for BFEE2.commonTools.ploter</h1><div class="highlight"><pre>
 <span></span><span class="c1"># plot figures</span>
 
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
 
-<div class="viewcode-block" id="readPMF"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.readPMF">[docs]</a><span class="k">def</span> <span class="nf">readPMF</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;read a 1D namd PMF file</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">interpolate</span>
+
+
+<span class="c1"># an runtime error</span>
+<span class="c1"># does not have corresponding correction for a pmf</span>
+<div class="viewcode-block" id="NoCorrectionFileError">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.NoCorrectionFileError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NoCorrectionFileError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">arg</span></div>
+
+
+<div class="viewcode-block" id="isGaWTM">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.isGaWTM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">isGaWTM</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;determine whether the input PMFs indicate Ga-WTM simulations</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pmfFiles (list[str]): path to a set of PMFs (and pmf corrections)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: GaWTM simulation or not</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">pmfFiles</span><span class="p">:</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.pmf&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="getGaWTMBaseName">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMBaseName">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">getGaWTMBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the base name from a GaWTM PMF file or its correction file.</span>
+<span class="sd">    </span>
+<span class="sd">    For example:</span>
+<span class="sd">        &#39;path/to/001.czar.pmf&#39; -&gt; &#39;001&#39;</span>
+<span class="sd">        &#39;path/to/001.reweightamd1.cumulant.pmf&#39; -&gt; &#39;001&#39;</span>
+<span class="sd">        &#39;path/to/step1.czar.pmf&#39; -&gt; &#39;step1&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        filePath (str): path to the file</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: base name of the file (without extensions)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+    <span class="c1"># Remove known GaWTM suffixes</span>
+    <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.czar.pmf&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.czar.pmf&#39;</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># For other PMF files, just remove .pmf extension</span>
+        <span class="k">return</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span></div>
+
+
+<div class="viewcode-block" id="getGaWTMBaseNames">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMBaseNames">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">getGaWTMBaseNames</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract all possible base names from a GaWTM PMF file for flexible matching.</span>
+<span class="sd">    </span>
+<span class="sd">    This function returns a list of candidate base names to support flexible pairing.</span>
+<span class="sd">    For example::</span>
+
+<span class="sd">        &#39;path/to/abf_1.abf1.czar.pmf&#39; -&gt; [&#39;abf_1.abf1&#39;, &#39;abf_1&#39;]</span>
+<span class="sd">        &#39;path/to/001.czar.pmf&#39; -&gt; [&#39;001&#39;]</span>
+<span class="sd">        &#39;path/to/step1.abf2.czar.pmf&#39; -&gt; [&#39;step1.abf2&#39;, &#39;step1&#39;]</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        filePath (str): path to the file</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: list of possible base names (primary first, then alternatives)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">primaryBaseName</span> <span class="o">=</span> <span class="n">getGaWTMBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">primaryBaseName</span><span class="p">]</span>
+    
+    <span class="c1"># Check if the base name contains patterns like .abf1, .abf2, etc.</span>
+    <span class="c1"># Find the last dot and check if it&#39;s followed by &#39;abf&#39; + digits</span>
+    <span class="n">dotIndex</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dotIndex</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="p">[</span><span class="n">dotIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">suffix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;abf&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">suffix</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">alternativeBaseName</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="p">[:</span><span class="n">dotIndex</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">alternativeBaseName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alternativeBaseName</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">candidates</span></div>
+
+
+<div class="viewcode-block" id="pairGaWTMFiles">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.pairGaWTMFiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pairGaWTMFiles</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pair GaWTM PMF files with their corresponding correction files.</span>
+<span class="sd">    </span>
+<span class="sd">    This function looks for files with matching base names:</span>
+<span class="sd">    - xxx.czar.pmf paired with xxx.reweightamd1.cumulant.pmf</span>
+<span class="sd">    </span>
+<span class="sd">    Files without a corresponding correction file are returned as unpaired.</span>
+<span class="sd">    Orphan correction files (without matching czar.pmf) are also returned separately.</span>
+<span class="sd">    Wrong correction files (.reweightamd1.reweight.pmf instead of .cumulant.pmf) are also detected.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        pmfFiles (list[str]): list of all PMF file paths (including correction files)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: (paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</span>
+<span class="sd">            paired_list: list of tuples (pmf_file_path, correction_file_path)</span>
+<span class="sd">            unpaired_czar_list: list of czar.pmf file paths without correction</span>
+<span class="sd">            orphan_correction_list: list of correction file paths without matching czar.pmf</span>
+<span class="sd">            other_files: list of other PMF files</span>
+<span class="sd">            wrong_correction_files: list of .reweightamd1.reweight.pmf files (wrong type)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Separate czar.pmf files and correction files</span>
+    <span class="n">czar_files</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; filePath</span>
+    <span class="n">czar_file_candidates</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; list of candidate base names for matching</span>
+    <span class="n">correction_files</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; filePath</span>
+    <span class="n">other_files</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># files that are neither</span>
+    <span class="n">wrong_correction_files</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># .reweightamd1.reweight.pmf files (wrong type)</span>
+    
+    <span class="k">for</span> <span class="n">filePath</span> <span class="ow">in</span> <span class="n">pmfFiles</span><span class="p">:</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">):</span>
+            <span class="n">baseName</span> <span class="o">=</span> <span class="n">getGaWTMBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+            <span class="n">correction_files</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="n">filePath</span>
+        <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.pmf&#39;</span><span class="p">):</span>
+            <span class="c1"># Wrong correction file type</span>
+            <span class="n">wrong_correction_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.czar.pmf&#39;</span><span class="p">):</span>
+            <span class="n">baseName</span> <span class="o">=</span> <span class="n">getGaWTMBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+            <span class="n">czar_files</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="n">filePath</span>
+            <span class="n">czar_file_candidates</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="n">getGaWTMBaseNames</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">other_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+    
+    <span class="c1"># Pair files by base name (with flexible matching)</span>
+    <span class="n">paired</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">unpaired_czar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">matched_corrections</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Track which correction files have been matched</span>
+    
+    <span class="k">for</span> <span class="n">baseName</span><span class="p">,</span> <span class="n">czarPath</span> <span class="ow">in</span> <span class="n">czar_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># Try all candidate base names for this czar file</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">czar_file_candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">baseName</span><span class="p">,</span> <span class="p">[</span><span class="n">baseName</span><span class="p">])</span>
+        <span class="n">matched</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">correction_files</span><span class="p">:</span>
+                <span class="n">paired</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">czarPath</span><span class="p">,</span> <span class="n">correction_files</span><span class="p">[</span><span class="n">candidate</span><span class="p">]))</span>
+                <span class="n">matched_corrections</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+                <span class="n">matched</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">matched</span><span class="p">:</span>
+            <span class="n">unpaired_czar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">czarPath</span><span class="p">)</span>
+    
+    <span class="c1"># Find orphan correction files (correction without czar.pmf)</span>
+    <span class="n">orphan_corrections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">baseName</span><span class="p">,</span> <span class="n">corrPath</span> <span class="ow">in</span> <span class="n">correction_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">baseName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matched_corrections</span><span class="p">:</span>
+            <span class="n">orphan_corrections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrPath</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">paired</span><span class="p">,</span> <span class="n">unpaired_czar</span><span class="p">,</span> <span class="n">orphan_corrections</span><span class="p">,</span> <span class="n">other_files</span><span class="p">,</span> <span class="n">wrong_correction_files</span></div>
+
+
+<div class="viewcode-block" id="correctGaWTM">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.correctGaWTM">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">correctGaWTM</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">,</span> <span class="n">correctionFile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;read a 1D namd PMF file and correct it using cumulant.pmf file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pmfFile (str): path to the pmf File</span>
+<span class="sd">        correctionFile (str, optional): path to the correction file. </span>
+<span class="sd">            If None, will try to find it in the same directory (legacy behavior).</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array (N*2): 1D PMF</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">pmf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">)</span>
+    
+    <span class="c1"># If correction file is not provided, try to find it (legacy behavior)</span>
+    <span class="k">if</span> <span class="n">correctionFile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">correctionFile</span> <span class="o">=</span> <span class="n">pmfFile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.czar.pmf&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">correctionFile</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">NoCorrectionFileError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pmfFile</span><span class="si">}</span><span class="s1"> does not have a corresponding correction!&#39;</span><span class="p">)</span>
+
+    <span class="n">correction_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">correctionFile</span><span class="p">)</span>
+    <span class="n">correction_interpolate</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">correction_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">correction_data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="s2">&quot;extrapolate&quot;</span><span class="p">)</span>
+
+    <span class="n">pmf</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">correction_interpolate</span><span class="p">(</span><span class="n">pmf</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">pmf</span></div>
+
+
+<div class="viewcode-block" id="readPMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.readPMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">readPMF</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;read a 1D namd PMF file</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pmfFile (str): path to the pmf File</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        np.array (N * 2): 1D PMF</span>
+<span class="sd">        np.array (N*2): 1D PMF</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="mergePMF"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.mergePMF">[docs]</a><span class="k">def</span> <span class="nf">mergePMF</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;merge several PMF files</span>
+
+<div class="viewcode-block" id="mergePMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.mergePMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mergePMF</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;merge several PMF files</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pmfFiles (list of np.arrays): list of 1D pmfs</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        np.array (N * 2): merged PMF if the PMFs overlap, pmfFiles[0] otherwise</span>
+<span class="sd">        np.array (N*2): merged PMF if the PMFs overlap, pmfFiles[0] otherwise</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
     <span class="n">numPmfs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">)</span>
@@ -209,21 +326,430 @@
 
     <span class="k">return</span> <span class="n">finalPMF</span></div>
 
-<div class="viewcode-block" id="writePMF"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.writePMF">[docs]</a><span class="k">def</span> <span class="nf">writePMF</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">,</span> <span class="n">pmf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;write a 1D namd PMF file</span>
+
+<div class="viewcode-block" id="writePMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.writePMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">writePMF</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">,</span> <span class="n">pmf</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;write a 1D namd PMF file</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pmfFile (str): path to the pmf File</span>
-<span class="sd">        pmf np.array (N * 2): pmf to be written</span>
+<span class="sd">        pmf (np.array, N*2): pmf to be written</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">pmfFile</span><span class="p">,</span> <span class="n">pmf</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%g</span><span class="s1">&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="plotPMF"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotPMF">[docs]</a><span class="k">def</span> <span class="nf">plotPMF</span><span class="p">(</span><span class="n">pmf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;plot a pmf</span>
+
+<span class="c1"># ============== History PMF functions ==============</span>
+
+<div class="viewcode-block" id="isGaWTMHist">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.isGaWTMHist">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">isGaWTMHist</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;determine whether the input History PMFs indicate Ga-WTM simulations</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        pmf np.array (N * 2): pmf to be plotted</span>
+<span class="sd">        pmfFiles (list[str]): path to a set of History PMFs (and pmf corrections)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: GaWTM simulation or not</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">pmfFiles</span><span class="p">:</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="c1"># Check for correction files (correct or wrong type)</span>
+        <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.hist.pmf&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.hist.pmf&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.pmf&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="getGaWTMHistBaseName">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMHistBaseName">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">getGaWTMHistBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the base name from a GaWTM History PMF file or its correction file.</span>
+<span class="sd">    </span>
+<span class="sd">    For example:</span>
+<span class="sd">        &#39;path/to/001.hist.czar.pmf&#39; -&gt; &#39;001&#39;</span>
+<span class="sd">        &#39;path/to/001.reweightamd1.cumulant.hist.pmf&#39; -&gt; &#39;001&#39;</span>
+<span class="sd">        &#39;path/to/001.reweightamd1.cumulant.pmf&#39; -&gt; &#39;001&#39;</span>
+<span class="sd">        &#39;path/to/step1.hist.czar.pmf&#39; -&gt; &#39;step1&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        filePath (str): path to the file</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: base name of the file (without extensions)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+    <span class="c1"># Remove known GaWTM history suffixes (order matters - check longer first)</span>
+    <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.hist.pmf&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.hist.pmf&#39;</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">)]</span>
+    <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.hist.czar.pmf&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.hist.czar.pmf&#39;</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># For other PMF files, try to remove common extensions</span>
+        <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.hist.pmf&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">fileName</span><span class="p">[:</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;.hist.pmf&#39;</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span></div>
+
+
+<div class="viewcode-block" id="getGaWTMHistBaseNames">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMHistBaseNames">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">getGaWTMHistBaseNames</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract all possible base names from a GaWTM History PMF file for flexible matching.</span>
+<span class="sd">    </span>
+<span class="sd">    This function returns a list of candidate base names to support flexible pairing.</span>
+<span class="sd">    For example::</span>
+
+<span class="sd">        &#39;path/to/abf_1.abf1.hist.czar.pmf&#39; -&gt; [&#39;abf_1.abf1&#39;, &#39;abf_1&#39;]</span>
+<span class="sd">        &#39;path/to/001.hist.czar.pmf&#39; -&gt; [&#39;001&#39;]</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        filePath (str): path to the file</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: list of possible base names (primary first, then alternatives)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">primaryBaseName</span> <span class="o">=</span> <span class="n">getGaWTMHistBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">primaryBaseName</span><span class="p">]</span>
+    
+    <span class="c1"># Check if the base name contains patterns like .abf1, .abf2, etc.</span>
+    <span class="c1"># Find the last dot and check if it&#39;s followed by &#39;abf&#39; + digits</span>
+    <span class="n">dotIndex</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dotIndex</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="p">[</span><span class="n">dotIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="n">suffix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;abf&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">suffix</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">alternativeBaseName</span> <span class="o">=</span> <span class="n">primaryBaseName</span><span class="p">[:</span><span class="n">dotIndex</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">alternativeBaseName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alternativeBaseName</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">candidates</span></div>
+
+
+<div class="viewcode-block" id="pairGaWTMHistFiles">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.pairGaWTMHistFiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pairGaWTMHistFiles</span><span class="p">(</span><span class="n">pmfFiles</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pair GaWTM History PMF files with their corresponding correction files.</span>
+<span class="sd">    </span>
+<span class="sd">    This function looks for files with matching base names:</span>
+<span class="sd">    - xxx.hist.czar.pmf paired with xxx.reweightamd1.cumulant.hist.pmf or xxx.reweightamd1.cumulant.pmf</span>
+<span class="sd">    </span>
+<span class="sd">    Files without a corresponding correction file are returned as unpaired.</span>
+<span class="sd">    Orphan correction files (without matching hist.czar.pmf) are also returned separately.</span>
+<span class="sd">    Wrong correction files (.reweightamd1.reweight.pmf instead of .cumulant.pmf) are also detected.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        pmfFiles (list[str]): list of all History PMF file paths (including correction files)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: (paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</span>
+
+<span class="sd">        ``paired_list`` is a list of tuples</span>
+<span class="sd">        ``(pmf_file_path, correction_file_path, is_hist_correction)``.</span>
+<span class="sd">        ``is_hist_correction`` is True if correction is .hist.pmf and False if</span>
+<span class="sd">        it is a single-frame .pmf. Other returned lists contain unpaired</span>
+<span class="sd">        hist.czar.pmf files, orphan correction files, other PMF files, and</span>
+<span class="sd">        wrong .reweightamd1.reweight.pmf correction files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">czar_files</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; filePath</span>
+    <span class="n">czar_file_candidates</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; list of candidate base names for matching</span>
+    <span class="n">correction_files</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># baseName -&gt; (filePath, is_hist_correction)</span>
+    <span class="n">other_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">wrong_correction_files</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># .reweightamd1.reweight.pmf files (wrong type)</span>
+    
+    <span class="k">for</span> <span class="n">filePath</span> <span class="ow">in</span> <span class="n">pmfFiles</span><span class="p">:</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.hist.pmf&#39;</span><span class="p">):</span>
+            <span class="n">baseName</span> <span class="o">=</span> <span class="n">getGaWTMHistBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+            <span class="n">correction_files</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.cumulant.pmf&#39;</span><span class="p">):</span>
+            <span class="n">baseName</span> <span class="o">=</span> <span class="n">getGaWTMHistBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+            <span class="c1"># Only add if not already have a hist correction (prefer hist over single-frame)</span>
+            <span class="k">if</span> <span class="n">baseName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">correction_files</span><span class="p">:</span>
+                <span class="n">correction_files</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.hist.pmf&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+             <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.reweightamd1.reweight.pmf&#39;</span><span class="p">):</span>
+            <span class="c1"># Wrong correction file type</span>
+            <span class="n">wrong_correction_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fileName</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.hist.czar.pmf&#39;</span><span class="p">):</span>
+            <span class="n">baseName</span> <span class="o">=</span> <span class="n">getGaWTMHistBaseName</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+            <span class="n">czar_files</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="n">filePath</span>
+            <span class="n">czar_file_candidates</span><span class="p">[</span><span class="n">baseName</span><span class="p">]</span> <span class="o">=</span> <span class="n">getGaWTMHistBaseNames</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">other_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+    
+    <span class="c1"># Pair files by base name (with flexible matching)</span>
+    <span class="n">paired</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">unpaired_czar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">matched_corrections</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Track which correction files have been matched</span>
+    
+    <span class="k">for</span> <span class="n">baseName</span><span class="p">,</span> <span class="n">czarPath</span> <span class="ow">in</span> <span class="n">czar_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># Try all candidate base names for this czar file</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">czar_file_candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">baseName</span><span class="p">,</span> <span class="p">[</span><span class="n">baseName</span><span class="p">])</span>
+        <span class="n">matched</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">correction_files</span><span class="p">:</span>
+                <span class="n">corrPath</span><span class="p">,</span> <span class="n">is_hist</span> <span class="o">=</span> <span class="n">correction_files</span><span class="p">[</span><span class="n">candidate</span><span class="p">]</span>
+                <span class="n">paired</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">czarPath</span><span class="p">,</span> <span class="n">corrPath</span><span class="p">,</span> <span class="n">is_hist</span><span class="p">))</span>
+                <span class="n">matched_corrections</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+                <span class="n">matched</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">matched</span><span class="p">:</span>
+            <span class="n">unpaired_czar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">czarPath</span><span class="p">)</span>
+    
+    <span class="n">orphan_corrections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">baseName</span><span class="p">,</span> <span class="p">(</span><span class="n">corrPath</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">correction_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">baseName</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matched_corrections</span><span class="p">:</span>
+            <span class="n">orphan_corrections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrPath</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">paired</span><span class="p">,</span> <span class="n">unpaired_czar</span><span class="p">,</span> <span class="n">orphan_corrections</span><span class="p">,</span> <span class="n">other_files</span><span class="p">,</span> <span class="n">wrong_correction_files</span></div>
+
+
+<div class="viewcode-block" id="readHistPMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.readHistPMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">readHistPMF</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a History PMF file and return a list of PMF frames.</span>
+<span class="sd">    </span>
+<span class="sd">    Each frame is a 2D numpy array with shape (N, 2) where N is the number of points.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        histPmfFile (str): path to the history PMF file</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[np.array]: list of PMF frames, each as (N, 2) array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_frame</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">stripped</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            
+            <span class="c1"># Skip empty lines</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">stripped</span><span class="p">:</span>
+                <span class="c1"># If we have accumulated data, save the frame</span>
+                <span class="k">if</span> <span class="n">current_frame</span><span class="p">:</span>
+                    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">current_frame</span><span class="p">))</span>
+                    <span class="n">current_frame</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># Skip comment/header lines</span>
+            <span class="k">if</span> <span class="n">stripped</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            
+            <span class="c1"># Parse data line</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="n">stripped</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">current_frame</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="k">continue</span>
+    
+    <span class="c1"># Don&#39;t forget the last frame if file doesn&#39;t end with empty line</span>
+    <span class="k">if</span> <span class="n">current_frame</span><span class="p">:</span>
+        <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">current_frame</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">frames</span></div>
+
+
+<div class="viewcode-block" id="correctGaWTMHist">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.correctGaWTMHist">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">correctGaWTMHist</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">,</span> <span class="n">correctionFile</span><span class="p">,</span> <span class="n">is_hist_correction</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply GaWTM correction to a History PMF file.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        histPmfFile (str): path to the history PMF file (.hist.czar.pmf)</span>
+<span class="sd">        correctionFile (str): path to the correction file</span>
+<span class="sd">        is_hist_correction (bool): True if correction file is history format (.hist.pmf),</span>
+<span class="sd">            False if single-frame format (.pmf)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[np.array]: list of corrected PMF frames</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pmf_frames</span> <span class="o">=</span> <span class="n">readHistPMF</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">correctionFile</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">NoCorrectionFileError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">histPmfFile</span><span class="si">}</span><span class="s1"> does not have a corresponding correction!&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">is_hist_correction</span><span class="p">:</span>
+        <span class="c1"># History correction file - apply frame by frame</span>
+        <span class="n">correction_frames</span> <span class="o">=</span> <span class="n">readHistPMF</span><span class="p">(</span><span class="n">correctionFile</span><span class="p">)</span>
+        
+        <span class="c1"># Interpolate correction frames if needed to match PMF frames</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">correction_frames</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pmf_frames</span><span class="p">):</span>
+            <span class="n">correction_frames</span> <span class="o">=</span> <span class="n">interpolateHistPMFFrames</span><span class="p">([</span><span class="n">correction_frames</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">pmf_frames</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="n">corrected_frames</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pmf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pmf_frames</span><span class="p">):</span>
+            <span class="n">correction</span> <span class="o">=</span> <span class="n">correction_frames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">correction_interp</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span>
+                <span class="n">correction</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">correction</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="s2">&quot;extrapolate&quot;</span>
+            <span class="p">)</span>
+            <span class="n">corrected</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">correction_interp</span><span class="p">(</span><span class="n">pmf</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="n">corrected_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">corrected_frames</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Single-frame correction file - apply same correction to all frames</span>
+        <span class="n">correction_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">correctionFile</span><span class="p">)</span>
+        <span class="n">correction_interp</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span>
+            <span class="n">correction_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">correction_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="s2">&quot;extrapolate&quot;</span>
+        <span class="p">)</span>
+        
+        <span class="n">corrected_frames</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">pmf</span> <span class="ow">in</span> <span class="n">pmf_frames</span><span class="p">:</span>
+            <span class="n">corrected</span> <span class="o">=</span> <span class="n">pmf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">corrected</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">correction_interp</span><span class="p">(</span><span class="n">pmf</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+            <span class="n">corrected_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">corrected_frames</span></div>
+
+
+<div class="viewcode-block" id="interpolateHistPMFFrames">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.interpolateHistPMFFrames">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">interpolateHistPMFFrames</span><span class="p">(</span><span class="n">all_hist_pmfs</span><span class="p">,</span> <span class="n">target_num_frames</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interpolate history PMF frames to a target number of frames.</span>
+<span class="sd">    </span>
+<span class="sd">    Each PMF file may have different number of frames. This function interpolates</span>
+<span class="sd">    the frame values to achieve a uniform frame count across all files.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        all_hist_pmfs (list[list[np.array]]): list of history PMFs, each is a list of frames</span>
+<span class="sd">        target_num_frames (int): target number of frames to interpolate to</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[list[np.array]]: interpolated history PMFs with uniform frame count</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">interpolated</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">hist_pmf</span> <span class="ow">in</span> <span class="n">all_hist_pmfs</span><span class="p">:</span>
+        <span class="n">num_frames</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist_pmf</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">num_frames</span> <span class="o">==</span> <span class="n">target_num_frames</span><span class="p">:</span>
+            <span class="n">interpolated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hist_pmf</span><span class="p">)</span>
+            <span class="k">continue</span>
+        
+        <span class="k">if</span> <span class="n">num_frames</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">interpolated</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+            <span class="k">continue</span>
+        
+        <span class="c1"># Create interpolated frames</span>
+        <span class="n">new_frames</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">target_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">target_num_frames</span><span class="p">):</span>
+            <span class="c1"># Calculate the source frame index (floating point)</span>
+            <span class="n">source_idx</span> <span class="o">=</span> <span class="n">target_idx</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">target_num_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">target_num_frames</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+            
+            <span class="c1"># Get the two neighboring frames for interpolation</span>
+            <span class="n">lower_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">source_idx</span><span class="p">)</span>
+            <span class="n">upper_idx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lower_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            
+            <span class="c1"># Interpolation weight</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">source_idx</span> <span class="o">-</span> <span class="n">lower_idx</span>
+            
+            <span class="n">lower_frame</span> <span class="o">=</span> <span class="n">hist_pmf</span><span class="p">[</span><span class="n">lower_idx</span><span class="p">]</span>
+            <span class="n">upper_frame</span> <span class="o">=</span> <span class="n">hist_pmf</span><span class="p">[</span><span class="n">upper_idx</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">weight</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">lower_idx</span> <span class="o">==</span> <span class="n">upper_idx</span><span class="p">:</span>
+                <span class="c1"># No interpolation needed</span>
+                <span class="n">new_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lower_frame</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Interpolate y values (x values should be the same across frames)</span>
+                <span class="c1"># But to be safe, we interpolate upper_frame to lower_frame&#39;s x-coordinates</span>
+                <span class="n">upper_interp</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span>
+                    <span class="n">upper_frame</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">upper_frame</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">fill_value</span><span class="o">=</span><span class="s2">&quot;extrapolate&quot;</span>
+                <span class="p">)</span>
+                
+                <span class="n">new_frame</span> <span class="o">=</span> <span class="n">lower_frame</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">new_frame</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">weight</span><span class="p">)</span> <span class="o">*</span> <span class="n">lower_frame</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">upper_interp</span><span class="p">(</span><span class="n">lower_frame</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+                <span class="n">new_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_frame</span><span class="p">)</span>
+        
+        <span class="n">interpolated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_frames</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">interpolated</span></div>
+
+
+<div class="viewcode-block" id="mergeHistPMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.mergeHistPMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mergeHistPMF</span><span class="p">(</span><span class="n">all_hist_pmfs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merge multiple history PMF files frame-by-frame.</span>
+<span class="sd">    </span>
+<span class="sd">    Each input is a list of frames (from different PMF windows).</span>
+<span class="sd">    The function first interpolates all to have the same number of frames,</span>
+<span class="sd">    then merges each frame using the standard mergePMF function.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        all_hist_pmfs (list[list[np.array]]): list of history PMFs, </span>
+<span class="sd">            each is a list of frames from one window</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list[np.array]: merged history PMF (list of merged frames)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">all_hist_pmfs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    
+    <span class="c1"># Find the maximum number of frames</span>
+    <span class="n">max_frames</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hist_pmf</span><span class="p">)</span> <span class="k">for</span> <span class="n">hist_pmf</span> <span class="ow">in</span> <span class="n">all_hist_pmfs</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">max_frames</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    
+    <span class="c1"># Interpolate all to have the same number of frames</span>
+    <span class="n">interpolated</span> <span class="o">=</span> <span class="n">interpolateHistPMFFrames</span><span class="p">(</span><span class="n">all_hist_pmfs</span><span class="p">,</span> <span class="n">max_frames</span><span class="p">)</span>
+    
+    <span class="c1"># Merge frame-by-frame</span>
+    <span class="n">merged_frames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">frame_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_frames</span><span class="p">):</span>
+        <span class="c1"># Collect the same frame from all windows</span>
+        <span class="n">frames_to_merge</span> <span class="o">=</span> <span class="p">[</span><span class="n">hist_pmf</span><span class="p">[</span><span class="n">frame_idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">hist_pmf</span> <span class="ow">in</span> <span class="n">interpolated</span> <span class="k">if</span> <span class="n">hist_pmf</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">frames_to_merge</span><span class="p">:</span>
+            <span class="n">merged</span> <span class="o">=</span> <span class="n">mergePMF</span><span class="p">(</span><span class="n">frames_to_merge</span><span class="p">)</span>
+            <span class="n">merged_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">merged_frames</span></div>
+
+
+<div class="viewcode-block" id="writeHistPMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.writeHistPMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">writeHistPMF</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">,</span> <span class="n">frames</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a History PMF file.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        histPmfFile (str): path to the output history PMF file</span>
+<span class="sd">        frames (list[np.array]): list of PMF frames to write</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">histPmfFile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">frame_idx</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">frames</span><span class="p">):</span>
+            <span class="c1"># Write frame header (similar to original format)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;# 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x_min</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="n">x_max</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mf">0.1</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;#  </span><span class="si">{</span><span class="n">x_min</span><span class="si">:</span><span class="s1">.14e</span><span class="si">}</span><span class="s1">  </span><span class="si">{</span><span class="n">dx</span><span class="si">:</span><span class="s1">.14e</span><span class="si">}</span><span class="s1">         </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span><span class="si">}</span><span class="s1">  0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># Write data</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">frame</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.14e</span><span class="si">}</span><span class="s1">   </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.14e</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># Add blank line between frames</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="plotPMF">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotPMF">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plotPMF</span><span class="p">(</span><span class="n">pmf</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;plot a pmf</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pmf (np.array, N*2): pmf to be plotted</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pmf</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">pmf</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
@@ -231,8 +757,52 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ΔG (kcal/mol)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="calcRMSD"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.calcRMSD">[docs]</a><span class="k">def</span> <span class="nf">calcRMSD</span><span class="p">(</span><span class="n">inputArray</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;calculate RMSD of a np.array with respect to (0,0,0,...0)</span>
+
+<div class="viewcode-block" id="plotHysteresis">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotHysteresis">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plotHysteresis</span><span class="p">(</span><span class="n">forwardProfile</span><span class="p">,</span> <span class="n">backwardProfile</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;plot the profile describing the hysteresis between forward and backward</span>
+<span class="sd">       simulations</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        forwardProfile (np.array, N*2): forward free-energy profile to be plotted</span>
+<span class="sd">        backwardProfile (np.array, N*2): backward free-energy profile to be plotted</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">forwardProfile</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">forwardProfile</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Forward&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">backwardProfile</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">backwardProfile</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Backward&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lambda&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ΔG (kcal/mol)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="saveHysteresis">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.saveHysteresis">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">saveHysteresis</span><span class="p">(</span><span class="n">forwardProfile</span><span class="p">,</span> <span class="n">backwardProfile</span><span class="p">,</span> <span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;save the hysteresis data to a text file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        forwardProfile (np.array, N*2): forward free-energy profile data</span>
+<span class="sd">        backwardProfile (np.array, N*2): backward free-energy profile data</span>
+<span class="sd">        filePath (str): path to save the data file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Combine forward and backward data into a single array</span>
+    <span class="c1"># Format: Lambda, Forward_dG, Backward_dG</span>
+    <span class="n">combined_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+        <span class="n">forwardProfile</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="n">forwardProfile</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> 
+        <span class="n">backwardProfile</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">])</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Lambda</span><span class="se">\t</span><span class="s1">Forward_dG(kcal/mol)</span><span class="se">\t</span><span class="s1">Backward_dG(kcal/mol)&#39;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">combined_data</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="calcRMSD">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.calcRMSD">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calcRMSD</span><span class="p">(</span><span class="n">inputArray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;calculate RMSD of a np.array with respect to (0,0,0,...0)</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        inputArray (1D np.array): the input array</span>
@@ -244,8 +814,11 @@
     <span class="n">sumG2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">inputArray</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sumG2</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputArray</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="readFrame"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.readFrame">[docs]</a><span class="k">def</span> <span class="nf">readFrame</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;read a frame of Colvars hist file and calculate its RMSD with respect to zero array</span>
+
+<div class="viewcode-block" id="readFrame">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.readFrame">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">readFrame</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;read a frame of Colvars hist file and calculate its RMSD with respect to zero array</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        input (python file object): input object</span>
@@ -278,8 +851,11 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="parseHistFile"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.parseHistFile">[docs]</a><span class="k">def</span> <span class="nf">parseHistFile</span><span class="p">(</span><span class="n">histPath</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;parse a hist.czar.pmf file and return frame-RMSD list</span>
+
+<div class="viewcode-block" id="parseHistFile">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.parseHistFile">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parseHistFile</span><span class="p">(</span><span class="n">histPath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;parse a hist.czar.pmf file and return frame-RMSD list</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        histPath (str): path to a hist.czar.pmf file</span>
@@ -297,8 +873,11 @@
             <span class="n">rmsd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmsdPerFrame</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">rmsd</span></div>
 
-<div class="viewcode-block" id="plotConvergence"><a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotConvergence">[docs]</a><span class="k">def</span> <span class="nf">plotConvergence</span><span class="p">(</span><span class="n">rmsdList</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;plot the time evolution of PMF rmsd</span>
+
+<div class="viewcode-block" id="plotConvergence">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotConvergence">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plotConvergence</span><span class="p">(</span><span class="n">rmsdList</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;plot the time evolution of PMF rmsd</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        rmsdList (list or 1D np.array, float): time evolution of RMSD with respect to zero array</span>
@@ -308,49 +887,50 @@
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frame&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;RMSD (Colvars Unit)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="saveConvergence">
+<a class="viewcode-back" href="../../../BFEE2.commonTools.html#BFEE2.commonTools.ploter.saveConvergence">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">saveConvergence</span><span class="p">(</span><span class="n">rmsdList</span><span class="p">,</span> <span class="n">filePath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;save the PMF RMSD convergence data to a text file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        rmsdList (list or 1D np.array, float): time evolution of RMSD with respect to zero array</span>
+<span class="sd">        filePath (str): path to save the data file</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+
+    <span class="n">frames</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">rmsdList</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">frames</span><span class="p">,</span> <span class="n">rmsdList</span><span class="p">])</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;Frame</span><span class="se">\t</span><span class="s1">RMSD(Colvars_Unit)&#39;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Haohao Fu, Haochuan Chen.
-
-    </p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen, Hengwei Bian, Wensheng Cai, Chris Chipot.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
