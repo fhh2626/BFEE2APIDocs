@@ -1,94 +1,48 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Python API &mdash; BFEE2  documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BFEE2.commonTools" href="BFEE2.commonTools.html" />
     <link rel="prev" title="Binding Free Energy Estimator 2" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> BFEE2
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            BFEE2
           </a>
-
-          
-            
-            
-              <div class="version">
-                2.1.8
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html">BFEE2.commonTools</a></li>
@@ -101,73 +55,32 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">BFEE2</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Python API</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python API</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/python_api.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="python-api">
-<h1>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="python-api">
+<h1>Python API<a class="headerlink" href="#python-api" title="Link to this heading"></a></h1>
 <p>BFEE2 Python API provides information for the end-user to use BFEE2 in a console program / streamline.</p>
 <p>One may always use <strong>BFEE2.inputGenerator</strong> and <strong>BFEE2.postTreatment</strong> when using BFEE2 Python API in automated/streamlined binding free-energy calculation.
 If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_namd</strong> also deserves to look at.</p>
@@ -175,70 +88,222 @@ If one wants to use BFEE2 as an NAMD or Colvars parser, <strong>BFEE2.templates_
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="BFEE2.commonTools.html">BFEE2.commonTools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.commonSlots">BFEE2.commonTools.commonSlots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.fileParser">BFEE2.commonTools.fileParser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.ploter">BFEE2.commonTools.ploter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.commonSlots">BFEE2.commonTools.commonSlots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.commonSlots.openFileDialog"><code class="docutils literal notranslate"><span class="pre">openFileDialog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.commonSlots.openFilesDialog"><code class="docutils literal notranslate"><span class="pre">openFilesDialog()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="BFEE2.gui.html">BFEE2.gui</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BFEE2.inputGenerator.html">BFEE2.inputGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.fileParser">BFEE2.commonTools.fileParser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.SelectionError"><code class="docutils literal notranslate"><span class="pre">SelectionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.amberToGromacs"><code class="docutils literal notranslate"><span class="pre">amberToGromacs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.charmmToGromacs"><code class="docutils literal notranslate"><span class="pre">charmmToGromacs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser"><code class="docutils literal notranslate"><span class="pre">fileParser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.centerSystem"><code class="docutils literal notranslate"><span class="pre">fileParser.centerSystem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.getResid"><code class="docutils literal notranslate"><span class="pre">fileParser.getResid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.measureCenter"><code class="docutils literal notranslate"><span class="pre">fileParser.measureCenter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.measureDistance"><code class="docutils literal notranslate"><span class="pre">fileParser.measureDistance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.measureMinmax"><code class="docutils literal notranslate"><span class="pre">fileParser.measureMinmax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.measurePBC"><code class="docutils literal notranslate"><span class="pre">fileParser.measurePBC()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.measurePolarAngles"><code class="docutils literal notranslate"><span class="pre">fileParser.measurePolarAngles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.moveSystem"><code class="docutils literal notranslate"><span class="pre">fileParser.moveSystem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.rotateSystem"><code class="docutils literal notranslate"><span class="pre">fileParser.rotateSystem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.saveFile"><code class="docutils literal notranslate"><span class="pre">fileParser.saveFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.saveNDX"><code class="docutils literal notranslate"><span class="pre">fileParser.saveNDX()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.fileParser.setBeta"><code class="docutils literal notranslate"><span class="pre">fileParser.setBeta()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.fileParser.gromacsToAmber"><code class="docutils literal notranslate"><span class="pre">gromacsToAmber()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.commonTools.html#module-BFEE2.commonTools.ploter">BFEE2.commonTools.ploter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.NoCorrectionFileError"><code class="docutils literal notranslate"><span class="pre">NoCorrectionFileError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.calcRMSD"><code class="docutils literal notranslate"><span class="pre">calcRMSD()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.correctGaWTM"><code class="docutils literal notranslate"><span class="pre">correctGaWTM()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.correctGaWTMHist"><code class="docutils literal notranslate"><span class="pre">correctGaWTMHist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMBaseName"><code class="docutils literal notranslate"><span class="pre">getGaWTMBaseName()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMBaseNames"><code class="docutils literal notranslate"><span class="pre">getGaWTMBaseNames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMHistBaseName"><code class="docutils literal notranslate"><span class="pre">getGaWTMHistBaseName()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.getGaWTMHistBaseNames"><code class="docutils literal notranslate"><span class="pre">getGaWTMHistBaseNames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.interpolateHistPMFFrames"><code class="docutils literal notranslate"><span class="pre">interpolateHistPMFFrames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.isGaWTM"><code class="docutils literal notranslate"><span class="pre">isGaWTM()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.isGaWTMHist"><code class="docutils literal notranslate"><span class="pre">isGaWTMHist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.mergeHistPMF"><code class="docutils literal notranslate"><span class="pre">mergeHistPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.mergePMF"><code class="docutils literal notranslate"><span class="pre">mergePMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.pairGaWTMFiles"><code class="docutils literal notranslate"><span class="pre">pairGaWTMFiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.pairGaWTMHistFiles"><code class="docutils literal notranslate"><span class="pre">pairGaWTMHistFiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.parseHistFile"><code class="docutils literal notranslate"><span class="pre">parseHistFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotConvergence"><code class="docutils literal notranslate"><span class="pre">plotConvergence()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotHysteresis"><code class="docutils literal notranslate"><span class="pre">plotHysteresis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.plotPMF"><code class="docutils literal notranslate"><span class="pre">plotPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.readFrame"><code class="docutils literal notranslate"><span class="pre">readFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.readHistPMF"><code class="docutils literal notranslate"><span class="pre">readHistPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.readPMF"><code class="docutils literal notranslate"><span class="pre">readPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.saveConvergence"><code class="docutils literal notranslate"><span class="pre">saveConvergence()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.saveHysteresis"><code class="docutils literal notranslate"><span class="pre">saveHysteresis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.writeHistPMF"><code class="docutils literal notranslate"><span class="pre">writeHistPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.commonTools.html#BFEE2.commonTools.ploter.writePMF"><code class="docutils literal notranslate"><span class="pre">writePMF()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.gui.html">BFEE2.gui</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.AIAssistantDialog"><code class="docutils literal notranslate"><span class="pre">AIAssistantDialog</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.AIAssistantDialog.THEME_COLORS"><code class="docutils literal notranslate"><span class="pre">AIAssistantDialog.THEME_COLORS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.AIAssistantDialog.applyTheme"><code class="docutils literal notranslate"><span class="pre">AIAssistantDialog.applyTheme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.AIAssistantDialog.showEvent"><code class="docutils literal notranslate"><span class="pre">AIAssistantDialog.showEvent()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.AIAssistantDialog.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">AIAssistantDialog.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.alchemicalAdvancedSettings"><code class="docutils literal notranslate"><span class="pre">alchemicalAdvancedSettings</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.alchemicalAdvancedSettings.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">alchemicalAdvancedSettings.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.geometricAdvancedSettings"><code class="docutils literal notranslate"><span class="pre">geometricAdvancedSettings</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.geometricAdvancedSettings.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">geometricAdvancedSettings.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.mainSettings"><code class="docutils literal notranslate"><span class="pre">mainSettings</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.mainSettings.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">mainSettings.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.mainUI"><code class="docutils literal notranslate"><span class="pre">mainUI</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.gui.html#BFEE2.gui.mainUI.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">mainUI.staticMetaObject</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.inputGenerator.html">BFEE2.inputGenerator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.DirectoryExistError"><code class="docutils literal notranslate"><span class="pre">DirectoryExistError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.FileTypeUnknownError"><code class="docutils literal notranslate"><span class="pre">FileTypeUnknownError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.inputGenerator"><code class="docutils literal notranslate"><span class="pre">inputGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.inputGenerator.generateGromacsGeometricFiles"><code class="docutils literal notranslate"><span class="pre">inputGenerator.generateGromacsGeometricFiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.inputGenerator.generateNAMDAlchemicalFiles"><code class="docutils literal notranslate"><span class="pre">inputGenerator.generateNAMDAlchemicalFiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.inputGenerator.html#BFEE2.inputGenerator.inputGenerator.generateNAMDGeometricFiles"><code class="docutils literal notranslate"><span class="pre">inputGenerator.generateNAMDGeometricFiles()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="BFEE2.templates_namd.html">BFEE2.templates_namd</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html#module-BFEE2.templates_namd.configTemplate">BFEE2.templates_namd.configTemplate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html#module-BFEE2.templates_namd.scriptTemplate">BFEE2.templates_namd.scriptTemplate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html#module-BFEE2.templates_namd.configTemplate">BFEE2.templates_namd.configTemplate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvABFTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvABFTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvAngleTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvAngleTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvEulerAngleTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvEulerAngleTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvHarmonicTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHarmonicWallsTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvHarmonicWallsTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHeadTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvHeadTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvHistogramTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvHistogramTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvLambdaTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvLambdaTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvPolarAngleTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvPolarAngleTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvProteinTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvProteinTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRMSDTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvRMSDTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvRTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvRTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.cvReweightAMDTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.cvReweightAMDTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.gromacsConfigTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.gromacsConfigTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.gromacsMinimizeConfigTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.gromacsMinimizeConfigTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.namdConfigTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.namdConfigTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.newCvEulerAngleTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.newCvEulerAngleTemplate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.configTemplate.configTemplate.newCvPolarAngleTemplate"><code class="docutils literal notranslate"><span class="pre">configTemplate.newCvPolarAngleTemplate()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_namd.html#module-BFEE2.templates_namd.scriptTemplate">BFEE2.templates_namd.scriptTemplate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_namd.html#BFEE2.templates_namd.scriptTemplate.charmmToGromacsTemplate"><code class="docutils literal notranslate"><span class="pre">charmmToGromacsTemplate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.templates_gromacs.html">BFEE2.templates_gromacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.logger"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.logger</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.handler"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.handler</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.baseDirectory"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.baseDirectory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.structureFile"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.structureFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.topologyFile"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.topologyFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.ligandOnlyStructureFile"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.ligandOnlyStructureFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.system"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.system</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.ligandOnlySystem"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.ligandOnlySystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.basenames"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.basenames</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.ligand"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.ligand</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.ligandOnly"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.ligandOnly</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.protein"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.protein</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.solvent"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.solvent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.temperature"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.temperature</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate000"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate000()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate001"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate001()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate002"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate002()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate003"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate003()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate004"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate004()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate005"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate005()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate006"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate006()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate007"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate007()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generate008"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generate008()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.generateGromacsIndex"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.generateGromacsIndex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.saveStructure"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.saveStructure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.setLigandHeavyAtomsGroup"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.setLigandHeavyAtomsGroup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.setProteinHeavyAtomsGroup"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.setProteinHeavyAtomsGroup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.setSolventAtomsGroup"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.setSolventAtomsGroup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.BFEEGromacs.setTemperature"><code class="docutils literal notranslate"><span class="pre">BFEEGromacs.setTemperature()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.SelectionError"><code class="docutils literal notranslate"><span class="pre">SelectionError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.generateColvars"><code class="docutils literal notranslate"><span class="pre">generateColvars()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.generateMDP"><code class="docutils literal notranslate"><span class="pre">generateMDP()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.generateShellScript"><code class="docutils literal notranslate"><span class="pre">generateShellScript()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.get_cell"><code class="docutils literal notranslate"><span class="pre">get_cell()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.mearsurePolarAngles"><code class="docutils literal notranslate"><span class="pre">mearsurePolarAngles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.measure_center"><code class="docutils literal notranslate"><span class="pre">measure_center()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.measure_minmax"><code class="docutils literal notranslate"><span class="pre">measure_minmax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.templates_gromacs.html#BFEE2.templates_gromacs.BFEEGromacs.scanGromacsTopologyInclude"><code class="docutils literal notranslate"><span class="pre">scanGromacsTopologyInclude()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BFEE2.postTreatment.html">BFEE2.postTreatment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.RStarTooLargeError"><code class="docutils literal notranslate"><span class="pre">RStarTooLargeError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment"><code class="docutils literal notranslate"><span class="pre">postTreatment</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.LDDMBindingFreeEnergy"><code class="docutils literal notranslate"><span class="pre">postTreatment.LDDMBindingFreeEnergy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.alchemicalBindingFreeEnergy"><code class="docutils literal notranslate"><span class="pre">postTreatment.alchemicalBindingFreeEnergy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.alchemicalFreeEnergy"><code class="docutils literal notranslate"><span class="pre">postTreatment.alchemicalFreeEnergy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.alchemicalFreeEnergyPMF"><code class="docutils literal notranslate"><span class="pre">postTreatment.alchemicalFreeEnergyPMF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.geometricBindingFreeEnergy"><code class="docutils literal notranslate"><span class="pre">postTreatment.geometricBindingFreeEnergy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="BFEE2.postTreatment.html#BFEE2.postTreatment.postTreatment.geometricBindingFreeEnergyHistPMF"><code class="docutils literal notranslate"><span class="pre">postTreatment.geometricBindingFreeEnergyHistPMF()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="BFEE2.commonTools.html" class="btn btn-neutral float-right" title="BFEE2.commonTools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Binding Free Energy Estimator 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BFEE2.commonTools.html" class="btn btn-neutral float-right" title="BFEE2.commonTools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Haohao Fu, Haochuan Chen.
-
-    </p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

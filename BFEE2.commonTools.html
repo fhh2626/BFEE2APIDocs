@@ -1,100 +1,93 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>BFEE2.commonTools &mdash; BFEE2  documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="BFEE2.gui" href="BFEE2.gui.html" />
     <link rel="prev" title="Python API" href="python_api.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> BFEE2
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            BFEE2
           </a>
-
-          
-            
-            
-              <div class="version">
-                2.1.8
-              </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="python_api.html">Python API</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">BFEE2.commonTools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.commonSlots">BFEE2.commonTools.commonSlots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.fileParser">BFEE2.commonTools.fileParser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.ploter">BFEE2.commonTools.ploter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.commonSlots">BFEE2.commonTools.commonSlots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.commonSlots.openFileDialog"><code class="docutils literal notranslate"><span class="pre">openFileDialog()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.commonSlots.openFilesDialog"><code class="docutils literal notranslate"><span class="pre">openFilesDialog()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.fileParser">BFEE2.commonTools.fileParser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError"><code class="docutils literal notranslate"><span class="pre">SelectionError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.fileParser.amberToGromacs"><code class="docutils literal notranslate"><span class="pre">amberToGromacs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.fileParser.charmmToGromacs"><code class="docutils literal notranslate"><span class="pre">charmmToGromacs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.fileParser.fileParser"><code class="docutils literal notranslate"><span class="pre">fileParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.fileParser.gromacsToAmber"><code class="docutils literal notranslate"><span class="pre">gromacsToAmber()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-BFEE2.commonTools.ploter">BFEE2.commonTools.ploter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.NoCorrectionFileError"><code class="docutils literal notranslate"><span class="pre">NoCorrectionFileError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.calcRMSD"><code class="docutils literal notranslate"><span class="pre">calcRMSD()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.correctGaWTM"><code class="docutils literal notranslate"><span class="pre">correctGaWTM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.correctGaWTMHist"><code class="docutils literal notranslate"><span class="pre">correctGaWTMHist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.getGaWTMBaseName"><code class="docutils literal notranslate"><span class="pre">getGaWTMBaseName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.getGaWTMBaseNames"><code class="docutils literal notranslate"><span class="pre">getGaWTMBaseNames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.getGaWTMHistBaseName"><code class="docutils literal notranslate"><span class="pre">getGaWTMHistBaseName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.getGaWTMHistBaseNames"><code class="docutils literal notranslate"><span class="pre">getGaWTMHistBaseNames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.interpolateHistPMFFrames"><code class="docutils literal notranslate"><span class="pre">interpolateHistPMFFrames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.isGaWTM"><code class="docutils literal notranslate"><span class="pre">isGaWTM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.isGaWTMHist"><code class="docutils literal notranslate"><span class="pre">isGaWTMHist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.mergeHistPMF"><code class="docutils literal notranslate"><span class="pre">mergeHistPMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.mergePMF"><code class="docutils literal notranslate"><span class="pre">mergePMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.pairGaWTMFiles"><code class="docutils literal notranslate"><span class="pre">pairGaWTMFiles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.pairGaWTMHistFiles"><code class="docutils literal notranslate"><span class="pre">pairGaWTMHistFiles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.parseHistFile"><code class="docutils literal notranslate"><span class="pre">parseHistFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.plotConvergence"><code class="docutils literal notranslate"><span class="pre">plotConvergence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.plotHysteresis"><code class="docutils literal notranslate"><span class="pre">plotHysteresis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.plotPMF"><code class="docutils literal notranslate"><span class="pre">plotPMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.readFrame"><code class="docutils literal notranslate"><span class="pre">readFrame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.readHistPMF"><code class="docutils literal notranslate"><span class="pre">readHistPMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.readPMF"><code class="docutils literal notranslate"><span class="pre">readPMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.saveConvergence"><code class="docutils literal notranslate"><span class="pre">saveConvergence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.saveHysteresis"><code class="docutils literal notranslate"><span class="pre">saveHysteresis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.writeHistPMF"><code class="docutils literal notranslate"><span class="pre">writeHistPMF()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BFEE2.commonTools.ploter.writePMF"><code class="docutils literal notranslate"><span class="pre">writePMF()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="BFEE2.gui.html">BFEE2.gui</a></li>
@@ -106,283 +99,274 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">BFEE2</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="python_api.html">Python API</a> &raquo;</li>
-        
-      <li>BFEE2.commonTools</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="python_api.html">Python API</a></li>
+      <li class="breadcrumb-item active">BFEE2.commonTools</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/BFEE2.commonTools.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="bfee2-commontools">
-<h1>BFEE2.commonTools<a class="headerlink" href="#bfee2-commontools" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-BFEE2.commonTools.commonSlots">
-<span id="bfee2-commontools-commonslots"></span><h2>BFEE2.commonTools.commonSlots<a class="headerlink" href="#module-BFEE2.commonTools.commonSlots" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="bfee2-commontools">
+<h1>BFEE2.commonTools<a class="headerlink" href="#bfee2-commontools" title="Link to this heading"></a></h1>
+<section id="module-BFEE2.commonTools.commonSlots">
+<span id="bfee2-commontools-commonslots"></span><h2>BFEE2.commonTools.commonSlots<a class="headerlink" href="#module-BFEE2.commonTools.commonSlots" title="Link to this heading"></a></h2>
 <dl class="py function">
-<dt id="BFEE2.commonTools.commonSlots.openFileDialog">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.commonSlots.</span></code><code class="sig-name descname"><span class="pre">openFileDialog</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineEdit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/commonSlots.html#openFileDialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.commonSlots.openFileDialog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.commonSlots.openFileDialog">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.commonSlots.</span></span><span class="sig-name descname"><span class="pre">openFileDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineEdit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/commonSlots.html#openFileDialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.commonSlots.openFileDialog" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>return a openFile function that opens special type of files</dt><dd><p>the openFile dialog is connected with a lineEdit widget</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fileType</strong> (<em>str</em>) – the file type for opening</p></li>
 <li><p><strong>lineEdit</strong> (<em>QLineEdit</em>) – the QLineEdit that connects to the QFileDialog</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>slot function opening special type of files</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>function obj</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.commonSlots.openFilesDialog">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.commonSlots.</span></code><code class="sig-name descname"><span class="pre">openFilesDialog</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listWidget</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/commonSlots.html#openFilesDialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.commonSlots.openFilesDialog" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.commonSlots.openFilesDialog">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.commonSlots.</span></span><span class="sig-name descname"><span class="pre">openFilesDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listWidget</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/commonSlots.html#openFilesDialog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.commonSlots.openFilesDialog" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>return a openFile function that opens a series of files</dt><dd><p>the openFile dialog is connected with a QListWidget</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fileType</strong> (<em>str</em>) – the file type for opening</p></li>
 <li><p><strong>listWidget</strong> (<em>QListWidget</em>) – the QListWidget that connects to the QFileDialog</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>slot function opening a series of files</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>function obj</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-BFEE2.commonTools.fileParser">
-<span id="bfee2-commontools-fileparser"></span><h2>BFEE2.commonTools.fileParser<a class="headerlink" href="#module-BFEE2.commonTools.fileParser" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-BFEE2.commonTools.fileParser">
+<span id="bfee2-commontools-fileparser"></span><h2>BFEE2.commonTools.fileParser<a class="headerlink" href="#module-BFEE2.commonTools.fileParser" title="Link to this heading"></a></h2>
 <dl class="py exception">
-<dt id="BFEE2.commonTools.fileParser.SelectionError">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></code><code class="sig-name descname"><span class="pre">SelectionError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#SelectionError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.SelectionError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.SelectionError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></span><span class="sig-name descname"><span class="pre">SelectionError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#SelectionError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.SelectionError" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.amberToGromacs">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></span><span class="sig-name descname"><span class="pre">amberToGromacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parmFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rstFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PBC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputPrefix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#amberToGromacs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.amberToGromacs" title="Link to this definition"></a></dt>
+<dd><p>convert a set of Amber files (parm7 + rst7) into the Gromacs format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parmFile</strong> (<em>str</em>) – path of the parm7 file</p></li>
+<li><p><strong>rstFile</strong> (<em>str</em>) – path of the rst7 file</p></li>
+<li><p><strong>PBC</strong> (<em>list</em><em> of </em><em>flost</em>) – pbc information</p></li>
+<li><p><strong>outputPrefix</strong> (<em>str</em>) – path + prefix of the output file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.charmmToGromacs">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></span><span class="sig-name descname"><span class="pre">charmmToGromacs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdbFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prmFiles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PBC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputPrefix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#charmmToGromacs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.charmmToGromacs" title="Link to this definition"></a></dt>
+<dd><p>convert a set of CHARMM files (psf + pdb + prm + pbc) into the Gromacs format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>psfFile</strong> (<em>str</em>) – path of the psf file</p></li>
+<li><p><strong>pdbFile</strong> (<em>str</em>) – path of the pdb file</p></li>
+<li><p><strong>prmFiles</strong> (<em>list</em><em> of </em><em>str</em>) – pathes of the prm files</p></li>
+<li><p><strong>PBC</strong> (<em>list</em><em> of </em><em>flost</em>) – pbc information</p></li>
+<li><p><strong>outputPrefix</strong> (<em>str</em>) – path + prefix of the output file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py class">
-<dt id="BFEE2.commonTools.fileParser.fileParser">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></code><code class="sig-name descname"><span class="pre">fileParser</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coorFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></span><span class="sig-name descname"><span class="pre">fileParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coorFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>topology and coordinate parser,
 this class implements basic method for the topology and
 coordinate file, used by BFEE</p>
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.centerSystem">
-<code class="sig-name descname"><span class="pre">centerSystem</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.centerSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.centerSystem" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.centerSystem">
+<span class="sig-name descname"><span class="pre">centerSystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.centerSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.centerSystem" title="Link to this definition"></a></dt>
 <dd><p>move all the atoms in the loaded file,
 such that the center of system be (0,0,0)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.getResid">
-<code class="sig-name descname"><span class="pre">getResid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.getResid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.getResid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.getResid">
+<span class="sig-name descname"><span class="pre">getResid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.getResid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.getResid" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>return a string listing the resid of the selection</dt><dd><p>may be used to generate amber masks</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>selection</strong> (<em>str</em>) – MDAnalysis selection</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>a list of resid, e.g. (4,5,6,7,8,9,10)</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.measureCenter">
-<code class="sig-name descname"><span class="pre">measureCenter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureCenter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureCenter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.measureCenter">
+<span class="sig-name descname"><span class="pre">measureCenter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureCenter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureCenter" title="Link to this definition"></a></dt>
 <dd><p>mimic vmd measure center</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>selection</strong> (<em>str</em>) – selection of atoms</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(x, y, z)</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.array (3, float)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.measureDistance">
-<code class="sig-name descname"><span class="pre">measureDistance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureDistance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureDistance" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.measureDistance">
+<span class="sig-name descname"><span class="pre">measureDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureDistance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureDistance" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>measure the distance between the center of mass</dt><dd><p>of two atom groups</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>selection1</strong> (<em>str</em>) – selection of atom group 1</p></li>
 <li><p><strong>selection2</strong> (<em>str</em>) – selection of atom group 2</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>distance between the center of mass of the two atom groups</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.measureMinmax">
-<code class="sig-name descname"><span class="pre">measureMinmax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureMinmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureMinmax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.measureMinmax">
+<span class="sig-name descname"><span class="pre">measureMinmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measureMinmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measureMinmax" title="Link to this definition"></a></dt>
 <dd><p>mimic VMD measure minmax</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>selection</strong> (<em>str</em>) – selection of atoms</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>((minX, minY, minZ), (maxX, maxY, maxZ))</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.array (2*3, float)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.measurePBC">
-<code class="sig-name descname"><span class="pre">measurePBC</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measurePBC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measurePBC" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.measurePBC">
+<span class="sig-name descname"><span class="pre">measurePBC</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measurePBC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measurePBC" title="Link to this definition"></a></dt>
 <dd><p>measure periodic boundary condition of the file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>((lengthX, lengthY, lengthZ), (centerX, centerY, centerZ))</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.array (2*3, float)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.measurePolarAngles">
-<code class="sig-name descname"><span class="pre">measurePolarAngles</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selectionPro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectionLig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measurePolarAngles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measurePolarAngles" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.measurePolarAngles">
+<span class="sig-name descname"><span class="pre">measurePolarAngles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selectionPro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selectionLig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.measurePolarAngles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.measurePolarAngles" title="Link to this definition"></a></dt>
 <dd><p>calculation the polar angles based on selectionPro and selectionLig</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>selectionPro</strong> (<em>str</em>) – selection of the host molecule</p></li>
 <li><p><strong>selectionLig</strong> (<em>str</em>) – selection of the ligand molecule</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>(theta, phi) in degrees</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.array (2, float)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.moveSystem">
-<code class="sig-name descname"><span class="pre">moveSystem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moveVector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.moveSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.moveSystem" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.moveSystem">
+<span class="sig-name descname"><span class="pre">moveSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moveVector</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.moveSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.moveSystem" title="Link to this definition"></a></dt>
 <dd><p>move all the atoms in the loaded file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>moveVector</strong> (<em>np.array</em><em>, </em><em>3</em><em>, </em><em>float</em>) – the vector of moving</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.rotateSystem">
-<code class="sig-name descname"><span class="pre">rotateSystem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.rotateSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.rotateSystem" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.rotateSystem">
+<span class="sig-name descname"><span class="pre">rotateSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrees</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.rotateSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.rotateSystem" title="Link to this definition"></a></dt>
 <dd><p>rotate all the atoms in the loaded file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>axis</strong> (<em>str</em>) – ‘x’ or ‘y’ or ‘z’</p></li>
 <li><p><strong>degrees</strong> (<em>float</em>) – degrees to move by</p></li>
@@ -392,15 +376,15 @@ such that the center of system be (0,0,0)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.saveFile">
-<code class="sig-name descname"><span class="pre">saveFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saveTop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topPath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.saveFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.saveFile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.saveFile">
+<span class="sig-name descname"><span class="pre">saveFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saveTop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topPath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.saveFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.saveFile" title="Link to this definition"></a></dt>
 <dd><dl class="simple">
 <dt>save the coordinate file to the target type</dt><dd><p>this function cannot really ‘save’ the topology file,
 it can only copy the original topology to the target path</p>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>selection</strong> (<em>str</em>) – selection of atoms to save</p></li>
 <li><p><strong>targetPath</strong> (<em>str</em>) – path for the coor file to be saved</p></li>
@@ -409,43 +393,43 @@ it can only copy the original topology to the target path</p>
 <li><p><strong>topPath</strong> (<em>str</em><em>, </em><em>optional</em>) – path for the topology file to be saved. Defaults to ‘’.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.saveNDX">
-<code class="sig-name descname"><span class="pre">saveNDX</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nonHydrogen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.saveNDX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.saveNDX" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.saveNDX">
+<span class="sig-name descname"><span class="pre">saveNDX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetPath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nonHydrogen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.saveNDX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.saveNDX" title="Link to this definition"></a></dt>
 <dd><p>save an ndx file, including the selections</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>selections</strong> (<em>list of str</em>) – the selections for the ndx file</p></li>
-<li><p><strong>names</strong> (<em>list of str</em>) – the name in ndx of each selection</p></li>
+<li><p><strong>selections</strong> (<em>list</em><em> of </em><em>str</em>) – the selections for the ndx file</p></li>
+<li><p><strong>names</strong> (<em>list</em><em> of </em><em>str</em>) – the name in ndx of each selection</p></li>
 <li><p><strong>targetPath</strong> (<em>str</em>) – path for the file to be saved</p></li>
 <li><p><strong>nonHydrogen</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether only non-H atoms are considered. Defaults to True.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="BFEE2.commonTools.fileParser.fileParser.setBeta">
-<code class="sig-name descname"><span class="pre">setBeta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.setBeta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.setBeta" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.fileParser.setBeta">
+<span class="sig-name descname"><span class="pre">setBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#fileParser.setBeta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.fileParser.setBeta" title="Link to this definition"></a></dt>
 <dd><p>set beta for the selected atoms</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>selection</strong> (<em>str</em>) – selection of atoms to change beta</p></li>
 <li><p><strong>beta</strong> (<em>int</em>) – beta value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#BFEE2.commonTools.fileParser.SelectionError" title="BFEE2.commonTools.fileParser.SelectionError"><strong>SelectionError</strong></a> – if the selection corresponds to nothing</p>
 </dd>
 </dl>
@@ -453,179 +437,539 @@ it can only copy the original topology to the target path</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-BFEE2.commonTools.ploter">
-<span id="bfee2-commontools-ploter"></span><h2>BFEE2.commonTools.ploter<a class="headerlink" href="#module-BFEE2.commonTools.ploter" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.calcRMSD">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">calcRMSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputArray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#calcRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.calcRMSD" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.fileParser.gromacsToAmber">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.fileParser.</span></span><span class="sig-name descname"><span class="pre">gromacsToAmber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PBC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputPrefix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/fileParser.html#gromacsToAmber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.fileParser.gromacsToAmber" title="Link to this definition"></a></dt>
+<dd><p>convert a set of Gromacs files (top + gro/pdb) into the Amber format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topFile</strong> (<em>str</em>) – path of the top file</p></li>
+<li><p><strong>groFile</strong> (<em>str</em>) – path of the gro file</p></li>
+<li><p><strong>PBC</strong> (<em>list</em><em> of </em><em>flost</em>) – pbc information</p></li>
+<li><p><strong>outputPrefix</strong> (<em>str</em>) – path + prefix of the output file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-BFEE2.commonTools.ploter">
+<span id="bfee2-commontools-ploter"></span><h2>BFEE2.commonTools.ploter<a class="headerlink" href="#module-BFEE2.commonTools.ploter" title="Link to this heading"></a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.NoCorrectionFileError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">NoCorrectionFileError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#NoCorrectionFileError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.NoCorrectionFileError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.calcRMSD">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">calcRMSD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputArray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#calcRMSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.calcRMSD" title="Link to this definition"></a></dt>
 <dd><p>calculate RMSD of a np.array with respect to (0,0,0,…0)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>inputArray</strong> (<em>1D np.array</em>) – the input array</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>RMSD of a np.array with respect to (0,0,0,…0)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.mergePMF">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">mergePMF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#mergePMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.mergePMF" title="Permalink to this definition">¶</a></dt>
-<dd><p>merge several PMF files</p>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.correctGaWTM">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">correctGaWTM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correctionFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#correctGaWTM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.correctGaWTM" title="Link to this definition"></a></dt>
+<dd><p>read a 1D namd PMF file and correct it using cumulant.pmf file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list of np.arrays</em>) – list of 1D pmfs</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pmfFile</strong> (<em>str</em>) – path to the pmf File</p></li>
+<li><p><strong>correctionFile</strong> (<em>str</em><em>, </em><em>optional</em>) – path to the correction file.
+If None, will try to find it in the same directory (legacy behavior).</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>merged PMF if the PMFs overlap, pmfFiles[0] otherwise</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1D PMF</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.array (N * 2)</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array (N*2)</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.parseHistFile">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">parseHistFile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histPath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#parseHistFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.parseHistFile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.correctGaWTMHist">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">correctGaWTMHist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histPmfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correctionFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_hist_correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#correctGaWTMHist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.correctGaWTMHist" title="Link to this definition"></a></dt>
+<dd><p>Apply GaWTM correction to a History PMF file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>histPmfFile</strong> (<em>str</em>) – path to the history PMF file (.hist.czar.pmf)</p></li>
+<li><p><strong>correctionFile</strong> (<em>str</em>) – path to the correction file</p></li>
+<li><p><strong>is_hist_correction</strong> (<em>bool</em>) – True if correction file is history format (.hist.pmf),
+False if single-frame format (.pmf)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of corrected PMF frames</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[np.array]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.getGaWTMBaseName">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">getGaWTMBaseName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#getGaWTMBaseName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.getGaWTMBaseName" title="Link to this definition"></a></dt>
+<dd><p>Extract the base name from a GaWTM PMF file or its correction file.</p>
+<dl class="simple">
+<dt>For example:</dt><dd><p>‘path/to/001.czar.pmf’ -&gt; ‘001’
+‘path/to/001.reweightamd1.cumulant.pmf’ -&gt; ‘001’
+‘path/to/step1.czar.pmf’ -&gt; ‘step1’</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>base name of the file (without extensions)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.getGaWTMBaseNames">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">getGaWTMBaseNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#getGaWTMBaseNames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.getGaWTMBaseNames" title="Link to this definition"></a></dt>
+<dd><p>Extract all possible base names from a GaWTM PMF file for flexible matching.</p>
+<p>This function returns a list of candidate base names to support flexible pairing.
+For example:</p>
+<blockquote>
+<div><p>‘path/to/abf_1.abf1.czar.pmf’ -&gt; [‘abf_1.abf1’, ‘abf_1’]
+‘path/to/001.czar.pmf’ -&gt; [‘001’]
+‘path/to/step1.abf2.czar.pmf’ -&gt; [‘step1.abf2’, ‘step1’]</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of possible base names (primary first, then alternatives)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.getGaWTMHistBaseName">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">getGaWTMHistBaseName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#getGaWTMHistBaseName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.getGaWTMHistBaseName" title="Link to this definition"></a></dt>
+<dd><p>Extract the base name from a GaWTM History PMF file or its correction file.</p>
+<dl class="simple">
+<dt>For example:</dt><dd><p>‘path/to/001.hist.czar.pmf’ -&gt; ‘001’
+‘path/to/001.reweightamd1.cumulant.hist.pmf’ -&gt; ‘001’
+‘path/to/001.reweightamd1.cumulant.pmf’ -&gt; ‘001’
+‘path/to/step1.hist.czar.pmf’ -&gt; ‘step1’</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>base name of the file (without extensions)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.getGaWTMHistBaseNames">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">getGaWTMHistBaseNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#getGaWTMHistBaseNames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.getGaWTMHistBaseNames" title="Link to this definition"></a></dt>
+<dd><p>Extract all possible base names from a GaWTM History PMF file for flexible matching.</p>
+<p>This function returns a list of candidate base names to support flexible pairing.
+For example:</p>
+<blockquote>
+<div><p>‘path/to/abf_1.abf1.hist.czar.pmf’ -&gt; [‘abf_1.abf1’, ‘abf_1’]
+‘path/to/001.hist.czar.pmf’ -&gt; [‘001’]</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filePath</strong> (<em>str</em>) – path to the file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of possible base names (primary first, then alternatives)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.interpolateHistPMFFrames">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">interpolateHistPMFFrames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_hist_pmfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_num_frames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#interpolateHistPMFFrames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.interpolateHistPMFFrames" title="Link to this definition"></a></dt>
+<dd><p>Interpolate history PMF frames to a target number of frames.</p>
+<p>Each PMF file may have different number of frames. This function interpolates
+the frame values to achieve a uniform frame count across all files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>all_hist_pmfs</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>np.array</em><em>]</em><em>]</em>) – list of history PMFs, each is a list of frames</p></li>
+<li><p><strong>target_num_frames</strong> (<em>int</em>) – target number of frames to interpolate to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>interpolated history PMFs with uniform frame count</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[list[np.array]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.isGaWTM">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">isGaWTM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#isGaWTM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.isGaWTM" title="Link to this definition"></a></dt>
+<dd><p>determine whether the input PMFs indicate Ga-WTM simulations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – path to a set of PMFs (and pmf corrections)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>GaWTM simulation or not</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.isGaWTMHist">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">isGaWTMHist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#isGaWTMHist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.isGaWTMHist" title="Link to this definition"></a></dt>
+<dd><p>determine whether the input History PMFs indicate Ga-WTM simulations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – path to a set of History PMFs (and pmf corrections)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>GaWTM simulation or not</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.mergeHistPMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">mergeHistPMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_hist_pmfs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#mergeHistPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.mergeHistPMF" title="Link to this definition"></a></dt>
+<dd><p>Merge multiple history PMF files frame-by-frame.</p>
+<p>Each input is a list of frames (from different PMF windows).
+The function first interpolates all to have the same number of frames,
+then merges each frame using the standard mergePMF function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>all_hist_pmfs</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>np.array</em><em>]</em><em>]</em>) – list of history PMFs,
+each is a list of frames from one window</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>merged history PMF (list of merged frames)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[np.array]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.mergePMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">mergePMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#mergePMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.mergePMF" title="Link to this definition"></a></dt>
+<dd><p>merge several PMF files</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em> of </em><em>np.arrays</em>) – list of 1D pmfs</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>merged PMF if the PMFs overlap, pmfFiles[0] otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array (N*2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.pairGaWTMFiles">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">pairGaWTMFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#pairGaWTMFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.pairGaWTMFiles" title="Link to this definition"></a></dt>
+<dd><p>Pair GaWTM PMF files with their corresponding correction files.</p>
+<p>This function looks for files with matching base names:
+- xxx.czar.pmf paired with xxx.reweightamd1.cumulant.pmf</p>
+<p>Files without a corresponding correction file are returned as unpaired.
+Orphan correction files (without matching czar.pmf) are also returned separately.
+Wrong correction files (.reweightamd1.reweight.pmf instead of .cumulant.pmf) are also detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – list of all PMF file paths (including correction files)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</dt><dd><p>paired_list: list of tuples (pmf_file_path, correction_file_path)
+unpaired_czar_list: list of czar.pmf file paths without correction
+orphan_correction_list: list of correction file paths without matching czar.pmf
+other_files: list of other PMF files
+wrong_correction_files: list of .reweightamd1.reweight.pmf files (wrong type)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.pairGaWTMHistFiles">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">pairGaWTMHistFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#pairGaWTMHistFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.pairGaWTMHistFiles" title="Link to this definition"></a></dt>
+<dd><p>Pair GaWTM History PMF files with their corresponding correction files.</p>
+<p>This function looks for files with matching base names:
+- xxx.hist.czar.pmf paired with xxx.reweightamd1.cumulant.hist.pmf or xxx.reweightamd1.cumulant.pmf</p>
+<p>Files without a corresponding correction file are returned as unpaired.
+Orphan correction files (without matching hist.czar.pmf) are also returned separately.
+Wrong correction files (.reweightamd1.reweight.pmf instead of .cumulant.pmf) are also detected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFiles</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – list of all History PMF file paths (including correction files)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl>
+<dt>(paired_list, unpaired_czar_list, orphan_correction_list, other_files, wrong_correction_files)</dt><dd><dl class="simple">
+<dt>paired_list: list of tuples (pmf_file_path, correction_file_path, is_hist_correction)</dt><dd><p>is_hist_correction: True if correction is .hist.pmf, False if single-frame .pmf</p>
+</dd>
+</dl>
+<p>unpaired_czar_list: list of hist.czar.pmf file paths without correction
+orphan_correction_list: list of correction file paths without matching hist.czar.pmf
+other_files: list of other PMF files
+wrong_correction_files: list of .reweightamd1.reweight.pmf files (wrong type)</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.parseHistFile">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">parseHistFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histPath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#parseHistFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.parseHistFile" title="Link to this definition"></a></dt>
 <dd><p>parse a hist.czar.pmf file and return frame-RMSD list</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>histPath</strong> (<em>str</em>) – path to a hist.czar.pmf file</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>time evolution of RMSD with respect to zero array</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1D np.array</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.plotConvergence">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">plotConvergence</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rmsdList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#plotConvergence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.plotConvergence" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.plotConvergence">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">plotConvergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rmsdList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#plotConvergence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.plotConvergence" title="Link to this definition"></a></dt>
 <dd><p>plot the time evolution of PMF rmsd</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rmsdList</strong> (<em>list</em><em> or </em><em>1D np.array</em><em>, </em><em>float</em>) – time evolution of RMSD with respect to zero array</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.plotPMF">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">plotPMF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#plotPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.plotPMF" title="Permalink to this definition">¶</a></dt>
-<dd><p>plot a pmf</p>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.plotHysteresis">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">plotHysteresis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forwardProfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backwardProfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#plotHysteresis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.plotHysteresis" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>plot the profile describing the hysteresis between forward and backward</dt><dd><p>simulations</p>
+</dd>
+</dl>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>np.array</strong> (<em>pmf</em>) – pmf to be plotted</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forwardProfile</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – forward free-energy profile to be plotted</p></li>
+<li><p><strong>backwardProfile</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – backward free-energy profile to be plotted</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.readFrame">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">readFrame</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#readFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.readFrame" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.plotPMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">plotPMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#plotPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.plotPMF" title="Link to this definition"></a></dt>
+<dd><p>plot a pmf</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmf</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – pmf to be plotted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.readFrame">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">readFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#readFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.readFrame" title="Link to this definition"></a></dt>
 <dd><p>read a frame of Colvars hist file and calculate its RMSD with respect to zero array</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>input</strong> (<em>python file object</em>) – input object</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>RMSD with respect to zero array</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.readPMF">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">readPMF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#readPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.readPMF" title="Permalink to this definition">¶</a></dt>
-<dd><p>read a 1D namd PMF file</p>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.readHistPMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">readHistPMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histPmfFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#readHistPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.readHistPMF" title="Link to this definition"></a></dt>
+<dd><p>Read a History PMF file and return a list of PMF frames.</p>
+<p>Each frame is a 2D numpy array with shape (N, 2) where N is the number of points.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pmfFile</strong> (<em>str</em>) – path to the pmf File</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>histPmfFile</strong> (<em>str</em>) – path to the history PMF file</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>1D PMF</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of PMF frames, each as (N, 2) array</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.array (N * 2)</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[np.array]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="BFEE2.commonTools.ploter.writePMF">
-<code class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></code><code class="sig-name descname"><span class="pre">writePMF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#writePMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.writePMF" title="Permalink to this definition">¶</a></dt>
-<dd><p>write a 1D namd PMF file</p>
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.readPMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">readPMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#readPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.readPMF" title="Link to this definition"></a></dt>
+<dd><p>read a 1D namd PMF file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pmfFile</strong> (<em>str</em>) – path to the pmf File</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1D PMF</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array (N*2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.saveConvergence">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">saveConvergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rmsdList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#saveConvergence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.saveConvergence" title="Link to this definition"></a></dt>
+<dd><p>save the PMF RMSD convergence data to a text file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pmfFile</strong> (<em>str</em>) – path to the pmf File</p></li>
-<li><p><strong>np.array</strong> (<em>pmf</em>) – pmf to be written</p></li>
+<li><p><strong>rmsdList</strong> (<em>list</em><em> or </em><em>1D np.array</em><em>, </em><em>float</em>) – time evolution of RMSD with respect to zero array</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – path to save the data file</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.saveHysteresis">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">saveHysteresis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forwardProfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backwardProfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#saveHysteresis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.saveHysteresis" title="Link to this definition"></a></dt>
+<dd><p>save the hysteresis data to a text file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forwardProfile</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – forward free-energy profile data</p></li>
+<li><p><strong>backwardProfile</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – backward free-energy profile data</p></li>
+<li><p><strong>filePath</strong> (<em>str</em>) – path to save the data file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.writeHistPMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">writeHistPMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">histPmfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#writeHistPMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.writeHistPMF" title="Link to this definition"></a></dt>
+<dd><p>Write a History PMF file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>histPmfFile</strong> (<em>str</em>) – path to the output history PMF file</p></li>
+<li><p><strong>frames</strong> (<em>list</em><em>[</em><em>np.array</em><em>]</em>) – list of PMF frames to write</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="BFEE2.commonTools.ploter.writePMF">
+<span class="sig-prename descclassname"><span class="pre">BFEE2.commonTools.ploter.</span></span><span class="sig-name descname"><span class="pre">writePMF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pmfFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/BFEE2/commonTools/ploter.html#writePMF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#BFEE2.commonTools.ploter.writePMF" title="Link to this definition"></a></dt>
+<dd><p>write a 1D namd PMF file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pmfFile</strong> (<em>str</em>) – path to the pmf File</p></li>
+<li><p><strong>pmf</strong> (<em>np.array</em><em>, </em><em>N*2</em>) – pmf to be written</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="BFEE2.gui.html" class="btn btn-neutral float-right" title="BFEE2.gui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="python_api.html" class="btn btn-neutral float-left" title="Python API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="BFEE2.gui.html" class="btn btn-neutral float-right" title="BFEE2.gui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Haohao Fu, Haochuan Chen.
-
-    </p>
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

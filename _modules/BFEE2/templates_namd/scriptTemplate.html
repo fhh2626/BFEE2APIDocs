@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFEE2.templates_namd.scriptTemplate &mdash; BFEE2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            BFEE2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_api.html">Python API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">BFEE2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">BFEE2.templates_namd.scriptTemplate</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for BFEE2.templates_namd.scriptTemplate</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">string</span>
+
+<span class="n">removeProteinTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">mol new $</span><span class="si">{path}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{path}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top &quot;not $selectionPro&quot;]</span>
+<span class="s1">$$aa writepsf $</span><span class="si">{outputPath}</span><span class="s1">.psf</span>
+<span class="s1">$$aa writepdb $</span><span class="si">{outputPath}</span><span class="s1">.pdb</span>
+<span class="s1">exit</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">removeMemProteinTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">mol new $</span><span class="si">{path}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{path}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top &quot;$selectionLig&quot;]</span>
+<span class="s1">$$aa writepsf $</span><span class="si">{outputPath}</span><span class="s1">_base.psf</span>
+<span class="s1">$$aa writepdb $</span><span class="si">{outputPath}</span><span class="s1">_base.pdb</span>
+<span class="s1">mol delete top</span>
+<span class="s1">package require solvate</span>
+<span class="s1">solvate $</span><span class="si">{outputPath}</span><span class="s1">_base.psf $</span><span class="si">{outputPath}</span><span class="s1">_base.pdb -x 20 -y 20 -z 20 +x 20 +y 20 +z 20 -o $</span><span class="si">{outputPath}</span><span class="s1"> -s WT -b 2.2</span>
+<span class="s1">mol delete top</span>
+<span class="s1">mol new $</span><span class="si">{outputPath}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{outputPath}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top all]</span>
+<span class="s1">$$aa writexyz $</span><span class="si">{outputPath}</span><span class="s1">.xyz</span>
+<span class="s1">exit</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">removeMemProteinFepTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">package require autoionize</span>
+<span class="s1">mol new $</span><span class="si">{path}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{path}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top &quot;$selectionLig&quot;]</span>
+<span class="s1">$$aa writepsf $</span><span class="si">{outputPath}</span><span class="s1">_base.psf</span>
+<span class="s1">$$aa writepdb $</span><span class="si">{outputPath}</span><span class="s1">_base.pdb</span>
+<span class="s1">mol delete top</span>
+<span class="s1">package require solvate</span>
+<span class="s1">solvate $</span><span class="si">{outputPath}</span><span class="s1">_base.psf $</span><span class="si">{outputPath}</span><span class="s1">_base.pdb -x 20 -y 20 -z 20 +x 20 +y 20 +z 20 -o $</span><span class="si">{outputPath}</span><span class="s1"> -s WT -b 2.2</span>
+<span class="s1">mol delete top</span>
+<span class="s1">mol new $</span><span class="si">{outputPath}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{outputPath}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top all]</span>
+<span class="s1">$$aa writexyz $</span><span class="si">{outputPath}</span><span class="s1">.xyz</span>
+<span class="s1">$$aa set beta 0</span>
+<span class="s1">set solute [atomselect top &quot;not water&quot;]</span>
+<span class="s1">$$solute set beta 1</span>
+<span class="s1">$$aa writepdb $</span><span class="si">{outputFepPath}</span><span class="s1">.pdb</span>
+<span class="s1">exit</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">removeProteinAmberTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">parm $</span><span class="si">{path}</span><span class="s1">.parm7</span>
+<span class="s1">trajin $</span><span class="si">{path}</span><span class="s1">.pdb</span>
+<span class="s1">strip :$residueNum parmout $</span><span class="si">{outputPath}</span><span class="s1">.parm7</span>
+<span class="s1">trajout $</span><span class="si">{outputPath}</span><span class="s1">.pdb</span>
+<span class="s1">go</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">neutralizeSystempTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">package require autoionize</span>
+<span class="s1">autoionize -psf $</span><span class="si">{path}</span><span class="s1">.psf -pdb $</span><span class="si">{path}</span><span class="s1">.pdb -neutralize -cation $</span><span class="si">{cationName}</span><span class="s1"> -anion $</span><span class="si">{anionName}</span><span class="s1"> -seg IO2 -o $</span><span class="si">{path}</span>
+<span class="s1">mol new $</span><span class="si">{path}</span><span class="s1">.psf</span>
+<span class="s1">mol addfile $</span><span class="si">{path}</span><span class="s1">.pdb</span>
+<span class="s1">set aa [atomselect top all]</span>
+<span class="s1">$$aa set beta 0</span>
+<span class="s1">set solute [atomselect top &quot;not water and not ion&quot;]</span>
+<span class="s1">$$solute set beta 1</span>
+<span class="s1">$$aa writexyz $</span><span class="si">{path}</span><span class="s1">.xyz</span>
+<span class="s1">$</span><span class="si">{extraCommand}</span>
+<span class="s1">exit</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="charmmToGromacsTemplate">
+<a class="viewcode-back" href="../../../BFEE2.templates_namd.html#BFEE2.templates_namd.scriptTemplate.charmmToGromacsTemplate">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">charmmToGromacsTemplate</span><span class="p">(</span><span class="n">inputPrefix</span><span class="p">,</span> <span class="n">forceFieldList</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import numpy as np</span>
+<span class="s1">import parmed, MDAnalysis</span>
+<span class="s1">from MDAnalysis import transformations</span>
+<span class="s1">def measurePBC(uObject):</span>
+<span class="s1">    atoms = uObject.select_atoms(&#39;all&#39;)</span>
+<span class="s1">    atomPositions = atoms.positions</span>
+<span class="s1">    xyz_array = np.transpose(atomPositions)</span>
+<span class="s1">    min_x = np.min(xyz_array[0])</span>
+<span class="s1">    max_x = np.max(xyz_array[0])</span>
+<span class="s1">    min_y = np.min(xyz_array[1])</span>
+<span class="s1">    max_y = np.max(xyz_array[1])</span>
+<span class="s1">    min_z = np.min(xyz_array[2])</span>
+<span class="s1">    max_z = np.max(xyz_array[2])</span>
+<span class="s1">    return [</span>
+<span class="s1">        np.array([max_x, max_y, max_z]) - np.array([min_x, min_y, min_z]),</span>
+<span class="s1">        (np.array([min_x, min_y, min_z]) + np.array([max_x, max_y, max_z])) / 2</span>
+<span class="s1">    ]</span>
+<span class="s1">def charmmToGromacs(psfFile, pdbFile, prmFiles, PBC, outputPrefix):</span>
+<span class="s1">    struct = parmed.load_file(psfFile)</span>
+<span class="s1">    struct.load_parameters(</span>
+<span class="s1">        parmed.charmm.CharmmParameterSet(*prmFiles)</span>
+<span class="s1">    )</span>
+<span class="s1">    struct.coordinates = parmed.load_file(pdbFile).coordinates</span>
+<span class="s1">    struct.box = [PBC[0], PBC[1], PBC[2], 90, 90, 90]</span>
+<span class="s1">    struct.save(f&#39;</span><span class="se">{{</span><span class="s1">outputPrefix</span><span class="se">}}</span><span class="s1">.top&#39;, format=&#39;gromacs&#39;)</span>
+<span class="s1">    struct.save(f&#39;</span><span class="se">{{</span><span class="s1">outputPrefix</span><span class="se">}}</span><span class="s1">.gro&#39;)</span>
+<span class="s1">uObject = MDAnalysis.Universe(&#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">.psf&#39;, &#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">.pdb&#39;)</span>
+<span class="s1">pbcVector = measurePBC(uObject)</span>
+<span class="s1">allAtoms = uObject.select_atoms(&#39;all&#39;)</span>
+<span class="s1">transformations.translate((-pbcVector[1] + pbcVector[0] / 2))(allAtoms)</span>
+<span class="s1">allAtoms.write(&#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">.pdb&#39;, &#39;pdb&#39;, bonds=None)</span>
+<span class="s1">charmmToGromacs(</span>
+<span class="s1">    &#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">.psf&#39;, </span>
+<span class="s1">    &#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">.pdb&#39;,</span>
+<span class="s1">    </span><span class="si">{</span><span class="n">forceFieldList</span><span class="si">}</span><span class="s1">,</span>
+<span class="s1">    pbcVector[0],</span>
+<span class="s1">    &#39;</span><span class="si">{</span><span class="n">inputPrefix</span><span class="si">}</span><span class="s1">_gmx&#39;</span>
+<span class="s1">)&#39;&#39;&#39;</span></div>
+
+
+<span class="n">amberToGromacsTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import numpy as np</span>
+<span class="s1">import parmed, MDAnalysis</span>
+<span class="s1">from MDAnalysis import transformations</span>
+<span class="s1">def measurePBC(uObject):</span>
+<span class="s1">    atoms = uObject.select_atoms(&#39;all&#39;)</span>
+<span class="s1">    atomPositions = atoms.positions</span>
+<span class="s1">    xyz_array = np.transpose(atomPositions)</span>
+<span class="s1">    min_x = np.min(xyz_array[0])</span>
+<span class="s1">    max_x = np.max(xyz_array[0])</span>
+<span class="s1">    min_y = np.min(xyz_array[1])</span>
+<span class="s1">    max_y = np.max(xyz_array[1])</span>
+<span class="s1">    min_z = np.min(xyz_array[2])</span>
+<span class="s1">    max_z = np.max(xyz_array[2])</span>
+<span class="s1">    return [</span>
+<span class="s1">        np.array([max_x, max_y, max_z]) - np.array([min_x, min_y, min_z]),</span>
+<span class="s1">        (np.array([min_x, min_y, min_z]) + np.array([max_x, max_y, max_z])) / 2</span>
+<span class="s1">    ]</span>
+<span class="s1">def amberToGromacs(parmFile, rstFile, PBC, outputPrefix):</span>
+<span class="s1">    struct = parmed.load_file(parmFile, xyz=rstFile)</span>
+<span class="s1">    struct.coordinates = parmed.load_file(rstFile).coordinates</span>
+<span class="s1">    struct.box = [PBC[0], PBC[1], PBC[2], 90, 90, 90]</span>
+<span class="s1">    struct.save(f&#39;</span><span class="si">{outputPrefix}</span><span class="s1">.top&#39;, format=&#39;gromacs&#39;)</span>
+<span class="s1">    struct.save(f&#39;</span><span class="si">{outputPrefix}</span><span class="s1">.gro&#39;)</span>
+<span class="s1">uObject = MDAnalysis.Universe(&#39;$</span><span class="si">{inputPrefix}</span><span class="s1">.parm7&#39;, &#39;$</span><span class="si">{inputPrefix}</span><span class="s1">.pdb&#39;)</span>
+<span class="s1">pbcVector = measurePBC(uObject)</span>
+<span class="s1">allAtoms = uObject.select_atoms(&#39;all&#39;)</span>
+<span class="s1">transformations.translate((-pbcVector[1] + pbcVector[0] / 2))(allAtoms)</span>
+<span class="s1">allAtoms.write(&#39;$</span><span class="si">{inputPrefix}</span><span class="s1">.pdb&#39;, &#39;pdb&#39;, bonds=None)</span>
+<span class="s1">amberToGromacs(</span>
+<span class="s1">    &#39;$</span><span class="si">{inputPrefix}</span><span class="s1">.parm7&#39;,</span>
+<span class="s1">    &#39;$</span><span class="si">{inputPrefix}</span><span class="s1">.pdb&#39;,</span>
+<span class="s1">    pbcVector[0],</span>
+<span class="s1">    &#39;$</span><span class="si">{inputPrefix}</span><span class="s1">_gmx&#39;,</span>
+<span class="s1">)</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">genarateLDDMFilesTemplate</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import numpy as np</span>
+<span class="s1">import os, sys</span>
+
+<span class="s1">TEMPERATURE = $</span><span class="si">{temperature}</span>
+<span class="s1">WINDOWS = $</span><span class="si">{windows}</span>
+<span class="s1">BOLTZMANN = 0.0019872041</span>
+
+<span class="s1">def parseDat(filename, temperature=300.0):</span>
+<span class="s1">    &quot;&quot;&quot;Parse a dat (histogram) file, return the most probable CV value</span>
+<span class="s1">       and the corresponding force constant for restraints</span>
+
+<span class="s1">    Args:</span>
+<span class="s1">        filename (str): the dat file to be parsed with</span>
+<span class="s1">        temperature (float): the temperature of the simulation</span>
+<span class="s1">        </span>
+<span class="s1">    Returns:</span>
+<span class="s1">        Tuple(float, float): the most probable CV value and the force constant</span>
+<span class="s1">    &quot;&quot;&quot;</span>
+<span class="s1">    </span>
+<span class="s1">    data = np.loadtxt(filename)</span>
+<span class="s1">    CVs = data[:,0]</span>
+<span class="s1">    counts = data[:,1]</span>
+
+<span class="s1">    beta = 1 / (-BOLTZMANN * temperature)</span>
+<span class="s1">    </span>
+<span class="s1">    maxCV = -1</span>
+<span class="s1">    maxCount = -1</span>
+<span class="s1">    maxIndex = -1</span>
+<span class="s1">    for index, (i, j) in enumerate(zip(CVs, counts)):</span>
+<span class="s1">        if j &gt; maxCount:</span>
+<span class="s1">            maxCV = i</span>
+<span class="s1">            maxCount = j</span>
+<span class="s1">            maxIndex = index</span>
+<span class="s1">    </span>
+<span class="s1">    # fitting</span>
+<span class="s1">    assert (maxIndex - 2 &gt;=0 and maxIndex + 2 &lt; len(counts)), f&quot;maxIndex is: </span><span class="si">{maxIndex}</span><span class="s1">, length is: {len(counts)}&quot;</span>
+<span class="s1">    X = [CVs[maxIndex - 2], CVs[maxIndex], CVs[maxIndex + 2]]</span>
+<span class="s1">    y = [beta * np.log(counts[maxIndex - 2]), beta * np.log(counts[maxIndex]), beta * np.log(counts[maxIndex + 2])]</span>
+
+<span class="s1">    forceConstant = np.polyfit(X, y, 2)</span>
+
+<span class="s1">    return maxCV, forceConstant[0]</span>
+
+<span class="s1">def showForceConstant(temperature=300):</span>
+<span class="s1">    &quot;&quot;&quot; Print force constants obtained from histogram.dat files</span>
+
+<span class="s1">    Args:</span>
+<span class="s1">        temperature (int, optional): _description_. Defaults to 300.</span>
+<span class="s1">    &quot;&quot;&quot;</span>
+<span class="s1">    #print(parseDat(&quot;eq.histogram1.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram2.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram3.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram4.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram5.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram6.dat&quot;, temperature))</span>
+<span class="s1">    print(parseDat(&quot;../000_eq/output/eq.histogram7.dat&quot;, temperature))</span>
+
+<span class="s1">def updateForceConstant(filename, CVs, newForceConstants):</span>
+<span class="s1">    &quot;&quot;&quot; Update force constant of the CVs in a colvars file named filename. </span>
+<span class="s1">        Generates a new files named filename.tmp.</span>
+
+<span class="s1">    Args:</span>
+<span class="s1">        filename (str): path to the colvars files</span>
+<span class="s1">        CVs (list[str]): list of CVs</span>
+<span class="s1">        newForceConstants (List[float]): new force constants</span>
+<span class="s1">    &quot;&quot;&quot;</span>
+<span class="s1">    # whether parsing a harmonic block</span>
+<span class="s1">    # either None or the index of the corresponding CV</span>
+<span class="s1">    inBlock = None</span>
+<span class="s1">    with open(filename, &#39;r&#39;) as oldColvarsFile:</span>
+<span class="s1">        # Python cannot modify text file in place</span>
+<span class="s1">        with open(filename + &#39;.tmp&#39;, &#39;w&#39;) as newColvarsFile:</span>
+<span class="s1">            for line in oldColvarsFile.readlines():</span>
+<span class="s1">                if line.strip().lower().startswith(&#39;colvarstrajfrequency&#39;):</span>
+<span class="s1">                    newColvarsFile.write(f&#39;colvarsTrajFrequency      50</span><span class="se">\\</span><span class="s1">n&#39;)</span>
+<span class="s1">                    continue</span>
+
+<span class="s1">                splitedLine = line.strip().split()</span>
+<span class="s1">                </span>
+<span class="s1">                if inBlock is None:</span>
+<span class="s1">                    newColvarsFile.write(line)</span>
+<span class="s1">                else:</span>
+<span class="s1">                    if not line.strip().lower().startswith(&#39;forceconstant&#39;):</span>
+<span class="s1">                        newColvarsFile.write(line)</span>
+<span class="s1">                    else:</span>
+<span class="s1">                        # &#39;colvars&#39; not in CVs</span>
+<span class="s1">                        if inBlock == -1:</span>
+<span class="s1">                            newColvarsFile.write(line)</span>
+<span class="s1">                        else:</span>
+<span class="s1">                            newColvarsFile.write(f&#39;    ForceConstant    $$afc_</span><span class="si">{newForceConstants[inBlock]}</span><span class="se">\\</span><span class="s1">n&#39;)</span>
+<span class="s1">                    </span>
+<span class="s1">                    if len(splitedLine) &gt; 0:</span>
+<span class="s1">                        if splitedLine[0] == &#39;}&#39;:</span>
+<span class="s1">                            inBlock = None</span>
+<span class="s1">                        </span>
+<span class="s1">                if line.strip().lower().startswith(&#39;harmonic&#39;):</span>
+<span class="s1">                    inBlock = -1</span>
+<span class="s1">                        </span>
+<span class="s1">                if line.strip().lower().startswith(&#39;colvars&#39;):</span>
+<span class="s1">                    for index, CV in enumerate(CVs):</span>
+<span class="s1">                        if splitedLine[1].lower() == CV.lower():</span>
+<span class="s1">                            inBlock = index</span>
+
+<span class="s1">def updateAllForceConstants(temperature=300):</span>
+<span class="s1">    &quot;&quot;&quot; update all the force constants of the colvars.in file,</span>
+<span class="s1">        based on histogram.dat files</span>
+
+<span class="s1">    Args:</span>
+<span class="s1">        temperature (int, optional): temperature. Defaults to 300.</span>
+<span class="s1">    &quot;&quot;&quot;</span>
+<span class="s1">    newForceConstants = []</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram2.dat&quot;, temperature)[1])</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram3.dat&quot;, temperature)[1])</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram4.dat&quot;, temperature)[1])</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram5.dat&quot;, temperature)[1])</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram6.dat&quot;, temperature)[1])</span>
+<span class="s1">    newForceConstants.append(parseDat(&quot;../000_eq/output/eq.histogram7.dat&quot;, temperature)[1])</span>
+
+<span class="s1">    updateForceConstant(&quot;./colvars.in&quot;, </span>
+<span class="s1">                        [&quot;eulerTheta&quot;, &quot;eulerPhi&quot;, &quot;eulerPsi&quot;, &quot;polarTheta&quot;, &quot;polarPhi&quot;, &quot;r&quot;],</span>
+<span class="s1">                        newForceConstants)</span>
+
+<span class="s1">def generateColvarsFiles(template_file, windows, prefix):</span>
+
+<span class="s1">    if os.path.exists(f&quot;./</span><span class="si">{prefix}</span><span class="s1">&quot;):</span>
+<span class="s1">        print(f&quot;Error, ./</span><span class="si">{prefix}</span><span class="s1"> exists!&quot;)</span>
+<span class="s1">        sys.exit(1)</span>
+<span class="s1">    </span>
+<span class="s1">    os.mkdir(prefix)</span>
+
+<span class="s1">    with open(template_file, &quot;r&quot;) as inputFile:</span>
+<span class="s1">        lines = inputFile.readlines()</span>
+
+<span class="s1">    for i in range(windows):</span>
+<span class="s1">        with open(f&quot;./</span><span class="si">{prefix}</span><span class="s1">/colvars_</span><span class="si">{i}</span><span class="s1">.in&quot;, &quot;w&quot;) as new_colvars_file:</span>
+<span class="s1">            for j in range(len(lines)):</span>
+<span class="s1">                splitedLine = lines[j].strip().split()</span>
+<span class="s1">                if len(splitedLine) &lt; 2 or (not splitedLine[1].startswith(&quot;$$afc_&quot;)):</span>
+<span class="s1">                    new_colvars_file.write(lines[j])</span>
+<span class="s1">                else:</span>
+<span class="s1">                    new_colvars_file.write(f&quot;    forceConstant  {float(splitedLine[1].split(&#39;_&#39;)[1]) * (float(i) / windows)}</span><span class="se">\\</span><span class="s1">n&quot;)</span>
+<span class="s1">    </span>
+<span class="s1">    with open(f&quot;./</span><span class="si">{prefix}</span><span class="s1">/colvars_</span><span class="si">{windows}</span><span class="s1">.in&quot;, &quot;w&quot;) as new_colvars_file:</span>
+<span class="s1">        for j in range(len(lines)):</span>
+<span class="s1">            splitedLine = lines[j].strip().split()</span>
+<span class="s1">            if len(splitedLine) &lt; 2 or (not splitedLine[1].startswith(&quot;$$afc_&quot;)):</span>
+<span class="s1">                new_colvars_file.write(lines[j])</span>
+<span class="s1">            else:</span>
+<span class="s1">                new_colvars_file.write(f&quot;    forceConstant  {float(splitedLine[1].split(&#39;_&#39;)[1])}</span><span class="se">\\</span><span class="s1">n&quot;)</span>
+
+<span class="s1">updateAllForceConstants(TEMPERATURE)</span>
+<span class="s1">generateColvarsFiles(&quot;colvars.in.tmp&quot;, WINDOWS, &quot;colvars_files&quot;)</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Haohao Fu, Haochuan Chen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
